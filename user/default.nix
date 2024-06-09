@@ -6,16 +6,7 @@
 
   home.packages = with pkgs;[
     neofetch
-    nnn # terminal file manager
-
-    # utils
-    ripgrep # recursively searches directories for a regex pattern
-    eza # A modern replacement for ‘ls’
-    fzf # A command-line fuzzy finder
-
-    btop  # replacement of htop/nmon
-    iotop # io monitoring
-    iftop # network monitoring
+    btop
   ];
 
   # git
@@ -24,6 +15,9 @@
     userName = "glaumar";
     userEmail = "git@geekgo.tech";
   };
+
+  # firefox.
+  programs.firefox.enable = true;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
