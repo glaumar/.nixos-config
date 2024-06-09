@@ -3,6 +3,9 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    # You can access packages and modules from different nixpkgs revs at the same time.
+    # nixpkgs.unstable-url = "github:nixos/nixpkgs/nixos-unstable";
+
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -28,7 +31,7 @@
 
             # 使用 home-manager.extraSpecialArgs 自定义传递给 ./home.nix 的参数
             # 取消注释下面这一行，就可以在 home.nix 中使用 flake 的所有 inputs 参数了
-            # home-manager.extraSpecialArgs = inputs;
+            home-manager.extraSpecialArgs = inputs;
           }
         ];
       };
