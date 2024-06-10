@@ -7,6 +7,10 @@
   home.packages = with pkgs;[
     neofetch
     btop
+
+    # nix
+    nil # nix lsp
+    nixpkgs-fmt # nix formate
   ];
 
   # git
@@ -16,31 +20,10 @@
     userEmail = "git@geekgo.tech";
   };
 
-  # firefox.
-  programs.firefox = {
-    enable = true;
-    package = pkgs.firefox;
-  };
-
-  # fcitx5
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-chinese-addons
-      fcitx5-anthy
-      fcitx5-with-addons
-    ];
-  };
 
   # vscode
   programs.vscode.enable = true;
 
-  # kdeconnect
-  services.kdeconnect = {
-    enable = true;
-    package = pkgs.kdePackages.kdeconnect-kde;
-    indicator = true;
-  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

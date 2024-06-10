@@ -81,14 +81,22 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-     git
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     wget
-     curl
+    vim
+    git
+    wget
+    curl
   ];
 
-  # set defualt editor
-  environment.variables.EDITOR = "vim";
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox;
+    preferences = {
+      "full-screen-api.warning.timeout" = 0;
+    };
+    preferencesStatus = "default";
+  };
+
+  programs.vim.defaultEditor = true;
 
   # List services that you want to enable:
 

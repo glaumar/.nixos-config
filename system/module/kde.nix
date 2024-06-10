@@ -10,5 +10,21 @@
   environment.systemPackages = with pkgs.kdePackages; [
     kate
   ];
+
+  programs.kdeconnect = {
+    enable = true;
+  };
+
+  # fcitx5
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.plasma6Support = true;
+    fcitx5.waylandFrontend = true;
+    fcitx5.addons = with pkgs; [
+      kdePackages.fcitx5-chinese-addons
+      kdePackages.fcitx5-with-addons
+      fcitx5-anthy
+    ];
+  };
 }
 
