@@ -9,6 +9,11 @@
 
   environment.systemPackages = with pkgs.kdePackages; [
     kate
+    yakuake
+  ];
+
+  environment.plasma6.excludePackages = with pkgs; [
+    kdePackages.elisa
   ];
 
   programs.kdeconnect = {
@@ -22,9 +27,8 @@
     fcitx5.waylandFrontend = true;
     fcitx5.addons = with pkgs; [
       kdePackages.fcitx5-chinese-addons
-      kdePackages.fcitx5-with-addons
+      kdePackages.fcitx5-with-addons  
       fcitx5-anthy
     ];
   };
 }
-

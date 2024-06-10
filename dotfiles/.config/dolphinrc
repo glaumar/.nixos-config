@@ -1,0 +1,14 @@
+[Desktop Entry]
+DefaultProfile=glaumar.profile
+
+[General]
+Version=202
+ViewPropsTimestamp=2024,6,9,3,3,14.502
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
