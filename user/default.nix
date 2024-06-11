@@ -22,8 +22,32 @@
     userEmail = "git@geekgo.tech";
   };
 
+  programs.fish.enable = true;
+
+  programs.direnv.enable = true;
+
   # vscode
   programs.vscode.enable = true;
+  # TODO: https://discourse.nixos.org/t/partly-overriding-a-desktop-entry/20743
+  xdg.desktopEntries.vscode = {
+    categories = [ "Utility" "TextEditor" "Development" "IDE" ];
+    name = "Visual Studio Code(fcitx5 fix)";
+    exec = "code --enable-features=UseOzonePlatform --enable-wayland-ime %F";
+    icon = "vscode";
+    # Keywords = "vscode";
+    genericName = "Text Editor";
+    mimeType = [ "text/plain" "inode/directory" ];
+    startupNotify = true;
+    # startupWmClass = "Code";
+    type = "Application";
+    # version = 1.4;
+
+    actions."new-empty-window" = {
+      exec = "code --new-window %F";
+      icon = "vscode";
+      name = "New Empty Window";
+    };
+  };
 
   # dotfile
   xdg.configFile =
@@ -36,6 +60,7 @@
       "user-dirs.locale".source = mkOutOfStoreSymlink "${conf_home}/user-dirs.locale";
       "autostart".source = mkOutOfStoreSymlink "${conf_home}/autostart";
       "fontconfig/fonts.conf".source = mkOutOfStoreSymlink "${conf_home}/fontconfig/fonts.conf";
+      "mimeapps.list".source = mkOutOfStoreSymlink "${conf_home}/mimeapps.list";
 
       # kde
       "kdedefaults".source = mkOutOfStoreSymlink "${conf_home}/kdedefaults";
@@ -61,11 +86,9 @@
       "plasmanotifyrc".source = mkOutOfStoreSymlink "${conf_home}/plasmanotifyrc";
       "plasma-localerc".source = mkOutOfStoreSymlink "${conf_home}/plasma-localerc";
       "plasma-workspace".source = mkOutOfStoreSymlink "${conf_home}/plasma-workspace";
-      "plasma-plasma-org.kde.plasma.desktop-appletsrc".source = mkOutOfStoreSymlink "${conf_home}/plasma-org.kde.plasma.desktop-appletsrc";
+      "plasma-org.kde.plasma.desktop-appletsrc".source = mkOutOfStoreSymlink "${conf_home}/plasma-org.kde.plasma.desktop-appletsrc";
 
       # gtk
-      "gtkrc".source = mkOutOfStoreSymlink "${conf_home}/gtkrc";
-      "gtkrc-2.0".source = mkOutOfStoreSymlink "${conf_home}/gtkrc-2.0";
       "gtk-3.0".source = mkOutOfStoreSymlink "${conf_home}/gtk-3.0";
       "gtk-4.0".source = mkOutOfStoreSymlink "${conf_home}/gtk-4.0";
 
@@ -77,6 +100,7 @@
       "systemmonitorrc".source = mkOutOfStoreSymlink "${conf_home}/systemmonitorrc";
       "spectaclerc".source = mkOutOfStoreSymlink "${conf_home}/spectaclerc";
       "katerc".source = mkOutOfStoreSymlink "${conf_home}/katerc";
+      "gwenviewrc".source = mkOutOfStoreSymlink "${conf_home}/gwenviewrc";
 
       # other app
       "fcitx5".source = mkOutOfStoreSymlink "${conf_home}/fcitx5";

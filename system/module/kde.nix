@@ -31,4 +31,7 @@
       fcitx5-anthy
     ];
   };
+
+  # enable wayland for electron
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }

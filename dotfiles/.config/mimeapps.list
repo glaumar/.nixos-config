@@ -1,0 +1,5 @@
+[Added Associations]
+application/xml=org.kde.kate.desktop;firefox.desktop;org.kde.kwrite.desktop;vscode.desktop;code.desktop;okularApplication_txt.desktop;
+
+[Default Applications]
+application/xml=org.kde.kate.desktop;
