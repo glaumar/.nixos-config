@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
   imports =
     [
@@ -99,6 +99,27 @@
   };
 
   programs.vim.defaultEditor = true;
+
+  services.v2raya.enable = true;
+
+  # TODO: fix direc error
+  # daed - dae with a web dashboard
+  # services.daed = {
+  #   enable = true;
+
+  #   openFirewall = {
+  #     enable = true;
+  #     port = 12345;
+  #   };
+
+  #   /* default options
+
+  #     package = inputs.daeuniverse.packages.x86_64-linux.daed;
+  #     configDir = "/etc/daed";
+  #     listen = "127.0.0.1:2023";
+
+  #     */
+  # };
 
   # List services that you want to enable:
 

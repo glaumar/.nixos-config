@@ -1,0 +1,19 @@
+[1]
+Description=Window settings for firefox
+noborder=true
+noborderrule=3
+types=1
+wmclass=firefox
+wmclassmatch=1
+
+[General]
+count=1
+rules=1
+
+[e6a08b10-6ecf-40b9-96e1-097e9bdbecc6]
+Description=Window settings for firefox
+noborder=true
+noborderrule=3
+types=1
+wmclass=firefox
+wmclassmatch=1

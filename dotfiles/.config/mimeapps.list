@@ -3,3 +3,4 @@ application/xml=org.kde.kate.desktop;firefox.desktop;org.kde.kwrite.desktop;vsco
 
 [Default Applications]
 application/xml=org.kde.kate.desktop;
+x-scheme-handler/devdocs=DevDocs.desktop

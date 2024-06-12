@@ -5,14 +5,18 @@
   home.homeDirectory = "/home/glaumar";
 
   home.packages = with pkgs;[
+    # cmd tool
     neofetch
     btop
     xorg.xkill
+    tealdeer
 
     # nix
     nil # nix lsp
     nixpkgs-fmt # nix formate
 
+    # app
+    telegram-desktop
   ];
 
   # git
@@ -65,12 +69,13 @@
       # kde
       "kdedefaults".source = mkOutOfStoreSymlink "${conf_home}/kdedefaults";
       "kwinrc".source = mkOutOfStoreSymlink "${conf_home}/kwinrc";
+      "kwinrulesrc".source = mkOutOfStoreSymlink "${conf_home}/kwinrulesrc";
+      "powerdevilrc".source = mkOutOfStoreSymlink "${conf_home}/powerdevilrc";
       "kglobalshortcutsrc".source = mkOutOfStoreSymlink "${conf_home}/kglobalshortcutsrc";
       "ktimezonedrc".source = mkOutOfStoreSymlink "${conf_home}/ktimezonedrc";
       "kded5rc".source = mkOutOfStoreSymlink "${conf_home}/kded5rc";
       "kded6rc".source = mkOutOfStoreSymlink "${conf_home}/kded6rc";
       "kdeglobals".source = mkOutOfStoreSymlink "${conf_home}/kdeglobals";
-      "kxkbrc".source = mkOutOfStoreSymlink "${conf_home}/kxkbrc";
       "kconf_updaterc".source = mkOutOfStoreSymlink "${conf_home}/kconf_updaterc";
       "kcminputrc".source = mkOutOfStoreSymlink "${conf_home}/kcminputrc";
       "kcmfonts".source = mkOutOfStoreSymlink "${conf_home}/kcmfonts";

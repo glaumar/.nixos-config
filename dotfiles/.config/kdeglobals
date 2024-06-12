@@ -140,6 +140,7 @@ XftSubPixel=rgb
 
 [KDE]
 LookAndFeelPackage=org.kde.breeze.desktop
+SingleClick=true
 widgetStyle=Breeze
 
 [KFileDialog Settings]

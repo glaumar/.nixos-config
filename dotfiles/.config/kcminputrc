@@ -1,2 +1,6 @@
+[Libinput][1739][0][Synaptics TM3383-002]
+ClickMethod=2
+ScrollMethod=1
+
 [Mouse]
 X11LibInputXAccelProfileFlat=true

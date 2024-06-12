@@ -15,27 +15,34 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # dae and daed
+    daeuniverse.url = "github:daeuniverse/flake.nix";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, daeuniverse, ... }: {
     nixosConfigurations = {
       Thinkpad = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system = "
+      x86_64-linux ";
+        specialArgs = { inherit inputs; };
         modules = [
           system/Thinkpad/default.nix
+          daeuniverse.nixosModules.daed
 
-          home-manager.nixosModules.home-manager {
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.extraSpecialArgs = inputs;
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.glaumar = import user/default.nix;
-            
+
             # rename overwrited file
             home-manager.backupFileExtension = "hm_backup";
-            
-            home-manager.extraSpecialArgs = inputs;
           }
         ];
       };
     };
   };
 }
+
