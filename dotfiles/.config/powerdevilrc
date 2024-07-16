@@ -1,7 +1,0 @@
-[AC][SuspendAndShutdown]
-AutoSuspendAction=0
-PowerButtonAction=64
-
-[Activities][f1fa271f-54b9-4af7-828d-ba9273d33385]
-InhibitScreenManagement=false
-InhibitSuspend=false

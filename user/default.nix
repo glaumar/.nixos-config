@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 
+
 {
   home.username = "glaumar";
   home.homeDirectory = "/home/glaumar";
@@ -17,7 +18,7 @@
 
     # app
     telegram-desktop
-    glaumar_repo.qrookie
+    # glaumar_repo.qrookie
 
   ];
 
@@ -65,54 +66,37 @@
       # xdg
       "user-dirs.dirs".source = mkOutOfStoreSymlink "${conf_home}/user-dirs.dirs";
       "user-dirs.locale".source = mkOutOfStoreSymlink "${conf_home}/user-dirs.locale";
-      "autostart".source = mkOutOfStoreSymlink "${conf_home}/autostart";
       "fontconfig/fonts.conf".source = mkOutOfStoreSymlink "${conf_home}/fontconfig/fonts.conf";
       "mimeapps.list".source = mkOutOfStoreSymlink "${conf_home}/mimeapps.list";
 
       # kde
-      "kdedefaults".source = mkOutOfStoreSymlink "${conf_home}/kdedefaults";
-      "kwinrc".source = mkOutOfStoreSymlink "${conf_home}/kwinrc";
-      "kwinrulesrc".source = mkOutOfStoreSymlink "${conf_home}/kwinrulesrc";
-      "powerdevilrc".source = mkOutOfStoreSymlink "${conf_home}/powerdevilrc";
       "kglobalshortcutsrc".source = mkOutOfStoreSymlink "${conf_home}/kglobalshortcutsrc";
-      "ktimezonedrc".source = mkOutOfStoreSymlink "${conf_home}/ktimezonedrc";
-      "kded5rc".source = mkOutOfStoreSymlink "${conf_home}/kded5rc";
-      "kded6rc".source = mkOutOfStoreSymlink "${conf_home}/kded6rc";
-      "kdeglobals".source = mkOutOfStoreSymlink "${conf_home}/kdeglobals";
-      "kconf_updaterc".source = mkOutOfStoreSymlink "${conf_home}/kconf_updaterc";
-      "kcminputrc".source = mkOutOfStoreSymlink "${conf_home}/kcminputrc";
-      "kcmfonts".source = mkOutOfStoreSymlink "${conf_home}/kcmfonts";
-      "powermanagementprofilesrc".source = mkOutOfStoreSymlink "${conf_home}/powermanagementprofilesrc";
-      "systemsettingsrc".source = mkOutOfStoreSymlink "${conf_home}/systemsettingsrc";
-      "kinfocenterrc".source = mkOutOfStoreSymlink "${conf_home}/kinfocenterrc";
-      "ksmserverrc".source = mkOutOfStoreSymlink "${conf_home}/ksmserverrc";
-      "baloofilerc".source = mkOutOfStoreSymlink "${conf_home}/baloofilerc";
-      "baloofileinformationrc".source = mkOutOfStoreSymlink "${conf_home}/baloofileinformationrc";
-      "kactivitymanagerd-statsrc".source = mkOutOfStoreSymlink "${conf_home}/kactivitymanagerd-statsrc";
-      "kactivitymanagerdrc".source = mkOutOfStoreSymlink "${conf_home}/kactivitymanagerdrc";
-      "plasmashellrc".source = mkOutOfStoreSymlink "${conf_home}/plasmashellrc";
-      "plasmanotifyrc".source = mkOutOfStoreSymlink "${conf_home}/plasmanotifyrc";
-      "plasma-localerc".source = mkOutOfStoreSymlink "${conf_home}/plasma-localerc";
-      "plasma-workspace".source = mkOutOfStoreSymlink "${conf_home}/plasma-workspace";
-
-      # gtk
-      "gtk-3.0".source = mkOutOfStoreSymlink "${conf_home}/gtk-3.0";
-      "gtk-4.0".source = mkOutOfStoreSymlink "${conf_home}/gtk-4.0";
 
       # kde app
       "konsolerc".source = mkOutOfStoreSymlink "${conf_home}/konsolerc";
-      "dolphinrc".source = mkOutOfStoreSymlink "${conf_home}/dolphinrc";
       "yakuakerc".source = mkOutOfStoreSymlink "${conf_home}/yakuakerc";
       "klipperrc".source = mkOutOfStoreSymlink "${conf_home}/klipperrc";
-      "systemmonitorrc".source = mkOutOfStoreSymlink "${conf_home}/systemmonitorrc";
-      "spectaclerc".source = mkOutOfStoreSymlink "${conf_home}/spectaclerc";
-      "katerc".source = mkOutOfStoreSymlink "${conf_home}/katerc";
-      "gwenviewrc".source = mkOutOfStoreSymlink "${conf_home}/gwenviewrc";
 
       # other app
-      "fcitx5".source = mkOutOfStoreSymlink "${conf_home}/fcitx5";
-      "neofetch".source = mkOutOfStoreSymlink "${conf_home}/neofetch";
+      "tealdeer/config.toml".source = mkOutOfStoreSymlink "${conf_home}/tealdeer/config.toml";
     };
+
+  xdg.dataFile =
+    let
+      data_home = "${config.home.homeDirectory}/.nixos-config/dotfiles/.local/share";
+    in
+    with config.lib.file;  {
+      # konsole
+      "konsole/glaumar.profile".source = mkOutOfStoreSymlink "${data_home}/konsole/glaumar.profile";
+    };
+
+  programs.plasma = {
+    enable = true;
+    workspace = {
+      clickItemTo = "open";
+      lookAndFeel = "org.kde.breezedark.desktop";
+    };
+  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

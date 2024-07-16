@@ -2,10 +2,10 @@
 
 {
   # Enable the KDE Plasma Desktop Environment.(wayland only)
-  services.displayManager.defaultSession = "plasma";
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.displayManager.defaultSession = lib.mkDefault "plasma";
+  services.displayManager.sddm.enable = lib.mkDefault  true;
+  services.displayManager.sddm.wayland.enable = lib.mkDefault true;
+  services.desktopManager.plasma6.enable = lib.mkDefault true;
 
   environment.systemPackages = with pkgs.kdePackages; [
     kate
@@ -27,14 +27,15 @@
   };
 
   programs.kdeconnect = {
-    enable = true;
+    enable = lib.mkDefault true;
   };
 
   # fcitx5
   i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.plasma6Support = true;
-    fcitx5.waylandFrontend = true;
+    type = "fcitx5";
+    enable = lib.mkDefault true;
+    fcitx5.plasma6Support = lib.mkDefault true;
+    fcitx5.waylandFrontend = lib.mkDefault true;
     fcitx5.addons = with pkgs; [
       kdePackages.fcitx5-chinese-addons
       kdePackages.fcitx5-with-addons
@@ -43,5 +44,5 @@
   };
 
   # enable wayland for electron
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.NIXOS_OZONE_WL = lib.mkDefault "1";
 }

@@ -2,13 +2,14 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{pkgs, ... }:
+{ pkgs, lib, ... }:
+
 {
   imports =
     [
       ../module/kde.nix
 
-      # the results of the hardware scan.
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -21,13 +22,12 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
-  networking.hostName = "Thinkpad"; 
+  networking.hostName = "SteamDeck";
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "zh_CN.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
@@ -62,9 +62,26 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "glaumar";
+
+  services.displayManager.sddm.enable = lib.mkForce false;
+  services.displayManager.defaultSession = lib.mkForce "gamescope";
+  jovian = {
+    steam = {
+      enable = true;
+      autoStart = true;
+      desktopSession = "plasma";
+      user = "glaumar";
+    };
+
+    devices.steamdeck = {
+      enable = true;
+    };
+
+    decky-loader = {
+      enable = true;
+      user = "glaumar";
+    };
+  };
 
   # install font
   fonts.packages = with pkgs; [
@@ -100,29 +117,18 @@
 
   services.v2raya.enable = true;
 
-  # TODO: fix direc error
-  # daed - dae with a web dashboard
-  # services.daed = {
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
   #   enable = true;
-
-  #   openFirewall = {
-  #     enable = true;git
-  #     port = 12345;
-  #   };
-
-  #   /* default options
-
-  #     package = inputs.daeuniverse.packages.x86_64-linux.daed;
-  #     configDir = "/etc/daed";
-  #     listen = "127.0.0.1:2023";
-
-  #     */
+  #   enableSSHSupport = true;
   # };
 
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
