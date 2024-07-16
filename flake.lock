@@ -173,6 +173,26 @@
         "type": "github"
       }
     },
+    "glaumar_repo": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1718944553,
+        "narHash": "sha256-y34/+JU3RtBLyDt0/GRwIl7YcNHz0/BAVDionE5lAOw=",
+        "owner": "glaumar",
+        "repo": "nur",
+        "rev": "14b1a9c513c0e578261217e5c7e54cc3a7199d38",
+        "type": "github"
+      },
+      "original": {
+        "owner": "glaumar",
+        "repo": "nur",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -385,6 +405,7 @@
     "root": {
       "inputs": {
         "daeuniverse": "daeuniverse",
+        "glaumar_repo": "glaumar_repo",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_4"
       }

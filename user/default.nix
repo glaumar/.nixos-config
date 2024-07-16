@@ -17,11 +17,14 @@
 
     # app
     telegram-desktop
+    glaumar_repo.qrookie
+
   ];
 
   # git
   programs.git = {
     enable = true;
+    lfs.enable = true;
     userName = "glaumar";
     userEmail = "git@geekgo.tech";
   };
@@ -91,7 +94,6 @@
       "plasmanotifyrc".source = mkOutOfStoreSymlink "${conf_home}/plasmanotifyrc";
       "plasma-localerc".source = mkOutOfStoreSymlink "${conf_home}/plasma-localerc";
       "plasma-workspace".source = mkOutOfStoreSymlink "${conf_home}/plasma-workspace";
-      "plasma-org.kde.plasma.desktop-appletsrc".source = mkOutOfStoreSymlink "${conf_home}/plasma-org.kde.plasma.desktop-appletsrc";
 
       # gtk
       "gtk-3.0".source = mkOutOfStoreSymlink "${conf_home}/gtk-3.0";

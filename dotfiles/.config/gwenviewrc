@@ -5,5 +5,9 @@ LastUsedVersion=210800
 MenuBar=Disabled
 ToolBarsMovable=Disabled
 
+[Recent Files]
+File1[$e]=$HOME/Code/QRookie/content/Image/matrix.png
+Name1[$e]=matrix.png
+
 [SideBar]
-InformationSplitterSizes=0,0
+InformationSplitterSizes=211,244

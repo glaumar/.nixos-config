@@ -108,7 +108,7 @@
   #   enable = true;
 
   #   openFirewall = {
-  #     enable = true;
+  #     enable = true;git
   #     port = 12345;
   #   };
 
@@ -130,7 +130,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # do garbage collection weekly to keep disk usage low
   nix.gc = {

@@ -5,6 +5,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     # You can access packages and modules from different nixpkgs revs at the same time.
     # nixpkgs.unstable-url = "github:nixos/nixpkgs/nixos-unstable";
+    glaumar_repo = {
+      url = "github:glaumar/nur";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # home-manager, used for managing user configuration
     home-manager = {
@@ -27,6 +31,13 @@
       x86_64-linux ";
         specialArgs = { inherit inputs; };
         modules = [
+          ({
+            nixpkgs.overlays = [
+              (final: prev: {
+                glaumar_repo = inputs.glaumar_repo.packages."${prev.system}";
+              })
+            ];
+          })
           system/Thinkpad/default.nix
           daeuniverse.nixosModules.daed
 
