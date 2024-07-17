@@ -2,6 +2,11 @@
 
 
 {
+  imports =
+    [
+      ./plasma.nix
+    ];
+
   home.username = "glaumar";
   home.homeDirectory = "/home/glaumar";
 
@@ -18,8 +23,9 @@
 
     # app
     telegram-desktop
-    # glaumar_repo.qrookie
-
+    glaumar_repo.qrookie
+    calibre
+    libreoffice-qt6-fresh
   ];
 
   # git
@@ -29,9 +35,7 @@
     userName = "glaumar";
     userEmail = "git@geekgo.tech";
   };
-
-  programs.fish.enable = true;
-
+  
   programs.direnv.enable = true;
 
   # vscode
@@ -57,6 +61,11 @@
     };
   };
 
+  services.syncthing = {
+    enable = true;
+    # tray.enable = true;
+  };
+
   # dotfile
   xdg.configFile =
     let
@@ -69,34 +78,10 @@
       "fontconfig/fonts.conf".source = mkOutOfStoreSymlink "${conf_home}/fontconfig/fonts.conf";
       "mimeapps.list".source = mkOutOfStoreSymlink "${conf_home}/mimeapps.list";
 
-      # kde
-      "kglobalshortcutsrc".source = mkOutOfStoreSymlink "${conf_home}/kglobalshortcutsrc";
-
-      # kde app
-      "konsolerc".source = mkOutOfStoreSymlink "${conf_home}/konsolerc";
-      "yakuakerc".source = mkOutOfStoreSymlink "${conf_home}/yakuakerc";
-      "klipperrc".source = mkOutOfStoreSymlink "${conf_home}/klipperrc";
-
       # other app
       "tealdeer/config.toml".source = mkOutOfStoreSymlink "${conf_home}/tealdeer/config.toml";
     };
 
-  xdg.dataFile =
-    let
-      data_home = "${config.home.homeDirectory}/.nixos-config/dotfiles/.local/share";
-    in
-    with config.lib.file;  {
-      # konsole
-      "konsole/glaumar.profile".source = mkOutOfStoreSymlink "${data_home}/konsole/glaumar.profile";
-    };
-
-  programs.plasma = {
-    enable = true;
-    workspace = {
-      clickItemTo = "open";
-      lookAndFeel = "org.kde.breezedark.desktop";
-    };
-  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

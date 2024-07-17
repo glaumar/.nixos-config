@@ -30,6 +30,7 @@
   swapDevices =
     [{ device = "/dev/disk/by-uuid/a09d3a3c-0609-48dc-989b-c830a6ddddbd"; }];
   
+  # try mounting the sd card
   fileSystems."/mnt/MicroSDCard" = {
     device = "/dev/mmcblk0p1";
     # If you have this partition mounted, then you can check its type by using
@@ -42,6 +43,7 @@
       "x-systemd.automount"
     ];
   };
+  
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
