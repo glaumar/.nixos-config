@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
@@ -14,20 +15,33 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/e2dfa3d4-eb47-4834-8090-5c5870776742";
+    {
+      device = "/dev/disk/by-uuid/e2dfa3d4-eb47-4834-8090-5c5870776742";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/C16D-7C1C";
+    {
+      device = "/dev/disk/by-uuid/C16D-7C1C";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/a09d3a3c-0609-48dc-989b-c830a6ddddbd"; }
+    [{ device = "/dev/disk/by-uuid/a09d3a3c-0609-48dc-989b-c830a6ddddbd"; }];
+  
+  fileSystems."/mnt/MicroSDCard" = {
+    device = "/dev/mmcblk0p1";
+    # If you have this partition mounted, then you can check its type by using
+    # df -T | grep /dev/${device}
+    fsType = "ext4";
+    options = [
+      # System will boot up if you don't have sd card inserted
+      "nofail"
+      # After booting up systemd will try mounting the sd card
+      "x-systemd.automount"
     ];
-
+  };
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction

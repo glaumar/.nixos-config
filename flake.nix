@@ -73,6 +73,7 @@
             ];
           })
 
+          daeuniverse.nixosModules.daed
           jovian-nixos.nixosModules.default
           system/SteamDeck/default.nix
 
