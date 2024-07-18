@@ -26,6 +26,7 @@
     glaumar_repo.qrookie
     calibre
     libreoffice-qt6-fresh
+    aseprite
   ];
 
   # git
@@ -80,6 +81,7 @@
 
       # other app
       "tealdeer/config.toml".source = mkOutOfStoreSymlink "${conf_home}/tealdeer/config.toml";
+      "aseprite/aseprite.ini".source = mkOutOfStoreSymlink "${conf_home}/aseprite/aseprite.ini";
     };
 
 

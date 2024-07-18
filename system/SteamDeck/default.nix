@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, lib, ... }:
+{ lib, ... }:
 
 {
   imports =
@@ -33,11 +33,6 @@
     devices.steamdeck = {
       enable = true;
     };
-
-    # decky-loader = {
-    #   enable = true;
-    #   user = "glaumar";
-    # };
   };
 
   # List services that you want to enable:
@@ -45,12 +40,7 @@
   # daed - dae with a web dashboard
   services.daed = {
     enable = true;
-
-    openFirewall = {
-      enable = true;
-      port = 12345;
-    };
-
+    
     # allow to access the web dashboard from other devices
     listen = "0.0.0.0:2023";
   };

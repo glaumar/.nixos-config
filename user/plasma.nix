@@ -7,8 +7,74 @@
       clickItemTo = "open";
       lookAndFeel = "org.kde.breezedark.desktop";
     };
+
+
+    panels = [
+      # Windows-like panel at the bottom
+      {
+        location = "bottom";
+        floating = true;
+        height = 56;
+        widgets = [
+          {
+            kickoff = {
+              sortAlphabetically = true;
+              icon = "nix-snowflake-white";
+            };
+          }
+          "org.kde.plasma.marginsseparator"
+          "org.kde.plasma.pager"
+          
+          "org.kde.plasma.panelspacer"
+          {
+            iconTasks = {
+              launchers = [
+                "applications:org.kde.dolphin.desktop"
+                "applications:firefox.desktop"
+              ];
+            };
+          }
+          "org.kde.plasma.panelspacer"
+
+          {
+            systemTray.items = {
+              shown = [
+              ];
+              hidden = [
+              ];
+            };
+          }
+
+          {
+            digitalClock = {
+              calendar.firstDayOfWeek = "sunday";
+              time.format = "24h";
+            };
+          }
+
+          "org.kde.plasma.showdesktop"
+        ];
+
+      }
+    ];
+
+
+    configFile = {
+      kwinrc = {
+        Desktops.Number = 2;
+        Wayland.InputMethod = "/run/current-system/sw/share/applications/org.fcitx.Fcitx5.desktop";
+      };
+    };
+
+    shortcuts = {
+      yakuake = {
+        "toggle-window-state" = "Meta+Return";
+      };
+    };
+
+
   };
-  
+
   xdg.configFile =
     let
       conf_home = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
@@ -29,13 +95,9 @@
         Type=Application
       '';
 
-      # kde
-      "kglobalshortcutsrc".source = mkOutOfStoreSymlink "${conf_home}/kglobalshortcutsrc";
-
       # kde app
       "konsolerc".source = mkOutOfStoreSymlink "${conf_home}/konsolerc";
       "yakuakerc".source = mkOutOfStoreSymlink "${conf_home}/yakuakerc";
-      "klipperrc".source = mkOutOfStoreSymlink "${conf_home}/klipperrc";
     };
 
   xdg.dataFile =
