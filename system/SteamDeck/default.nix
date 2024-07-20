@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports =
@@ -22,6 +22,8 @@
 
   services.displayManager.sddm.enable = lib.mkForce false;
   services.displayManager.defaultSession = lib.mkForce "gamescope";
+
+  programs.steam.extraCompatPackages = [ pkgs.proton-ge-bin ];
   jovian = {
     steam = {
       enable = true;
@@ -40,7 +42,7 @@
   # daed - dae with a web dashboard
   services.daed = {
     enable = true;
-    
+
     # allow to access the web dashboard from other devices
     listen = "0.0.0.0:2023";
   };

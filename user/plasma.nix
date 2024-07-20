@@ -24,7 +24,7 @@
           }
           "org.kde.plasma.marginsseparator"
           "org.kde.plasma.pager"
-          
+
           "org.kde.plasma.panelspacer"
           {
             iconTasks = {
@@ -37,11 +37,8 @@
           "org.kde.plasma.panelspacer"
 
           {
-            systemTray.items = {
-              shown = [
-              ];
-              hidden = [
-              ];
+            systemTray = {
+              icons.scaleToFit = true;
             };
           }
 
@@ -72,6 +69,42 @@
       };
     };
 
+
+    window-rules = [
+      {
+        description = "Dolphin";
+        match = {
+          window-class = {
+            value = "dolphin";
+            type = "exact";
+          };
+          window-types = [ "normal" ];
+        };
+        apply = {
+          noborder = {
+            value = true;
+            apply = "force";
+          };
+        };
+      }
+
+      {
+        description = "org.telegram.desktop";
+        match = {
+          window-class = {
+            value = "telegram-desktop org.telegram.desktop";
+            type = "exact";
+          };
+          window-types = [ "normal" ];
+        };
+        apply = {
+          noborder = {
+            value = true;
+            apply = "force";
+          };
+        };
+      }
+    ];
 
   };
 

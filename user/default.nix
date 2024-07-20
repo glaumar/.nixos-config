@@ -12,6 +12,7 @@
 
   home.packages = with pkgs;[
     # cmd tool
+    file
     neofetch
     btop
     xorg.xkill
@@ -22,11 +23,13 @@
     nixpkgs-fmt # nix formate
 
     # app
+    mpv
     telegram-desktop
     glaumar_repo.qrookie
     calibre
     libreoffice-qt6-fresh
     aseprite
+    gimp
   ];
 
   # git
