@@ -5,6 +5,7 @@
   imports =
     [
       ./plasma.nix
+      ./vscode.nix
     ];
 
   home.username = "glaumar";
@@ -41,29 +42,6 @@
   };
   
   programs.direnv.enable = true;
-
-  # vscode
-  programs.vscode.enable = true;
-  # TODO: https://discourse.nixos.org/t/partly-overriding-a-desktop-entry/20743
-  xdg.desktopEntries.vscode = {
-    categories = [ "Utility" "TextEditor" "Development" "IDE" ];
-    name = "Visual Studio Code(fcitx5 fix)";
-    exec = "code --enable-features=UseOzonePlatform --enable-wayland-ime %F";
-    icon = "vscode";
-    # Keywords = "vscode";
-    genericName = "Text Editor";
-    mimeType = [ "text/plain" "inode/directory" ];
-    startupNotify = true;
-    # startupWmClass = "Code";
-    type = "Application";
-    # version = 1.4;
-
-    actions."new-empty-window" = {
-      exec = "code --new-window %F";
-      icon = "vscode";
-      name = "New Empty Window";
-    };
-  };
 
   services.syncthing = {
     enable = true;

@@ -13,6 +13,9 @@
 
     # Using the KDE Wallet to store ssh key passphrases
     ksshaskpass
+
+    # system tools
+    partitionmanager
   ];
 
   environment.plasma6.excludePackages = with pkgs; [

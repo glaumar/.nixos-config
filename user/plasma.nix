@@ -8,7 +8,6 @@
       lookAndFeel = "org.kde.breezedark.desktop";
     };
 
-
     panels = [
       # Windows-like panel at the bottom
       {
@@ -27,12 +26,14 @@
 
           "org.kde.plasma.panelspacer"
           {
-            iconTasks = {
-              launchers = [
-                "applications:org.kde.dolphin.desktop"
-                "applications:firefox.desktop"
-              ];
-            };
+            iconTasks =
+              {
+                launchers = [
+                  "applications:org.kde.dolphin.desktop"
+                  "applications:firefox.desktop"
+                ];
+                behavior.middleClickAction = "close";
+              };
           }
           "org.kde.plasma.panelspacer"
 
@@ -55,20 +56,21 @@
       }
     ];
 
-
     configFile = {
       kwinrc = {
         Desktops.Number = 2;
-        Wayland.InputMethod = "/run/current-system/sw/share/applications/org.fcitx.Fcitx5.desktop";
+        Wayland.InputMethod = "org.fcitx.Fcitx5.desktop";
       };
     };
 
     shortcuts = {
+      kwin = {
+        "Window Close" = "Meta+Esc";
+      };
       yakuake = {
         "toggle-window-state" = "Meta+Return";
       };
     };
-
 
     window-rules = [
       {
@@ -94,6 +96,57 @@
           window-class = {
             value = "telegram-desktop org.telegram.desktop";
             type = "exact";
+          };
+          window-types = [ "normal" ];
+        };
+        apply = {
+          noborder = {
+            value = true;
+            apply = "force";
+          };
+        };
+      }
+
+      {
+        description = "org.kde.konsole";
+        match = {
+          window-class = {
+            value = "konsole org.kde.konsole";
+            type = "exact";
+          };
+          window-types = [ "normal" ];
+        };
+        apply = {
+          noborder = {
+            value = true;
+            apply = "force";
+          };
+        };
+      }
+
+      {
+        description = "firefox";
+        match = {
+          window-class = {
+            value = "firefox firefox";
+            type = "exact";
+          };
+          window-types = [ "normal" ];
+        };
+        apply = {
+          noborder = {
+            value = true;
+            apply = "force";
+          };
+        };
+      }
+
+      {
+        description = "Calibre";
+        match = {
+          window-class = {
+            value = "calibre-gui";
+            type = "substring";
           };
           window-types = [ "normal" ];
         };
@@ -131,6 +184,9 @@
       # kde app
       "konsolerc".source = mkOutOfStoreSymlink "${conf_home}/konsolerc";
       "yakuakerc".source = mkOutOfStoreSymlink "${conf_home}/yakuakerc";
+
+      # fcitx5
+      "fcitx5".source = mkOutOfStoreSymlink "${conf_home}/fcitx5";
     };
 
   xdg.dataFile =
