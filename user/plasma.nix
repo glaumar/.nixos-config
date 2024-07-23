@@ -85,7 +85,7 @@
         apply = {
           noborder = {
             value = true;
-            apply = "force";
+            apply = "initially";
           };
         };
       }
@@ -102,7 +102,7 @@
         apply = {
           noborder = {
             value = true;
-            apply = "force";
+            apply = "initially";
           };
         };
       }
@@ -119,7 +119,7 @@
         apply = {
           noborder = {
             value = true;
-            apply = "force";
+            apply = "initially";
           };
         };
       }
@@ -132,11 +132,15 @@
             type = "exact";
           };
           window-types = [ "normal" ];
+          title = {
+            value = "Mozilla Firefox";
+            type = "substring";
+          };
         };
         apply = {
           noborder = {
             value = true;
-            apply = "force";
+            apply = "initially";
           };
         };
       }
@@ -153,7 +157,7 @@
         apply = {
           noborder = {
             value = true;
-            apply = "force";
+            apply = "initially";
           };
         };
       }

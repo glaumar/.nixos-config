@@ -6,48 +6,19 @@
     [
       ./plasma.nix
       ./vscode.nix
+      ./cmd_tools.nix
+      ./gui_apps.nix
     ];
 
   home.username = "glaumar";
   home.homeDirectory = "/home/glaumar";
 
   home.packages = with pkgs;[
-    # cmd tool
-    file
-    neofetch
-    btop
-    xorg.xkill
-    tealdeer
-
     # nix
     nil # nix lsp
     nixpkgs-fmt # nix formate
-
-    # app
-    mpv
-    telegram-desktop
-    glaumar_repo.qrookie
-    calibre
-    libreoffice-qt6-fresh
-    aseprite
-    gimp
   ];
-
-  # git
-  programs.git = {
-    enable = true;
-    lfs.enable = true;
-    userName = "glaumar";
-    userEmail = "git@geekgo.tech";
-  };
   
-  programs.direnv.enable = true;
-
-  services.syncthing = {
-    enable = true;
-    # tray.enable = true;
-  };
-
   # dotfile
   xdg.configFile =
     let
@@ -59,10 +30,6 @@
       "user-dirs.locale".source = mkOutOfStoreSymlink "${conf_home}/user-dirs.locale";
       "fontconfig/fonts.conf".source = mkOutOfStoreSymlink "${conf_home}/fontconfig/fonts.conf";
       "mimeapps.list".source = mkOutOfStoreSymlink "${conf_home}/mimeapps.list";
-
-      # other app
-      "tealdeer/config.toml".source = mkOutOfStoreSymlink "${conf_home}/tealdeer/config.toml";
-      "aseprite/aseprite.ini".source = mkOutOfStoreSymlink "${conf_home}/aseprite/aseprite.ini";
     };
 
 
