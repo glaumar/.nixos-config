@@ -4,32 +4,26 @@
 {
   imports =
     [
-      ./plasma.nix
-      ./vscode.nix
-      ./cmd_tools.nix
-      ./gui_apps.nix
+      ../module/plasma.nix
+      ../module/vscode.nix
+      ../module/cmd_tools.nix
+      ../module/gui_apps.nix
     ];
 
   home.username = "glaumar";
   home.homeDirectory = "/home/glaumar";
 
-  home.packages = with pkgs;[
-    # nix
-    nil # nix lsp
-    nixpkgs-fmt # nix formate
-  ];
-  
   # dotfile
   xdg.configFile =
     let
-      conf_home = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
+      conf = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
     in
     with config.lib.file;  {
       # xdg
-      "user-dirs.dirs".source = mkOutOfStoreSymlink "${conf_home}/user-dirs.dirs";
-      "user-dirs.locale".source = mkOutOfStoreSymlink "${conf_home}/user-dirs.locale";
-      "fontconfig/fonts.conf".source = mkOutOfStoreSymlink "${conf_home}/fontconfig/fonts.conf";
-      "mimeapps.list".source = mkOutOfStoreSymlink "${conf_home}/mimeapps.list";
+      "user-dirs.dirs".source = mkOutOfStoreSymlink "${conf}/user-dirs.dirs";
+      "user-dirs.locale".source = mkOutOfStoreSymlink "${conf}/user-dirs.locale";
+      "fontconfig/fonts.conf".source = mkOutOfStoreSymlink "${conf}/fontconfig/fonts.conf";
+      "mimeapps.list".source = mkOutOfStoreSymlink "${conf}/mimeapps.list";
     };
 
 

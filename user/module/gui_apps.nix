@@ -9,6 +9,9 @@
     libreoffice-qt6-fresh
     aseprite
     gimp
+    
+    # keyboard
+    via
   ];
 
   services.syncthing = {
@@ -19,10 +22,10 @@
   # dotfile
   xdg.configFile =
     let
-      conf_home = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
+      conf = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
     in
     with config.lib.file;  {
-      "aseprite/aseprite.ini".source = mkOutOfStoreSymlink "${conf_home}/aseprite/aseprite.ini";
+      "aseprite/aseprite.ini".source = mkOutOfStoreSymlink "${conf}/aseprite/aseprite.ini";
     };
 
 }

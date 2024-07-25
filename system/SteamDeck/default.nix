@@ -37,6 +37,10 @@
     };
   };
 
+  environment.sessionVariables = {
+   STEAM_FORCE_DESKTOPUI_SCALING = "1.5";
+  };
+
   # List services that you want to enable:
 
   # daed - dae with a web dashboard

@@ -167,7 +167,7 @@
 
   xdg.configFile =
     let
-      conf_home = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
+      conf = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
     in
     with config.lib.file;  {
       # autostart
@@ -186,20 +186,21 @@
       '';
 
       # kde app
-      "konsolerc".source = mkOutOfStoreSymlink "${conf_home}/konsolerc";
-      "yakuakerc".source = mkOutOfStoreSymlink "${conf_home}/yakuakerc";
+      "konsolerc".source = mkOutOfStoreSymlink "${conf}/konsolerc";
+      "yakuakerc".source = mkOutOfStoreSymlink "${conf}/yakuakerc";
 
       # fcitx5
-      "fcitx5".source = mkOutOfStoreSymlink "${conf_home}/fcitx5";
+      "fcitx5".source = mkOutOfStoreSymlink "${conf}/fcitx5";
     };
 
   xdg.dataFile =
     let
-      data_home = "${config.home.homeDirectory}/.nixos-config/dotfiles/.local/share";
+      data = "${config.home.homeDirectory}/.nixos-config/dotfiles/.local/share";
     in
     with config.lib.file;  {
-      # konsole
-      "konsole/glaumar.profile".source = mkOutOfStoreSymlink "${data_home}/konsole/glaumar.profile";
+      # konsole/yakuake
+      "konsole/glaumar.profile".source = mkOutOfStoreSymlink "${data}/konsole/glaumar.profile";
+      "konsole/Breeze.colorscheme".source = mkOutOfStoreSymlink "${data}/konsole/Breeze.colorscheme";
     };
 }
 

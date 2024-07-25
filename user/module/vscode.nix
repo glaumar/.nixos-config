@@ -1,7 +1,15 @@
-{ ... }:
+{ config, pkgs, ... }:
 
 {
   programs.vscode.enable = true;
+
+  home.packages = with pkgs;[
+    # nix
+    nil # nix lsp
+    nixpkgs-fmt # nix formate
+    neovim
+  ];
+
   # fix fcitx5
   xdg.dataFile."applications/code.desktop".text = ''
     [Desktop Entry]
@@ -41,4 +49,11 @@
     Version=1.4
   '';
 
+  xdg.configFile =
+    let
+      conf = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
+    in
+    with config.lib.file;  {
+      "nvim".source = mkOutOfStoreSymlink "${conf}/nvim";
+    };
 }

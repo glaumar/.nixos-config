@@ -53,7 +53,7 @@
             home-manager.extraSpecialArgs = inputs;
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.glaumar = import user/default.nix;
+            home-manager.users.glaumar = import user/Thinkpad/default.nix;
 
             # rename overwrited file
             home-manager.backupFileExtension = "hm_backup";
@@ -83,7 +83,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
-            home-manager.users.glaumar = import user/default.nix;
+            home-manager.users.glaumar = import user/SteamDeck/default.nix;
 
             # rename overwrited file
             home-manager.backupFileExtension = "hm_backup";

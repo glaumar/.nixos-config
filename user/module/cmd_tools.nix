@@ -21,10 +21,10 @@
   
   xdg.configFile =
     let
-      conf_home = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
+      conf = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
     in
     with config.lib.file;  {
-      "tealdeer/config.toml".source = mkOutOfStoreSymlink "${conf_home}/tealdeer/config.toml";
+      "tealdeer/config.toml".source = mkOutOfStoreSymlink "${conf}/tealdeer/config.toml";
     };
 
 }
