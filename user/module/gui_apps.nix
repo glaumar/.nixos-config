@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, dotfile, ... }:
 
 {
   home.packages = with pkgs;[
@@ -9,7 +9,7 @@
     libreoffice-qt6-fresh
     aseprite
     gimp
-    
+
     # keyboard
     via
   ];
@@ -20,12 +20,8 @@
   };
 
   # dotfile
-  xdg.configFile =
-    let
-      conf = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
-    in
-    with config.lib.file;  {
-      "aseprite/aseprite.ini".source = mkOutOfStoreSymlink "${conf}/aseprite/aseprite.ini";
-    };
+  xdg.configFile = with config.lib.file;  {
+    "aseprite/aseprite.ini".source = mkOutOfStoreSymlink "${dotfile.conf}/aseprite/aseprite.ini";
+  };
 
 }

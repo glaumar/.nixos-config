@@ -1,11 +1,8 @@
 [Added Associations]
 application/xml=org.kde.kate.desktop;firefox.desktop;org.kde.kwrite.desktop;vscode.desktop;code.desktop;okularApplication_txt.desktop;
-inode/directory=org.kde.dolphin.desktop;vscode.desktop;org.kde.gwenview.desktop;org.kde.kate.desktop;
+inode/directory=org.kde.dolphin.desktop;code.desktop;org.kde.kate.desktop;org.kde.gwenview.desktop;
 
 [Default Applications]
 application/xml=org.kde.kate.desktop;
 inode/directory=org.kde.dolphin.desktop;
 x-scheme-handler/devdocs=DevDocs.desktop
-
-[Removed Associations]
-inode/directory=code.desktop;

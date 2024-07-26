@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, dotfile, ... }:
 
 {
   programs.plasma = {
@@ -165,42 +165,34 @@
 
   };
 
-  xdg.configFile =
-    let
-      conf = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
-    in
-    with config.lib.file;  {
-      # autostart
-      "autostart/org.kde.yakuake.desktop".text = ''
-        [Desktop Entry]
-        Categories=Qt;KDE;System;TerminalEmulator;
-        Comment=A drop-down terminal emulator based on KDE Konsole technology.
-        DBusActivatable=true
-        Exec=yakuake
-        GenericName=Drop-down Terminal
-        Icon=yakuake
-        Name=Yakuake
-        StartupNotify=false
-        Terminal=false
-        Type=Application
-      '';
+  xdg.configFile = with config.lib.file;  {
+    # autostart
+    "autostart/org.kde.yakuake.desktop".text = ''
+      [Desktop Entry]
+      Categories=Qt;KDE;System;TerminalEmulator;
+      Comment=A drop-down terminal emulator based on KDE Konsole technology.
+      DBusActivatable=true
+      Exec=yakuake
+      GenericName=Drop-down Terminal
+      Icon=yakuake
+      Name=Yakuake
+      StartupNotify=false
+      Terminal=false
+      Type=Application
+    '';
 
-      # kde app
-      "konsolerc".source = mkOutOfStoreSymlink "${conf}/konsolerc";
-      "yakuakerc".source = mkOutOfStoreSymlink "${conf}/yakuakerc";
+    # kde app
+    "konsolerc".source = mkOutOfStoreSymlink "${dotfile.conf}/konsolerc";
+    "yakuakerc".source = mkOutOfStoreSymlink "${dotfile.conf}/yakuakerc";
 
-      # fcitx5
-      "fcitx5".source = mkOutOfStoreSymlink "${conf}/fcitx5";
-    };
+    # fcitx5
+    "fcitx5".source = mkOutOfStoreSymlink "${dotfile.conf}/fcitx5";
+  };
 
-  xdg.dataFile =
-    let
-      data = "${config.home.homeDirectory}/.nixos-config/dotfiles/.local/share";
-    in
-    with config.lib.file;  {
-      # konsole/yakuake
-      "konsole/glaumar.profile".source = mkOutOfStoreSymlink "${data}/konsole/glaumar.profile";
-      "konsole/Breeze.colorscheme".source = mkOutOfStoreSymlink "${data}/konsole/Breeze.colorscheme";
-    };
+  xdg.dataFile = with config.lib.file;  {
+    # konsole/yakuake
+    "konsole/glaumar.profile".source = mkOutOfStoreSymlink "${dotfile.data}/konsole/glaumar.profile";
+    "konsole/Breeze.colorscheme".source = mkOutOfStoreSymlink "${dotfile.data}/konsole/Breeze.colorscheme";
+  };
 }
 

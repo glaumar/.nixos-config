@@ -10,16 +10,12 @@
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     git
+    git-lfs
     wget
     curl
   ];
 
-  programs.firefox = {
-    enable = true;
-    package = pkgs.firefox;
-  };
-
-  programs.vim = {
+  programs.neovim = {
     enable = true;
     defaultEditor = true;
   };

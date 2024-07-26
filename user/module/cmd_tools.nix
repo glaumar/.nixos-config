@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, dotfile, ... }:
 
 {
   home.packages = with pkgs;[
@@ -18,13 +18,9 @@
     userName = "glaumar";
     userEmail = "git@geekgo.tech";
   };
-  
-  xdg.configFile =
-    let
-      conf = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
-    in
-    with config.lib.file;  {
-      "tealdeer/config.toml".source = mkOutOfStoreSymlink "${conf}/tealdeer/config.toml";
-    };
+
+  xdg.configFile = with config.lib.file;  {
+    "tealdeer/config.toml".source = mkOutOfStoreSymlink "${dotfile.conf}/tealdeer/config.toml";
+  };
 
 }

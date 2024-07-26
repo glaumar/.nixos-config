@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, dotfile, ... }:
 
 {
   programs.vscode.enable = true;
@@ -6,8 +6,11 @@
   home.packages = with pkgs;[
     # nix
     nil # nix lsp
-    nixpkgs-fmt # nix formate
-    neovim
+    nixpkgs-fmt # nix formatter
+
+    # lua
+    lua-language-server
+    # luaformatter
   ];
 
   # fix fcitx5
@@ -16,7 +19,7 @@
     Actions=new-empty-window
     Categories=Utility;TextEditor;Development;IDE
     Comment=Code Editing. Redefined.
-    Exec=code --enable-features=UseOzonePlatform --enable-wayland-ime %F
+    Exec=code %F --enable-features=UseOzonePlatform --enable-wayland-ime
     GenericName=Text Editor
     Icon=vscode
     Keywords=vscode
@@ -28,7 +31,7 @@
     Version=1.4
 
     [Desktop Action new-empty-window]
-    Exec=code --enable-features=UseOzonePlatform --enable-wayland-ime --new-window %F
+    Exec=code %F --enable-features=UseOzonePlatform --enable-wayland-ime --new-window
     Icon=vscode
     Name=New Empty Window
   '';
@@ -37,7 +40,7 @@
     [Desktop Entry]
     Categories=Utility;TextEditor;Development;IDE
     Comment=Code Editing. Redefined.
-    Exec=code --enable-features=UseOzonePlatform --enable-wayland-ime --open-url %U
+    Exec=code %U --enable-features=UseOzonePlatform --enable-wayland-ime --open-url
     GenericName=Text Editor
     Icon=vscode
     Keywords=vscode
@@ -49,11 +52,7 @@
     Version=1.4
   '';
 
-  xdg.configFile =
-    let
-      conf = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
-    in
-    with config.lib.file;  {
-      "nvim".source = mkOutOfStoreSymlink "${conf}/nvim";
+  xdg.configFile =with config.lib.file;  {
+      "nvim".source = mkOutOfStoreSymlink "${dotfile.conf}/nvim";
     };
 }

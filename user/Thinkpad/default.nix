@@ -1,31 +1,28 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
-
+let
+  dotfile.conf = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
+  dotfile.data = "${config.home.homeDirectory}/.nixos-config/dotfiles/.local/share";
+in
 {
   imports =
     [
-      ../module/plasma.nix
-      ../module/vscode.nix
-      ../module/cmd_tools.nix
-      ../module/gui_apps.nix
+      (import ../module/plasma.nix { inherit config dotfile; })
+      (import ../module/vscode.nix { inherit config pkgs dotfile; })
+      (import ../module/cmd_tools.nix { inherit config pkgs dotfile; })
+      # (import ../module/gui_apps.nix { inherit config pkgs dotfile; })
     ];
-
 
   home.username = "glaumar";
   home.homeDirectory = "/home/glaumar";
-  
-  # dotfile
-  xdg.configFile =
-    let
-      conf_home = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
-    in
-    with config.lib.file;  {
-      # xdg
-      "user-dirs.dirs".source = mkOutOfStoreSymlink "${conf_home}/user-dirs.dirs";
-      "user-dirs.locale".source = mkOutOfStoreSymlink "${conf_home}/user-dirs.locale";
-      "fontconfig/fonts.conf".source = mkOutOfStoreSymlink "${conf_home}/fontconfig/fonts.conf";
-      "mimeapps.list".source = mkOutOfStoreSymlink "${conf_home}/mimeapps.list";
-    };
+
+  xdg.configFile = with config.lib.file;  {
+    # xdg
+    "user-dirs.dirs".source = mkOutOfStoreSymlink "${dotfile.conf}/user-dirs.dirs";
+    "user-dirs.locale".source = mkOutOfStoreSymlink "${dotfile.conf}/user-dirs.locale";
+    "fontconfig/fonts.conf".source = mkOutOfStoreSymlink "${dotfile.conf}/fontconfig/fonts.conf";
+    "mimeapps.list".source = mkOutOfStoreSymlink "${dotfile.conf}/mimeapps.list";
+  };
 
 
   # This value determines the Home Manager release that your

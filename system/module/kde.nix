@@ -16,7 +16,15 @@
 
     # system tools
     partitionmanager
+    
+    # dev
+    plasma-sdk
   ];
+
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox;
+  };
 
   environment.plasma6.excludePackages = with pkgs; [
     kdePackages.elisa
