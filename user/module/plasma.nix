@@ -193,6 +193,7 @@
     # konsole/yakuake
     "konsole/glaumar.profile".source = mkOutOfStoreSymlink "${dotfile.data}/konsole/glaumar.profile";
     "konsole/Breeze.colorscheme".source = mkOutOfStoreSymlink "${dotfile.data}/konsole/Breeze.colorscheme";
+    "user-places.xbel".source = mkOutOfStoreSymlink "${dotfile.data}/user-places.xbel";
   };
 }
 

@@ -1,10 +1,13 @@
 { config, pkgs, ... }:
 
 let
-  dotfile.conf = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
-  dotfile.data = "${config.home.homeDirectory}/.nixos-config/dotfiles/.local/share";
+  dotfile = {
+    conf = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
+    data = "${config.home.homeDirectory}/.nixos-config/dotfiles/.local/share";
+  };
 in
 {
+  
   imports =
     [
       (import ../module/plasma.nix { inherit config dotfile; })
@@ -24,6 +27,8 @@ in
     "mimeapps.list".source = mkOutOfStoreSymlink "${dotfile.conf}/mimeapps.list";
   };
 
+  # set avatar. TODO: use https://github.com/NixOS/nixpkgs/issues/163080 in the future
+  home.file.".face.icon".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/avatar.png";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

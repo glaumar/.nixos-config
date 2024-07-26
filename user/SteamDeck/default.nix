@@ -1,8 +1,11 @@
 { config, pkgs, ... }:
 
 let
-  dotfile.conf = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
-  dotfile.data = "${config.home.homeDirectory}/.nixos-config/dotfiles/.local/share";
+  dotfile = {
+    home = "${config.home.homeDirectory}/.nixos-config/dotfiles";
+    conf = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
+    data = "${config.home.homeDirectory}/.nixos-config/dotfiles/.local/share";
+  };
 in
 {
   imports =
@@ -24,6 +27,10 @@ in
     "fontconfig/fonts.conf".source = mkOutOfStoreSymlink "${dotfile.conf}/fontconfig/fonts.conf";
     "mimeapps.list".source = mkOutOfStoreSymlink "${dotfile.conf}/mimeapps.list";
   };
+  
+  # set avatar. TODO: use https://github.com/NixOS/nixpkgs/issues/163080 in the future
+  home.file.".face.icon".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/avatar.png";
+
 
 
   # This value determines the Home Manager release that your

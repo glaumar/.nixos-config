@@ -11,6 +11,13 @@
     # lua
     lua-language-server
     # luaformatter
+    
+    # cpp
+    # ccls # c/c++ lsp
+    clang-tools
+    
+    lunarvim 
+    nerdfonts
   ];
 
   # fix fcitx5
