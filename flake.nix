@@ -30,9 +30,14 @@
 
     # dae and daed
     daeuniverse.url = "github:daeuniverse/flake.nix";
+
+    sopts-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, daeuniverse, jovian-nixos, plasma-manager, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, daeuniverse, jovian-nixos, plasma-manager, sops-nix, ... }: {
     nixosConfigurations = {
       Thinkpad = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -47,6 +52,7 @@
           })
           system/Thinkpad/default.nix
           daeuniverse.nixosModules.daed
+          sops-nix.nixosModules.sops
 
           home-manager.nixosModules.home-manager
           {
@@ -75,6 +81,7 @@
 
           daeuniverse.nixosModules.daed
           jovian-nixos.nixosModules.default
+          sops-nix.nixosModules.sops
           system/SteamDeck/default.nix
 
           home-manager.nixosModules.home-manager

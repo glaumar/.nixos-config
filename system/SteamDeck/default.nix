@@ -21,9 +21,10 @@
   networking.hostName = "SteamDeck";
 
   services.displayManager.sddm.enable = lib.mkForce false;
-  services.displayManager.defaultSession = lib.mkForce "gamescope";
+  #services.displayManager.defaultSession = lib.mkForce "gamescope";
 
   programs.steam.extraCompatPackages = [ pkgs.proton-ge-bin ];
+  programs.steam.remotePlay.openFirewall = true;
   jovian = {
     steam = {
       enable = true;
@@ -38,7 +39,7 @@
   };
 
   environment.sessionVariables = {
-   STEAM_FORCE_DESKTOPUI_SCALING = "1.5";
+    STEAM_FORCE_DESKTOPUI_SCALING = "1.5";
   };
 
   # List services that you want to enable:
@@ -47,18 +48,27 @@
   services.daed = {
     enable = true;
 
+    openFirewall.enable = true;
+    openFirewall.port = 2023;
     # allow to access the web dashboard from other devices
     listen = "0.0.0.0:2023";
   };
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    openFirewall = true;
+  };
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
+  networking.nftables.enable = true;
+  networking.firewall = {
+    enable = true;
+    allowPing = true;
+    allowedTCPPorts = [
+      8384 # syncthing webui
+    ];
+    allowedUDPPorts = [ ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

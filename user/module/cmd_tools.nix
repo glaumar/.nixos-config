@@ -8,6 +8,7 @@
     btop
     xorg.xkill
     tealdeer
+    tree
   ];
 
   programs.direnv.enable = true;
@@ -17,6 +18,7 @@
     lfs.enable = true;
     userName = "glaumar";
     userEmail = "git@geekgo.tech";
+    extraConfig.pull.rebase = true;
   };
 
   xdg.configFile = with config.lib.file;  {

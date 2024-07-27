@@ -1,0 +1,17 @@
+# This example uses YAML anchors which allows reuse of multiple keys 
+# without having to repeat yourself.
+# Also see https://github.com/Mic92/dotfiles/blob/master/nixos/.sops.yaml
+# for a more complex example.
+keys:
+  # /home/glaumar/.config/sops/age/keys.txt
+  - &steamdeck_user age10gzhu5k0k5r3xveyde4l3edatpf9zx2rwyu4j6v3yy3gegaj2s9sf9y29v
+  # /etc/ssh/ssh_host_ed25519_key.pub
+  - &steamdeck age1j55px5k0hl49w59g57ya77dt5h02vj5deqnjusk8uz852jc6e5xqdwgd5x
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+    - age:
+      - *steamdeck_user
+      - *steamdeck
+
+

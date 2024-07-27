@@ -98,6 +98,17 @@
    </metadata>
   </info>
  </bookmark>
+ <bookmark href="file:///home/glaumar/Public">
+  <title>Public</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-public"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1722060587/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
  <bookmark href="file:///home/glaumar/Sync">
   <title>Sync</title>
   <info>
@@ -218,4 +229,15 @@
    </metadata>
   </info>
  </separator>
+ <bookmark href="kdeconnect://207d215d_e66a_4467_9e6c_0bb991be7e92/">
+  <title>OnePlus 7 Pro</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="kdeconnect"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1722111798/1</ID>
+   </metadata>
+  </info>
+ </bookmark>
 </xbel>
