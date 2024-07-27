@@ -133,18 +133,6 @@
    </metadata>
   </info>
  </bookmark>
- <bookmark href="trash:/">
-  <title>Trash</title>
-  <info>
-   <metadata owner="http://freedesktop.org">
-    <bookmark:icon name="user-trash"/>
-   </metadata>
-   <metadata owner="http://www.kde.org">
-    <ID>1721136930/5</ID>
-    <isSystemItem>true</isSystemItem>
-   </metadata>
-  </info>
- </bookmark>
  <bookmark href="file:///home/glaumar/.config">
   <title>.config</title>
   <info>
@@ -164,6 +152,18 @@
    </metadata>
    <metadata owner="http://www.kde.org">
     <ID>1722009022/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="trash:/">
+  <title>Trash</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="user-trash"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1721136930/5</ID>
+    <isSystemItem>true</isSystemItem>
    </metadata>
   </info>
  </bookmark>

@@ -25,6 +25,7 @@ in
     "user-dirs.locale".source = mkOutOfStoreSymlink "${dotfile.conf}/user-dirs.locale";
     "fontconfig/fonts.conf".source = mkOutOfStoreSymlink "${dotfile.conf}/fontconfig/fonts.conf";
     "mimeapps.list".source = mkOutOfStoreSymlink "${dotfile.conf}/mimeapps.list";
+    "gtk-3.0/bookmarks".source = mkOutOfStoreSymlink "${dotfile.conf}/gtk-3.0/bookmarks";
   };
 
   # set avatar. TODO: use https://github.com/NixOS/nixpkgs/issues/163080 in the future
