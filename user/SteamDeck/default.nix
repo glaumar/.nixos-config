@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   dotfile = {
@@ -10,29 +10,14 @@ in
 {
   imports =
     [
+      (import ../module/user.nix { inherit config dotfile; })
+      (import ../module/key_generate.nix { inherit pkgs lib; })
       (import ../module/plasma.nix { inherit config dotfile; })
       (import ../module/vscode.nix { inherit config pkgs dotfile; })
       (import ../module/cmd_tools.nix { inherit config pkgs dotfile; })
       (import ../module/gui_apps.nix { inherit config pkgs dotfile; })
       # ../module/nexusmods_app.nix
     ];
-
-  home.username = "glaumar";
-  home.homeDirectory = "/home/glaumar";
-
-  xdg.configFile = with config.lib.file;  {
-    # xdg
-    "user-dirs.dirs".source = mkOutOfStoreSymlink "${dotfile.conf}/user-dirs.dirs";
-    "user-dirs.locale".source = mkOutOfStoreSymlink "${dotfile.conf}/user-dirs.locale";
-    "fontconfig/fonts.conf".source = mkOutOfStoreSymlink "${dotfile.conf}/fontconfig/fonts.conf";
-    "mimeapps.list".source = mkOutOfStoreSymlink "${dotfile.conf}/mimeapps.list";
-    "gtk-3.0/bookmarks".source = mkOutOfStoreSymlink "${dotfile.conf}/gtk-3.0/bookmarks";
-  };
-  
-  # set avatar. TODO: use https://github.com/NixOS/nixpkgs/issues/163080 in the future
-  home.file.".face.icon".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/avatar.png";
-
-
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

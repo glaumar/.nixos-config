@@ -4,7 +4,7 @@
 # for a more complex example.
 keys:
   # /home/glaumar/.config/sops/age/keys.txt
-  - &steamdeck_user age10gzhu5k0k5r3xveyde4l3edatpf9zx2rwyu4j6v3yy3gegaj2s9sf9y29v
+  - &steamdeck_user age1c5cckmfesmvf8u0h8q2wpyzym4x7fzwak0kn7t5ryqxf0kd54a2shh0ly4
   # /etc/ssh/ssh_host_ed25519_key.pub
   - &steamdeck age1j55px5k0hl49w59g57ya77dt5h02vj5deqnjusk8uz852jc6e5xqdwgd5x
 creation_rules:

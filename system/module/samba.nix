@@ -1,22 +1,29 @@
-{ config, ... }:
+{ pkgs, ... }:
 
 {
   # share a folder:
   #   net usershare add --long videos /home/glaumar/Videos/ "" "Everyone:r"  "guest_ok=n"
 
+  sops.secrets.samba_passwd = { };
+
   # https://wiki.archlinux.org/title/Samba#Enable_Usershares
   users.groups.sambashare = { };
   users.users.glaumar.extraGroups = [ "sambashare" ];
   system.activationScripts.samba = ''
-    mkdir -p /var/lib/samba/usershares
-    chown root:sambashare /var/lib/samba/usershares
-    chmod 1770 /var/lib/samba/usershares
-    
-    mkdir -p /home/glaumar/Public
-    chown glaumar:users /home/glaumar/Public
-    chmod 0755 /home/glaumar/Public
+  
+    if [ ! -e ~/var/lib/samba/usershares ];then
+      mkdir -p /var/lib/samba/usershares
+      chown root:sambashare /var/lib/samba/usershares
+      chmod 1770 /var/lib/samba/usershares
+    fi
 
-    source ${config.system.build.setEnvironment} 
+    if [ ! -e /home/glaumar/Public ];then
+      mkdir -p /home/glaumar/Public
+      chown glaumar:users /home/glaumar/Public
+      chmod 0755 /home/glaumar/Public
+    fi
+    
+    export PATH="${pkgs.shadow}/bin:${pkgs.samba}/bin:$PATH"
 
     export SAMBA_PASSWD="$(cat /run/secrets/samba_passwd)"
     smbpasswd -a glaumar -s << EOF

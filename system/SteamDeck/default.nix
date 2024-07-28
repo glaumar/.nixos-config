@@ -21,7 +21,7 @@
   networking.hostName = "SteamDeck";
 
   services.displayManager.sddm.enable = lib.mkForce false;
-  #services.displayManager.defaultSession = lib.mkForce "gamescope";
+  services.displayManager.defaultSession = lib.mkForce "gamescope";
 
   programs.steam.extraCompatPackages = [ pkgs.proton-ge-bin ];
   programs.steam.remotePlay.openFirewall = true;
