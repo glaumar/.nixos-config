@@ -31,10 +31,10 @@
   <title>Code</title>
   <info>
    <metadata owner="http://freedesktop.org">
-    <bookmark:icon name="inode-directory"/>
+    <bookmark:icon name="format-text-code"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1722010252/0</ID>
+    <ID>1722187845/1</ID>
    </metadata>
   </info>
  </bookmark>
@@ -71,6 +71,17 @@
    <metadata owner="http://www.kde.org">
     <ID>1721136930/3</ID>
     <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/glaumar/Games">
+  <title>Games</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-games"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1722188008/2</ID>
    </metadata>
   </info>
  </bookmark>
@@ -113,10 +124,10 @@
   <title>Sync</title>
   <info>
    <metadata owner="http://freedesktop.org">
-    <bookmark:icon name="inode-directory"/>
+    <bookmark:icon name="syncthing"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1722010752/0</ID>
+    <ID>1722257544/0</ID>
    </metadata>
   </info>
  </bookmark>
@@ -155,6 +166,17 @@
    </metadata>
   </info>
  </bookmark>
+ <bookmark href="file:///home/glaumar/.nixos-config">
+  <title>.nixos-config</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="nix-snowflake"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1722196955/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
  <bookmark href="file:///home/glaumar/.local">
   <title>.local</title>
   <info>
@@ -163,6 +185,17 @@
    </metadata>
    <metadata owner="http://www.kde.org">
     <ID>1722009022/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="file:///home/glaumar/.steam/steam/steamapps/compatdata">
+  <title>SteamGameData</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="steam"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1722186323/0</ID>
    </metadata>
   </info>
  </bookmark>
@@ -229,15 +262,4 @@
    </metadata>
   </info>
  </separator>
- <bookmark href="kdeconnect://207d215d_e66a_4467_9e6c_0bb991be7e92/">
-  <title>OnePlus 7 Pro</title>
-  <info>
-   <metadata owner="http://freedesktop.org">
-    <bookmark:icon name="kdeconnect"/>
-   </metadata>
-   <metadata owner="http://www.kde.org">
-    <ID>1722123346/0</ID>
-   </metadata>
-  </info>
- </bookmark>
 </xbel>

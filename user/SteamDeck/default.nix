@@ -1,10 +1,11 @@
 { config, pkgs, lib, ... }:
 
 let
-  dotfile = {
-    home = "${config.home.homeDirectory}/.nixos-config/dotfiles";
-    conf = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
-    data = "${config.home.homeDirectory}/.nixos-config/dotfiles/.local/share";
+  dotfile = rec {
+    project_root = "${config.home.homeDirectory}/.nixos-config";
+    home = "${project_root}/dotfiles";
+    conf = "${home}/.config";
+    data = "${home}/.local/share";
   };
 in
 {

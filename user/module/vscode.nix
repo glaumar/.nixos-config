@@ -62,4 +62,6 @@
   xdg.configFile =with config.lib.file;  {
       "nvim".source = mkOutOfStoreSymlink "${dotfile.conf}/nvim";
     };
+
+  home.file."Notes/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Notes/.directory";
 }

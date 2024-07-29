@@ -23,7 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    glaumar_repo = {
+    glaumar_aur = {
       url = "github:glaumar/nur";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -35,18 +35,19 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
 
-  outputs = inputs@{ nixpkgs, home-manager, daeuniverse, jovian-nixos, plasma-manager, sops-nix, ... }: {
+  };
+  # starrt ==> ++
+  outputs = { nixpkgs, home-manager, daeuniverse, jovian-nixos, plasma-manager, sops-nix, glaumar_aur, ... }: {
     nixosConfigurations = {
       Thinkpad = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        # specialArgs = { inherit inputs; };
         modules = [
           ({
             nixpkgs.overlays = [
               (final: prev: {
-                glaumar_repo = inputs.glaumar_repo.packages."${prev.system}";
+                glaumarPkgs = glaumar_aur.packages."${prev.system}";
               })
             ];
           })
@@ -56,7 +57,7 @@
 
           home-manager.nixosModules.home-manager
           {
-            home-manager.extraSpecialArgs = inputs;
+            # home-manager.extraSpecialArgs = inputs;
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.glaumar = import user/Thinkpad/default.nix;
@@ -69,12 +70,12 @@
 
       SteamDeck = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        # specialArgs = { inherit inputs; };
         modules = [
           ({
             nixpkgs.overlays = [
               (final: prev: {
-                glaumar_repo = inputs.glaumar_repo.packages."${prev.system}";
+                glaumarPkgs = glaumar_aur.packages."${prev.system}";
               })
             ];
           })
@@ -86,7 +87,7 @@
 
           home-manager.nixosModules.home-manager
           {
-            home-manager.extraSpecialArgs = inputs;
+            # home-manager.extraSpecialArgs = inputs;
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];

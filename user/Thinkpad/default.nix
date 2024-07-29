@@ -1,13 +1,14 @@
 { config, pkgs, ... }:
 
 let
-  dotfile = {
-    conf = "${config.home.homeDirectory}/.nixos-config/dotfiles/.config";
-    data = "${config.home.homeDirectory}/.nixos-config/dotfiles/.local/share";
+  dotfile = rec {
+    project_root = "${config.home.homeDirectory}/.nixos-config";
+    home = "${project_root}/dotfiles";
+    conf = "${home}/.config";
+    data = "${home}/.local/share";
   };
 in
 {
-  
   imports =
     [
       (import ../module/user.nix { inherit config dotfile; })

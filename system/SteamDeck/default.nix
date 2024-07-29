@@ -23,8 +23,18 @@
   services.displayManager.sddm.enable = lib.mkForce false;
   services.displayManager.defaultSession = lib.mkForce "gamescope";
 
-  programs.steam.extraCompatPackages = [ pkgs.proton-ge-bin ];
-  programs.steam.remotePlay.openFirewall = true;
+  programs.steam = {
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ];
+    fontPackages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+    ];
+    remotePlay.openFirewall = true;
+  };
+
   jovian = {
     steam = {
       enable = true;
@@ -41,6 +51,14 @@
   environment.sessionVariables = {
     STEAM_FORCE_DESKTOPUI_SCALING = "1.5";
   };
+
+  environment.systemPackages = with pkgs; [
+    ludusavi
+
+    # TODO: 
+    #   sgdboop
+    # see https://github.com/NixOS/nixpkgs/pull/269369
+  ];
 
   # List services that you want to enable:
 

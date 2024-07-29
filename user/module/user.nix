@@ -14,4 +14,11 @@
     "mimeapps.list".source = mkOutOfStoreSymlink "${dotfile.conf}/mimeapps.list";
     "gtk-3.0/bookmarks".source = mkOutOfStoreSymlink "${dotfile.conf}/gtk-3.0/bookmarks";
   };
+
+  # dir
+  home.file."Games/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Games/.directory";
+  home.file."Code/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Code/.directory";
+  home.file."Calibre Library/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Calibre Library/.directory";
+  home.file."Sync/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Sync/.directory";
+  home.file."tmp/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/tmp/.directory";
 }

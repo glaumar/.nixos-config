@@ -14,6 +14,7 @@
   environment.systemPackages = with pkgs.kdePackages; [
     kate
     yakuake
+    
     kdenetwork-filesharing
 
     # Using the KDE Wallet to store ssh key passphrases
@@ -21,6 +22,7 @@
 
     # system tools
     partitionmanager
+    ksystemlog
     # plasma-firewall
 
     # dev

@@ -136,7 +136,7 @@
         "type": "github"
       }
     },
-    "glaumar_repo": {
+    "glaumar_aur": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -452,7 +452,7 @@
     "root": {
       "inputs": {
         "daeuniverse": "daeuniverse",
-        "glaumar_repo": "glaumar_repo",
+        "glaumar_aur": "glaumar_aur",
         "home-manager": "home-manager",
         "jovian-nixos": "jovian-nixos",
         "nixpkgs": "nixpkgs_4",

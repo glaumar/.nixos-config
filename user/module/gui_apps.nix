@@ -4,9 +4,10 @@
   home.packages = with pkgs;[
     mpv
     telegram-desktop
-    glaumar_repo.qrookie
+    glaumarPkgs.qrookie
     calibre
     libreoffice-qt6-fresh
+    # wpsoffice 
     aseprite
     gimp
 

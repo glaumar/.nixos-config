@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # flakes and new nix command
@@ -23,5 +23,11 @@
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
+    
+    # Microsoft fonts
+    corefonts
+    vistafonts
+    vistafonts-cht
+    vistafonts-chs
   ];
 }

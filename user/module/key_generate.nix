@@ -15,7 +15,6 @@
   #   cat /etc/ssh/ssh_host_ed25519_key.pub | ssh-to-age
   
   # add key to .sops.yaml
-
   # update secrets keys:
   #  sops updatekeys secrets/default.yaml
 
