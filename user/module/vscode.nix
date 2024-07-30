@@ -11,13 +11,11 @@
     # lua
     lua-language-server
     # luaformatter
-    
+
     # cpp
     # ccls # c/c++ lsp
-    clang-tools
-    
-    lunarvim 
-    nerdfonts
+    clang-tools # c/c++ lsp and formatter
+    libclang.python # git-clang-format
   ];
 
   # fix fcitx5
@@ -59,9 +57,10 @@
     Version=1.4
   '';
 
-  xdg.configFile =with config.lib.file;  {
-      "nvim".source = mkOutOfStoreSymlink "${dotfile.conf}/nvim";
-    };
+  xdg.configFile = with config.lib.file;  {
+    "nvim".source = mkOutOfStoreSymlink "${dotfile.conf}/nvim";
+    "lvim".source = mkOutOfStoreSymlink "${dotfile.conf}/lvim";
+  };
 
   home.file."Notes/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Notes/.directory";
 }

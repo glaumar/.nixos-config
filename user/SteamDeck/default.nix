@@ -13,7 +13,7 @@ in
     [
       (import ../module/user.nix { inherit config dotfile; })
       (import ../module/key_generate.nix { inherit pkgs lib; })
-      (import ../module/plasma.nix { inherit config dotfile; })
+      (import ../module/plasma.nix { inherit config dotfile pkgs; })
       (import ../module/vscode.nix { inherit config pkgs dotfile; })
       (import ../module/cmd_tools.nix { inherit config pkgs dotfile; })
       (import ../module/gui_apps.nix { inherit config pkgs dotfile; })

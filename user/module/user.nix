@@ -10,12 +10,13 @@
     # xdg
     "user-dirs.dirs".source = mkOutOfStoreSymlink "${dotfile.conf}/user-dirs.dirs";
     "user-dirs.locale".source = mkOutOfStoreSymlink "${dotfile.conf}/user-dirs.locale";
-    "fontconfig/fonts.conf".source = mkOutOfStoreSymlink "${dotfile.conf}/fontconfig/fonts.conf";
+    # "fontconfig/fonts.conf".source = mkOutOfStoreSymlink "${dotfile.conf}/fontconfig/fonts.conf";
     "mimeapps.list".source = mkOutOfStoreSymlink "${dotfile.conf}/mimeapps.list";
     "gtk-3.0/bookmarks".source = mkOutOfStoreSymlink "${dotfile.conf}/gtk-3.0/bookmarks";
   };
 
   # dir
+  home.file."Downloads/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Downloads/.directory";
   home.file."Games/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Games/.directory";
   home.file."Code/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Code/.directory";
   home.file."Calibre Library/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Calibre Library/.directory";

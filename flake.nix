@@ -36,69 +36,85 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-  };
-  # starrt ==> ++
-  outputs = { nixpkgs, home-manager, daeuniverse, jovian-nixos, plasma-manager, sops-nix, glaumar_aur, ... }: {
-    nixosConfigurations = {
-      Thinkpad = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        # specialArgs = { inherit inputs; };
-        modules = [
-          ({
-            nixpkgs.overlays = [
-              (final: prev: {
-                glaumarPkgs = glaumar_aur.packages."${prev.system}";
-              })
-            ];
-          })
-          system/Thinkpad/default.nix
-          daeuniverse.nixosModules.daed
-          sops-nix.nixosModules.sops
-
-          home-manager.nixosModules.home-manager
-          {
-            # home-manager.extraSpecialArgs = inputs;
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.glaumar = import user/Thinkpad/default.nix;
-
-            # rename overwrited file
-            home-manager.backupFileExtension = "hm_backup";
-          }
-        ];
-      };
-
-      SteamDeck = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        # specialArgs = { inherit inputs; };
-        modules = [
-          ({
-            nixpkgs.overlays = [
-              (final: prev: {
-                glaumarPkgs = glaumar_aur.packages."${prev.system}";
-              })
-            ];
-          })
-
-          daeuniverse.nixosModules.daed
-          jovian-nixos.nixosModules.default
-          sops-nix.nixosModules.sops
-          system/SteamDeck/default.nix
-
-          home-manager.nixosModules.home-manager
-          {
-            # home-manager.extraSpecialArgs = inputs;
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
-            home-manager.users.glaumar = import user/SteamDeck/default.nix;
-
-            # rename overwrited file
-            home-manager.backupFileExtension = "hm_backup";
-          }
-        ];
-      };
+    # Weekly updated nix-index database 
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
+  outputs =
+    { nixpkgs
+    , home-manager
+    , daeuniverse
+    , jovian-nixos
+    , plasma-manager
+    , sops-nix
+    , glaumar_aur
+    , nix-index-database
+    , ...
+    }: {
+      nixosConfigurations = {
+        Thinkpad = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          # specialArgs = { inherit inputs; };
+          modules = [
+            ({
+              nixpkgs.overlays = [
+                (final: prev: {
+                  glaumarPkgs = glaumar_aur.packages."${prev.system}";
+                })
+              ];
+            })
+            system/Thinkpad/default.nix
+            daeuniverse.nixosModules.daed
+            sops-nix.nixosModules.sops
+
+            home-manager.nixosModules.home-manager
+            {
+              # home-manager.extraSpecialArgs = inputs;
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.glaumar = import user/Thinkpad/default.nix;
+
+              # rename overwrited file
+              home-manager.backupFileExtension = "hm_backup";
+            }
+          ];
+        };
+
+        SteamDeck = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          # specialArgs = { inherit inputs; };
+          modules = [
+            ({
+              nixpkgs.overlays = [
+                (final: prev: {
+                  glaumarPkgs = glaumar_aur.packages."${prev.system}";
+                })
+              ];
+            })
+
+            daeuniverse.nixosModules.daed
+            jovian-nixos.nixosModules.default
+            sops-nix.nixosModules.sops
+            system/SteamDeck/default.nix
+
+            home-manager.nixosModules.home-manager
+            {
+              # home-manager.extraSpecialArgs = inputs;
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.sharedModules = [
+                plasma-manager.homeManagerModules.plasma-manager
+                nix-index-database.hmModules.nix-index
+              ];
+              home-manager.users.glaumar = import user/SteamDeck/default.nix;
+              home-manager.backupFileExtension = "hm_backup";
+            }
+          ];
+        };
+      };
+    };
 }
 

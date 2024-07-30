@@ -1,0 +1,28 @@
+MenuBar=Disabled
+
+[General]
+BrowseThroughArchives=true
+GlobalViewProps=false
+Version=202
+ViewPropsTimestamp=2024,7,16,22,11,52.058
+
+[IconsMode]
+PreviewSize=96
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs
+
+[VersionControl]
+enabledPlugins=Git
+
+[ViewPropertiesDialog]
+1920x1080 screen: Height=464
+1920x1080 screen: Width=379

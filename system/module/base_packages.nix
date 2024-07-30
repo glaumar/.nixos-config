@@ -9,12 +9,16 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    git
     wget
     curl
   ];
 
-  programs.neovim = {
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+  };
+
+  programs.vim = {
     enable = true;
     defaultEditor = true;
   };
@@ -23,11 +27,5 @@
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
-    
-    # Microsoft fonts
-    corefonts
-    vistafonts
-    vistafonts-cht
-    vistafonts-chs
   ];
 }

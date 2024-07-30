@@ -15,14 +15,10 @@
     kate
     yakuake
     
-    kdenetwork-filesharing
 
     # Using the KDE Wallet to store ssh key passphrases
     ksshaskpass
 
-    # system tools
-    partitionmanager
-    ksystemlog
     # plasma-firewall
 
     # dev

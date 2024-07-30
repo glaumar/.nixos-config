@@ -1,6 +1,13 @@
-{ config, dotfile, ... }:
+{ config, dotfile, pkgs, ... }:
 
 {
+  home.packages = with pkgs.kdePackages; [
+    kcolorpicker
+    kdenetwork-filesharing
+    partitionmanager
+    ksystemlog
+  ];
+
   programs.plasma = {
     enable = true;
     workspace = {
@@ -184,6 +191,7 @@
     # kde app
     "konsolerc".source = mkOutOfStoreSymlink "${dotfile.conf}/konsolerc";
     "yakuakerc".source = mkOutOfStoreSymlink "${dotfile.conf}/yakuakerc";
+    "dolphinrc".source = mkOutOfStoreSymlink "${dotfile.conf}/dolphinrc";
 
     # fcitx5
     "fcitx5".source = mkOutOfStoreSymlink "${dotfile.conf}/fcitx5";
