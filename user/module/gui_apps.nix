@@ -1,4 +1,4 @@
-{ pkgs, config, dotfile, ... }:
+{ pkgs, config,lib, dotfile, ... }:
 
 {
   home.packages = with pkgs;[
@@ -20,6 +20,9 @@
     vistafonts
     vistafonts-cht
     vistafonts-chs
+    
+    # other
+    xorg.xkill
   ];
 
   services.syncthing = {
@@ -36,8 +39,8 @@
     enable = true;
     defaultFonts.sansSerif = [
       "Noto Sans"
-      "Noto Sans CJK SC"
       "Microsoft YaHei"
+      "Noto Sans CJK SC"
       "Noto Sans CJK TC"
       "Noto Sans CJK JP"
       "Noto Sans CJK KR"
@@ -58,7 +61,6 @@
     defaultFonts.monospace = [
       "Noto Sans Mono"
       "Hack"
-      "FiraCode Nerd Font Mono"
       "Noto Sans Mono CJK SC"
       "Noto Sans Mono CJK TC"
       "Noto Sans Mono CJK HK"
@@ -73,5 +75,13 @@
       # "Noto Emoji"
     ];
   };
+
+
+  # TODO: let fonts.config create a file/hard link instead of symlink
+  # flatpak apps can not read symbolic link, so we need to copy the file
+  home.activation.cp_fontconfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    #!/usr/bin/env bash
+    run cp -rfL ${dotfile.conf}/fontconfig/fonts.conf ${config.xdg.configHome}/fontconfig/fonts.conf
+  '';
 
 }

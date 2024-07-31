@@ -41,6 +41,8 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   outputs =
@@ -52,6 +54,7 @@
     , sops-nix
     , glaumar_aur
     , nix-index-database
+    , nix-flatpak
     , ...
     }: {
       nixosConfigurations = {
@@ -98,6 +101,7 @@
             daeuniverse.nixosModules.daed
             jovian-nixos.nixosModules.default
             sops-nix.nixosModules.sops
+            nix-flatpak.nixosModules.nix-flatpak
             system/SteamDeck/default.nix
 
             home-manager.nixosModules.home-manager
@@ -108,6 +112,7 @@
               home-manager.sharedModules = [
                 plasma-manager.homeManagerModules.plasma-manager
                 nix-index-database.hmModules.nix-index
+                # nix-flatpak.nixosModules.nix-flatpak
               ];
               home-manager.users.glaumar = import user/SteamDeck/default.nix;
               home-manager.backupFileExtension = "hm_backup";

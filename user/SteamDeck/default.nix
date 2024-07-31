@@ -16,7 +16,7 @@ in
       (import ../module/plasma.nix { inherit config dotfile pkgs; })
       (import ../module/vscode.nix { inherit config pkgs dotfile; })
       (import ../module/cmd_tools.nix { inherit config pkgs dotfile; })
-      (import ../module/gui_apps.nix { inherit config pkgs dotfile; })
+      (import ../module/gui_apps.nix { inherit config pkgs lib dotfile; })
       # ../module/nexusmods_app.nix
     ];
 

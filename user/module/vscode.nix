@@ -62,5 +62,6 @@
     "lvim".source = mkOutOfStoreSymlink "${dotfile.conf}/lvim";
   };
 
+  # for dionmunk.vscode-notes 
   home.file."Notes/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Notes/.directory";
 }

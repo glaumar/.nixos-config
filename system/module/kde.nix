@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, config, ... }:
 
 {
   imports = [
@@ -14,7 +14,6 @@
   environment.systemPackages = with pkgs.kdePackages; [
     kate
     yakuake
-    
 
     # Using the KDE Wallet to store ssh key passphrases
     ksshaskpass
@@ -23,6 +22,10 @@
 
     # dev
     plasma-sdk
+  ] ++ lib.optionals config.services.flatpak.enable [
+    (pkgs.xdg-desktop-portal-gtk)
+  ] ++ lib.optionals config.services.samba.enable [
+    kdenetwork-filesharing
   ];
 
   programs.firefox = {

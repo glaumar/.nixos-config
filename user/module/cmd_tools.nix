@@ -6,7 +6,6 @@
     file
     neofetch
     btop
-    xorg.xkill
     tealdeer
     tree
 
@@ -35,6 +34,7 @@
 
   xdg.configFile = with config.lib.file;  {
     "tealdeer/config.toml".source = mkOutOfStoreSymlink "${dotfile.conf}/tealdeer/config.toml";
+    "lvim".source = mkOutOfStoreSymlink "${dotfile.conf}/lvim";
     # "git/config".source = mkOutOfStoreSymlink "${dotfile.conf}/git/config";
   };
 

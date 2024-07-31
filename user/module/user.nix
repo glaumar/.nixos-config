@@ -14,7 +14,8 @@
     "mimeapps.list".source = mkOutOfStoreSymlink "${dotfile.conf}/mimeapps.list";
     "gtk-3.0/bookmarks".source = mkOutOfStoreSymlink "${dotfile.conf}/gtk-3.0/bookmarks";
   };
-
+  
+  
   # dir
   home.file."Downloads/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Downloads/.directory";
   home.file."Games/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Games/.directory";

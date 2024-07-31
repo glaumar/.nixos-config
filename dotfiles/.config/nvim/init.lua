@@ -31,4 +31,4 @@ vim.api.nvim_set_keymap('n', '<leader>bo', ':%bd!|e #|bd #|normal`"<CR>', { nore
 
 -- use register z
 vim.api.nvim_set_keymap('n', '<leader>z', '"z', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>z', '"z', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>z', '"z', { noremap = true, silent = true })

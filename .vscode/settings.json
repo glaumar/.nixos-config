@@ -3,5 +3,36 @@
         "activityBar.background": "#203308",
         "titleBar.activeBackground": "#2D470B",
         "titleBar.activeForeground": "#F6FCEF"
-    }
+    },
+    "cSpell.words": [
+        "alsa",
+        "anthy",
+        "ASKPASS",
+        "DESKTOPUI",
+        "dotfile",
+        "flathub",
+        "Flatseal",
+        "fontconfig",
+        "gamescope",
+        "gpasswd",
+        "ksshaskpass",
+        "ludusavi",
+        "mimeapps",
+        "netbios",
+        "netease",
+        "noto",
+        "optimise",
+        "pkgs",
+        "rtkit",
+        "sambashare",
+        "sendfile",
+        "smbpasswd",
+        "tchx84",
+        "Unmanaged",
+        "usershare",
+        "usershares",
+        "v2raya",
+        "webui",
+        "wsdd"
+    ]
 }

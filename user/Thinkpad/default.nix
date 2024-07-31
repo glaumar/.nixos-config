@@ -16,7 +16,7 @@ in
       (import ../module/plasma.nix { inherit config dotfile; })
       (import ../module/vscode.nix { inherit config pkgs dotfile; })
       (import ../module/cmd_tools.nix { inherit config pkgs dotfile; })
-      # (import ../module/gui_apps.nix { inherit config pkgs dotfile; })
+      # (import ../module/gui_apps.nix { inherit config pkgs lib dotfile; })
     ];
 
   # This value determines the Home Manager release that your
