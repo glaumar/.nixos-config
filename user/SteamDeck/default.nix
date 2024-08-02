@@ -17,6 +17,7 @@ in
       (import ../module/vscode.nix { inherit config pkgs dotfile; })
       (import ../module/cmd_tools.nix { inherit config pkgs dotfile; })
       (import ../module/gui_apps.nix { inherit config pkgs lib dotfile; })
+      (import ../module/firefox.nix { inherit pkgs; })
       # ../module/nexusmods_app.nix
     ];
 

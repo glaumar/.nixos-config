@@ -12,6 +12,7 @@
       ../module/locale.nix
       ../module/gc.nix
       ../module/user.nix
+      ../module/firefox.nix
       ../module/kde.nix
       ../module/flatpak.nix
 
@@ -35,7 +36,9 @@
     ];
     remotePlay.openFirewall = true;
   };
-
+  
+  # all jovian options: 
+  #   https://jovian-experiments.github.io/Jovian-NixOS/options.html
   jovian = {
     steam = {
       enable = true;
@@ -46,20 +49,26 @@
 
     devices.steamdeck = {
       enable = true;
+      autoUpdate = true;
     };
+
+    # decky-loader = {
+    #   enable = true;
+    #   user = "glaumar";
+      # extraPackages = with pkgs; [ python3 ];
+    # };
   };
 
   environment.sessionVariables = {
     STEAM_FORCE_DESKTOPUI_SCALING = "1.5";
   };
 
-  environment.systemPackages = with pkgs; [
-    ludusavi
+  # environment.systemPackages = with pkgs; [
 
-    # TODO: 
-    #   sgdboop
-    # see https://github.com/NixOS/nixpkgs/pull/269369
-  ];
+  #   # TODO: 
+  #   #   sgdboop
+  #   # see https://github.com/NixOS/nixpkgs/pull/269369
+  # ];
 
   # List services that you want to enable:
 

@@ -1,11 +1,11 @@
 [Added Associations]
-application/xhtml+xml=firefox.desktop;calibre-ebook-edit.desktop;org.kde.kate.desktop;org.kde.kwrite.desktop;code.desktop;okularApplication_txt.desktop;calibre-ebook-viewer.desktop;lvim.desktop;writer.desktop;calibre-gui.desktop;nvim.desktop;
-application/xml=org.kde.kate.desktop;firefox.desktop;org.kde.kwrite.desktop;vscode.desktop;code.desktop;okularApplication_txt.desktop;
+application/xhtml+xml=firefox-devedition.desktop;calibre-ebook-edit.desktop;org.kde.kate.desktop;org.kde.kwrite.desktop;code.desktop;okularApplication_txt.desktop;calibre-ebook-viewer.desktop;lvim.desktop;writer.desktop;calibre-gui.desktop;nvim.desktop;
+application/xml=org.kde.kate.desktop;firefox-devedition.desktop;org.kde.kwrite.desktop;vscode.desktop;code.desktop;okularApplication_txt.desktop;
 inode/directory=org.kde.dolphin.desktop;code.desktop;org.kde.kate.desktop;org.kde.gwenview.desktop;
-text/html=org.kde.kate.desktop;firefox.desktop;calibre-ebook-edit.desktop;org.kde.kwrite.desktop;calibre-ebook-viewer.desktop;okularApplication_txt.desktop;lvim.desktop;code.desktop;writer.desktop;calibre-gui.desktop;nvim.desktop;
+text/html=org.kde.kate.desktop;firefox-devedition.desktop;calibre-ebook-edit.desktop;org.kde.kwrite.desktop;calibre-ebook-viewer.desktop;okularApplication_txt.desktop;lvim.desktop;code.desktop;writer.desktop;calibre-gui.desktop;nvim.desktop;
 
 [Default Applications]
-application/xhtml+xml=firefox.desktop;
+application/xhtml+xml=firefox-devedition.desktop;
 application/xml=org.kde.kate.desktop;
 inode/directory=org.kde.dolphin.desktop;
 text/html=org.kde.kate.desktop;

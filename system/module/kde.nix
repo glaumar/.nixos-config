@@ -23,15 +23,11 @@
     # dev
     plasma-sdk
   ] ++ lib.optionals config.services.flatpak.enable [
+    # make flatpak GTK app follow system theme
     (pkgs.xdg-desktop-portal-gtk)
   ] ++ lib.optionals config.services.samba.enable [
     kdenetwork-filesharing
   ];
-
-  programs.firefox = {
-    enable = true;
-    package = pkgs.firefox;
-  };
 
   environment.plasma6.excludePackages = with pkgs; [
     kdePackages.elisa
@@ -61,6 +57,8 @@
     ];
   };
 
-  # enable wayland for electron
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables = {
+    # enable wayland for electron
+    NIXOS_OZONE_WL = "1";
+  };
 }

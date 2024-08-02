@@ -1,26 +1,44 @@
-{ pkgs, config,lib, dotfile, ... }:
+{ pkgs, config, lib, dotfile, ... }:
 
 {
   home.packages = with pkgs;[
+    # multimedia
     mpv
-    telegram-desktop
-    glaumarPkgs.qrookie
-    calibre
-    libreoffice-qt6-fresh
-    # wpsoffice 
+    # yesplaymusic
     aseprite
     gimp
     haruna
 
+    # IM
+    telegram-desktop
+    element-desktop
+    discord
+
+    # game
+    glaumarPkgs.qrookie
+    ludusavi
+
+    # office
+    calibre
+    libreoffice-qt6-fresh
+    # wpsoffice 
+
     # keyboard
-    via
+    # via
 
     # Microsoft fonts
     corefonts
     vistafonts
     vistafonts-cht
     vistafonts-chs
+
+    # browser
+    # firefox
+    # chromium
     
+    #
+    # proton-pass
+
     # other
     xorg.xkill
   ];
@@ -55,7 +73,7 @@
       "Noto Serif CJK JP"
       "Noto Serif CJK KR"
       "Noto Color Emoji"
-      # "Noto Emoji"
+      "Noto Emoji"
     ];
 
     defaultFonts.monospace = [
@@ -67,12 +85,12 @@
       "Noto Sans Mono CJK JP"
       "Noto Sans Mono CJK KR"
       "Noto Color Emoji"
-      # "Noto Emoji"
+      "Noto Emoji"
     ];
-    
+
     defaultFonts.emoji = [
       "Noto Color Emoji"
-      # "Noto Emoji"
+      "Noto Emoji"
     ];
   };
 

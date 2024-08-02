@@ -43,6 +43,13 @@
     };
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+
+    # firefox-addons = {
+    #   url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
+    nur.url = "github:nix-community/NUR";
   };
 
   outputs =
@@ -55,6 +62,7 @@
     , glaumar_aur
     , nix-index-database
     , nix-flatpak
+    , nur
     , ...
     }: {
       nixosConfigurations = {
@@ -102,6 +110,7 @@
             jovian-nixos.nixosModules.default
             sops-nix.nixosModules.sops
             nix-flatpak.nixosModules.nix-flatpak
+            # nur.nixosModules.nur
             system/SteamDeck/default.nix
 
             home-manager.nixosModules.home-manager
@@ -112,10 +121,13 @@
               home-manager.sharedModules = [
                 plasma-manager.homeManagerModules.plasma-manager
                 nix-index-database.hmModules.nix-index
-                # nix-flatpak.nixosModules.nix-flatpak
+                # nur.hmModules.nur
               ];
               home-manager.users.glaumar = import user/SteamDeck/default.nix;
               home-manager.backupFileExtension = "hm_backup";
+              nixpkgs.overlays = [
+                nur.overlay
+              ];
             }
           ];
         };

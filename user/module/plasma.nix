@@ -1,6 +1,9 @@
 { config, dotfile, pkgs, ... }:
 
 {
+  # config example: 
+  #   https://github.com/nix-community/plasma-manager/blob/trunk/examples/home.nix
+
   home.packages = with pkgs.kdePackages; [
     partitionmanager
     ksystemlog
@@ -35,7 +38,7 @@
               {
                 launchers = [
                   "applications:org.kde.dolphin.desktop"
-                  "applications:firefox.desktop"
+                  "applications:firefox-devedition.desktop"
                 ];
                 behavior.middleClickAction = "close";
               };
@@ -68,9 +71,11 @@
       };
     };
 
+    # ~/.config/kglobalshortcutsrc
     shortcuts = {
       kwin = {
         "Window Close" = "Meta+Esc";
+        "Window Fullscreen" = "Meta+F";
       };
       yakuake = {
         "toggle-window-state" = "Meta+Return";
@@ -83,6 +88,40 @@
         match = {
           window-class = {
             value = "dolphin";
+            type = "exact";
+          };
+          window-types = [ "normal" ];
+        };
+        apply = {
+          noborder = {
+            value = true;
+            apply = "initially";
+          };
+        };
+      }
+
+      {
+        description = "Element";
+        match = {
+          window-class = {
+            value = "electron Element";
+            type = "exact";
+          };
+          window-types = [ "normal" ];
+        };
+        apply = {
+          noborder = {
+            value = true;
+            apply = "initially";
+          };
+        };
+      }
+
+      {
+        description = "Discord";
+        match = {
+          window-class = {
+            value = "Discord discord";
             type = "exact";
           };
           window-types = [ "normal" ];
