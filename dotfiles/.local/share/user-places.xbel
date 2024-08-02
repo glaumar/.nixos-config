@@ -38,6 +38,17 @@
    </metadata>
   </info>
  </bookmark>
+ <bookmark href="file:///home/glaumar/Godot">
+  <title>Godot</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-godot-symbolic"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1722616112/1</ID>
+   </metadata>
+  </info>
+ </bookmark>
  <bookmark href="file:///home/glaumar/Desktop">
   <title>Desktop</title>
   <info>
@@ -143,6 +154,17 @@
    </metadata>
   </info>
  </bookmark>
+ <bookmark href="file:///home/glaumar/.config">
+  <title>.config</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="configure"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1722616373/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
  <bookmark href="remote:/">
   <title>Network</title>
   <info>
@@ -152,17 +174,6 @@
    <metadata owner="http://www.kde.org">
     <ID>1721136930/4</ID>
     <isSystemItem>true</isSystemItem>
-   </metadata>
-  </info>
- </bookmark>
- <bookmark href="file:///home/glaumar/.config">
-  <title>.config</title>
-  <info>
-   <metadata owner="http://freedesktop.org">
-    <bookmark:icon name="inode-directory"/>
-   </metadata>
-   <metadata owner="http://www.kde.org">
-    <ID>1721955189/0</ID>
    </metadata>
   </info>
  </bookmark>
@@ -262,4 +273,15 @@
    </metadata>
   </info>
  </separator>
+ <bookmark href="kdeconnect://207d215d_e66a_4467_9e6c_0bb991be7e92/">
+  <title>OnePlus 7 Pro</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="kdeconnect"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1722607438/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
 </xbel>

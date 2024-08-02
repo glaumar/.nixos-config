@@ -44,11 +44,6 @@
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
-    # firefox-addons = {
-    #   url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     nur.url = "github:nix-community/NUR";
   };
 
@@ -121,7 +116,6 @@
               home-manager.sharedModules = [
                 plasma-manager.homeManagerModules.plasma-manager
                 nix-index-database.hmModules.nix-index
-                # nur.hmModules.nur
               ];
               home-manager.users.glaumar = import user/SteamDeck/default.nix;
               home-manager.backupFileExtension = "hm_backup";

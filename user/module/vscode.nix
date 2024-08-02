@@ -10,13 +10,20 @@
 
     # lua
     lua-language-server
-    # luaformatter
+
+    lemminx # xml lsp 
+    # yaml-language-server
 
     # cpp
     # ccls # c/c++ lsp
     clang-tools # c/c++ lsp and formatter
     libclang.python # git-clang-format
+
+    # godot
+    godot_4
+    godot_4-export-templates
   ];
+
 
   # fix fcitx5
   xdg.dataFile."applications/code.desktop".text = ''
@@ -59,7 +66,7 @@
 
   xdg.configFile = with config.lib.file;  {
     "nvim".source = mkOutOfStoreSymlink "${dotfile.conf}/nvim";
-    "lvim".source = mkOutOfStoreSymlink "${dotfile.conf}/lvim";
+    "godot".source = mkOutOfStoreSymlink "${dotfile.conf}/godot";
   };
 
   # for dionmunk.vscode-notes 

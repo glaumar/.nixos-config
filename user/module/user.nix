@@ -17,9 +17,11 @@
   
   
   # dir
+  home.file.".config/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/.config/.directory";
   home.file."Downloads/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Downloads/.directory";
   home.file."Games/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Games/.directory";
   home.file."Code/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Code/.directory";
+  home.file."Godot/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Godot/.directory";
   home.file."Calibre Library/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Calibre Library/.directory";
   home.file."Sync/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Sync/.directory";
   home.file."tmp/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/tmp/.directory";

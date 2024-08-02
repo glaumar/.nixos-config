@@ -1,8 +1,7 @@
 if vim.g.vscode then
-   -- VSCode extension
+    -- VSCode extension
 else
     -- ordinary Neovim
-
 end
 
 -- hilight line and column
@@ -29,6 +28,12 @@ vim.api.nvim_set_keymap('n', '<leader>h', ':nohlsearch<CR>', { noremap = true, s
 -- close other bufferks
 vim.api.nvim_set_keymap('n', '<leader>bo', ':%bd!|e #|bd #|normal`"<CR>', { noremap = true, silent = true })
 
+-- save file
+vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>w', ':w<CR>', { noremap = true, silent = true })
+
 -- use register z
 vim.api.nvim_set_keymap('n', '<leader>z', '"z', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<leader>z', '"z', { noremap = true, silent = true })
+
+

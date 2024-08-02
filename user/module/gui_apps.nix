@@ -57,7 +57,7 @@
     enable = true;
     defaultFonts.sansSerif = [
       "Noto Sans"
-      "Microsoft YaHei"
+      # "Microsoft YaHei"
       "Noto Sans CJK SC"
       "Noto Sans CJK TC"
       "Noto Sans CJK JP"
@@ -78,7 +78,7 @@
 
     defaultFonts.monospace = [
       "Noto Sans Mono"
-      "Hack"
+      # "Hack"
       "Noto Sans Mono CJK SC"
       "Noto Sans Mono CJK TC"
       "Noto Sans Mono CJK HK"

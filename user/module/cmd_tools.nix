@@ -8,6 +8,8 @@
     btop
     tealdeer
     tree
+    pwgen
+    busybox
 
     # vim ide
     lunarvim

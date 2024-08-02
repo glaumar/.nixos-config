@@ -65,6 +65,12 @@
               updateInterval = 24 * 60 * 60 * 1000; # every day
               definedAliases = [ "g" ];
             };
+            "Flathub" = {
+              urls = [{ template = "https://flathub.org/apps/search?q={searchTerms}"; }];
+              iconUpdateURL = "https://flathub.org/favicon.svg";
+              updateInterval = 24 * 60 * 60 * 1000; # every day
+              definedAliases = [ "fh" ];
+            };
             "Nix Packages" = {
               urls = [{
                 template = "https://search.nixos.org/packages";
@@ -107,6 +113,19 @@
               iconUpdateURL = "https://nixos.wiki/favicon.png";
               updateInterval = 24 * 60 * 60 * 1000; # every day
               definedAliases = [ "nw" ];
+            };
+
+            "Zhihu" = {
+              urls = [{
+                template = "https://www.zhihu.com/";
+                params = [
+                  { name = "type"; value = "content"; }
+                  { name = "q"; value = "{searchTerms}"; }
+                ];
+              }];
+              iconUpdateURL = "https://static.zhihu.com/heifetz/favicon.ico";
+              updateInterval = 24 * 60 * 60 * 1000; # every day
+              definedAliases = [ "z" ];
             };
             # builtin engines only support specifying one additional alias
             "Google".metaData.alias = "gg";

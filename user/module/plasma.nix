@@ -7,6 +7,7 @@
   home.packages = with pkgs.kdePackages; [
     partitionmanager
     ksystemlog
+    plasma-browser-integration
   ];
 
   programs.plasma = {

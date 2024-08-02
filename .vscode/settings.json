@@ -56,5 +56,8 @@
         "xorg",
         "yakuakerc",
         "yesplaymusic"
+    ],
+    "cSpell.enableFiletypes": [
+        "!nix"
     ]
 }
