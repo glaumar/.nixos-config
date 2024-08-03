@@ -23,7 +23,6 @@
     libreoffice-qt6-fresh
     # wpsoffice 
 
-    # keyboard
     # via
 
     # Microsoft fonts
@@ -35,14 +34,13 @@
     # browser
     # firefox
     # chromium
-    
+
     #
     # proton-pass
 
     # other
     xorg.xkill
   ];
-
   services.syncthing = {
     enable = true;
     # tray.enable = true;

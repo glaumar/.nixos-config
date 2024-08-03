@@ -30,9 +30,11 @@ EnumerateSkipFirst=False
 
 [Hotkey/PrevPage]
 0=Up
+1=bracketleft
 
 [Hotkey/NextPage]
 0=Down
+1=bracketright
 
 [Hotkey/PrevCandidate]
 0=Shift+Tab

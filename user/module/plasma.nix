@@ -73,15 +73,23 @@
     };
 
     # ~/.config/kglobalshortcutsrc
-    shortcuts = {
-      kwin = {
-        "Window Close" = "Meta+Esc";
-        "Window Fullscreen" = "Meta+F";
-      };
-      yakuake = {
-        "toggle-window-state" = "Meta+Return";
-      };
-    };
+    # shortcuts = {
+    #   kwin = {
+    #     "Window Close" = "Meta+Esc";
+    #     "Window Fullscreen" = "Meta+F";
+    #     "Window Maximize" = "Meta+M";
+    #     "Window Minimize" = "Meta+N";
+    #     "Window Maximize Vertical" = "Meta+G";
+
+    #     # klipper
+    #     "cycleNextAction" = "Meta+]";
+    #     "cyclePrevAction" = "Meta+[";
+    #     # "show-on-mouse-pos" = "Meta+G";
+    #   };
+    #   yakuake = {
+    #     "toggle-window-state" = "Meta+Return";
+    #   };
+    # };
 
     window-rules = [
       {
@@ -170,6 +178,27 @@
       }
 
       {
+        description = "firefox dev";
+        match = {
+          window-class = {
+            value = "firefox firefox-devedition";
+            type = "exact";
+          };
+          window-types = [ "normal" ];
+          title = {
+            value = "Firefox Developer Edition";
+            type = "substring";
+          };
+        };
+        apply = {
+          noborder = {
+            value = true;
+            apply = "initially";
+          };
+        };
+      }
+      
+      {
         description = "firefox";
         match = {
           window-class = {
@@ -230,6 +259,10 @@
     "konsolerc".source = mkOutOfStoreSymlink "${dotfile.conf}/konsolerc";
     "yakuakerc".source = mkOutOfStoreSymlink "${dotfile.conf}/yakuakerc";
     "dolphinrc".source = mkOutOfStoreSymlink "${dotfile.conf}/dolphinrc";
+    "klipperrc".source = mkOutOfStoreSymlink "${dotfile.conf}/klipperrc";
+    
+    # shortcuts
+    "kglobalshortcutsrc".source = mkOutOfStoreSymlink "${dotfile.conf}/kglobalshortcutsrc";
 
     # fcitx5
     "fcitx5".source = mkOutOfStoreSymlink "${dotfile.conf}/fcitx5";

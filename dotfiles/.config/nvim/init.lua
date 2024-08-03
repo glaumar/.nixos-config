@@ -33,7 +33,5 @@ vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true, silent = t
 vim.api.nvim_set_keymap('v', '<leader>w', ':w<CR>', { noremap = true, silent = true })
 
 -- use register z
-vim.api.nvim_set_keymap('n', '<leader>z', '"z', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '<leader>z', '"z', { noremap = true, silent = true })
-
-
+-- vim.api.nvim_set_keymap('n', '<leader>z', '"z', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('v', '<leader>z', '"z', { noremap = true, silent = true })

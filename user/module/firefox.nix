@@ -26,6 +26,9 @@
           "browser.newtabpage.activity-stream.section.highlights.includeVisited" = false;
 
           "full-screen-api.warning.timeout" = 0;
+          
+          # use system title bar
+          "browser.tabs.inTitlebar" = 0;
         };
 
         # extensions = with pkgs.nur.repos.rycee.firefox-addons; [

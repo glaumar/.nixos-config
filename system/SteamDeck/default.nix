@@ -15,6 +15,7 @@
       ../module/firefox.nix
       ../module/kde.nix
       ../module/flatpak.nix
+      ../module/piper.nix
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix

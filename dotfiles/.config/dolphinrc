@@ -3,6 +3,7 @@ MenuBar=Disabled
 [General]
 BrowseThroughArchives=true
 GlobalViewProps=false
+RememberOpenedTabs=false
 Version=202
 ViewPropsTimestamp=2024,7,16,22,11,52.058
 
