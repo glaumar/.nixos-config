@@ -1,6 +1,15 @@
 { pkgs, ... }:
 
 {
+  # 1. How to get target machine public key:
+  #    1) from local machine ~/.ssh/known_hosts: 
+  #       $ ssh-keyscan example.com | ssh-to-age
+  #    2) from remote machine /etc/ssh/ssh_host_ed25519_key.pub:
+  #       $ cat /etc/ssh/ssh_host_ed25519_key.pub | ssh-to-age
+
+  # 2. How to add new keys
+  #    1) add public key to .sops.yaml
+  #    2) $ sops updatekeys secrets/**
 
   environment.systemPackages = with pkgs; [
     sops

@@ -273,6 +273,14 @@
    </metadata>
   </info>
  </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/kde/fstab/fuse.cryfs/home/glaumar/Videos/share</UDI>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </separator>
  <bookmark href="kdeconnect://207d215d_e66a_4467_9e6c_0bb991be7e92/">
   <title>OnePlus 7 Pro</title>
   <info>
@@ -280,7 +288,7 @@
     <bookmark:icon name="kdeconnect"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1722707484/0</ID>
+    <ID>1722829347/2</ID>
    </metadata>
   </info>
  </bookmark>

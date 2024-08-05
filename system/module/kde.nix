@@ -18,6 +18,7 @@
     # Using the KDE Wallet to store ssh key passphrases
     ksshaskpass
 
+    plasma-vault
     # plasma-browser-integration
     # plasma-firewall
 

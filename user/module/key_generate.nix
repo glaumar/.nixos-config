@@ -2,23 +2,8 @@
 
 
 {
-
   # show public key:
   #   age-keygen -y ~/.config/sops/age/keys.txt
-  #
-  # edit secrets/default.yaml with sops:
-  #   sops secrets/default.yaml
-
-  # get target machine key:
-  #   ssh-keyscan example.com | ssh-to-age
-  # or:
-  #   cat /etc/ssh/ssh_host_ed25519_key.pub | ssh-to-age
-  
-  # add key to .sops.yaml
-   
-  # and then update secrets keys:
-  #   sops updatekeys secrets/default.yaml
-
 
   home.activation.glaumar_ssh_keygen = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     #!/usr/bin/env bash

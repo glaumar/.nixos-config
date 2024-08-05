@@ -8,6 +8,7 @@ Version=202
 ViewPropsTimestamp=2024,7,16,22,11,52.058
 
 [IconsMode]
+IconSize=96
 PreviewSize=96
 
 [KFileDialog Settings]

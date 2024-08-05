@@ -16,6 +16,7 @@
       ../module/kde.nix
       ../module/flatpak.nix
       ../module/piper.nix
+      ../module/daed.nix
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -72,16 +73,6 @@
   # ];
 
   # List services that you want to enable:
-
-  # daed - dae with a web dashboard
-  services.daed = {
-    enable = true;
-
-    openFirewall.enable = true;
-    openFirewall.port = 2023;
-    # allow to access the web dashboard from other devices
-    listen = "0.0.0.0:2023";
-  };
 
   # Enable the OpenSSH daemon.
   services.openssh = {

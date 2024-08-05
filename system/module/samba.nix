@@ -1,8 +1,11 @@
 { pkgs, ... }:
 
 {
-  # share a folder:
-  #   net usershare add --long videos /home/glaumar/Videos/ "" "Everyone:r"  "guest_ok=n"
+  # 1. How to share a folder:
+  #    $ net usershare add --long videos /home/glaumar/Videos/ "" "Everyone:r"  "guest_ok=n"
+  #
+  # 2. How to change sops.secrets.samba_passwd :
+  #    $ sops secrets/default.yaml
 
   sops.secrets.samba_passwd = { };
 

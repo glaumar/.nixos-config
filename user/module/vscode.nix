@@ -19,11 +19,19 @@
     clang-tools # c/c++ lsp and formatter
     libclang.python # git-clang-format
 
+    # rust
+    cargo
+    clippy
+    rust-analyzer # rust lsp
+    rustfmt # rust formatter
+
     # godot
     godot_4
     godot_4-export-templates
-  ];
 
+    # npm and nodejs for slidev
+    nodePackages.nodejs
+  ];
 
   # fix fcitx5
   xdg.dataFile."applications/code.desktop".text = ''

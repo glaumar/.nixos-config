@@ -13,3 +13,9 @@ creation_rules:
       - age:
           - *steamdeck_user
           - *steamdeck
+
+  - path_regex: (/etc|secrets)/daed/wing.db$
+    key_groups:
+      - age:
+          - *steamdeck_user
+          - *steamdeck

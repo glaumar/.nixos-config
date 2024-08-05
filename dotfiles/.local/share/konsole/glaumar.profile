@@ -1,6 +1,6 @@
 [Appearance]
 ColorScheme=Breeze
-Font=FiraCode Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+Font=Hack Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 TabColor=27,30,32,0
 UseFontLineChararacters=false
 
