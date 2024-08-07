@@ -11,6 +11,10 @@
     pwgen
     busybox
 
+    desktop-file-utils
+    appstream
+    just
+
     # vim ide
     lunarvim
     nerdfonts

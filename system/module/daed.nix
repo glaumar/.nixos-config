@@ -8,10 +8,16 @@
   sops.secrets.wing_db = {
     format = "binary";
     sopsFile = ../../secrets/daed/wing.db;
+    restartUnits = [ "daed.service" ];
   };
 
   system.activationScripts.daed = ''
-    cat /run/secrets/wing_db > /etc/daed/wing.db
+    NEW_MD5=$(md5sum /run/secrets/wing_db  | cut --delimiter=" " --fields=1)
+    OLD_MD5=$(md5sum /etc/daed/wing.db  | cut --delimiter=" " --fields=1)
+
+    if [ $NEW_MD5 != $OLD_MD5 ]; then
+      cat /run/secrets/wing_db > /etc/daed/wing.db
+    fi
   '';
 
   services.daed = {

@@ -7,7 +7,14 @@
   # 2. How to change sops.secrets.samba_passwd :
   #    $ sops secrets/default.yaml
 
-  sops.secrets.samba_passwd = { };
+  sops.secrets.samba_passwd = {
+    restartUnits = [
+      "samba-smbd.service"
+      "samba-wsdd.service"
+      "samba-winbindd.service"
+      "samba-nmbd.service"
+    ];
+  };
 
   # https://wiki.archlinux.org/title/Samba#Enable_Usershares
   users.groups.sambashare = { };

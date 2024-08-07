@@ -40,6 +40,7 @@
                 launchers = [
                   "applications:org.kde.dolphin.desktop"
                   "applications:firefox-devedition.desktop"
+                  "applications:code-url-handler.desktop"
                 ];
                 behavior.middleClickAction = "close";
               };
@@ -197,7 +198,7 @@
           };
         };
       }
-      
+
       {
         description = "firefox";
         match = {
@@ -260,7 +261,7 @@
     "yakuakerc".source = mkOutOfStoreSymlink "${dotfile.conf}/yakuakerc";
     "dolphinrc".source = mkOutOfStoreSymlink "${dotfile.conf}/dolphinrc";
     "klipperrc".source = mkOutOfStoreSymlink "${dotfile.conf}/klipperrc";
-    
+
     # shortcuts
     "kglobalshortcutsrc".source = mkOutOfStoreSymlink "${dotfile.conf}/kglobalshortcutsrc";
 

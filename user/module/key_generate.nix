@@ -20,7 +20,7 @@
     #!/usr/bin/env bash
     export PATH="${pkgs.age}/bin:$PATH"
     
-    if [ ! -e ~/.config/sops/age/keys.txt ];then
+    if [ ! -e ~/.config/sops/age/keys.txt ] && [ ! -e ~/.local/share/plasma-vault/sops.enc ];then
       run mkdir -p ~/.config/sops/age/
       run age-keygen -o ~/.config/sops/age/keys.txt
     fi
