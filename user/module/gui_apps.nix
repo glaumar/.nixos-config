@@ -33,7 +33,7 @@
 
     # browser
     # firefox
-    # chromium
+    chromium
 
     #
     # proton-pass

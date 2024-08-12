@@ -31,6 +31,12 @@
 
     # npm and nodejs for slidev
     nodePackages.nodejs
+
+    # csharp
+    dotnet-sdk_8
+    # dotnet-runtime_8
+    dotnetPackages.Nuget
+    omnisharp-roslyn # csharp lsp
   ];
 
   # fix fcitx5

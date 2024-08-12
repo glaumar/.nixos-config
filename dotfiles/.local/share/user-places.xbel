@@ -281,6 +281,33 @@
    </metadata>
   </info>
  </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/freedesktop/UDisks2/block_devices/sda2</UDI>
+    <isSystemItem>true</isSystemItem>
+    <uuid>b2c8-40d2</uuid>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/freedesktop/UDisks2/block_devices/sda1</UDI>
+    <isSystemItem>true</isSystemItem>
+    <uuid>2954-aba5</uuid>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/freedesktop/UDisks2/block_devices/sda3</UDI>
+    <isSystemItem>true</isSystemItem>
+    <uuid>2c54-ac54</uuid>
+   </metadata>
+  </info>
+ </separator>
  <bookmark href="kdeconnect://207d215d_e66a_4467_9e6c_0bb991be7e92/">
   <title>OnePlus 7 Pro</title>
   <info>
@@ -288,7 +315,7 @@
     <bookmark:icon name="kdeconnect"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1723012818/2</ID>
+    <ID>1723434901/0</ID>
    </metadata>
   </info>
  </bookmark>

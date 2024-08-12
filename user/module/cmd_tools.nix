@@ -10,6 +10,8 @@
     tree
     pwgen
     busybox
+    gh # github cli
+    android-tools
 
     desktop-file-utils
     appstream

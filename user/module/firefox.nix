@@ -120,7 +120,7 @@
 
             "Zhihu" = {
               urls = [{
-                template = "https://www.zhihu.com/";
+                template = "https://www.zhihu.com/search";
                 params = [
                   { name = "type"; value = "content"; }
                   { name = "q"; value = "{searchTerms}"; }
