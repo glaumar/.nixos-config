@@ -7,6 +7,7 @@ keys:
   - &steamdeck_user age1c5cckmfesmvf8u0h8q2wpyzym4x7fzwak0kn7t5ryqxf0kd54a2shh0ly4
   # /etc/ssh/ssh_host_ed25519_key.pub
   - &steamdeck age1j55px5k0hl49w59g57ya77dt5h02vj5deqnjusk8uz852jc6e5xqdwgd5x
+  - &desktop_user age1svk4xm4harkcj7636j54fndjsqz60xftpe9ju4p37xsd6e6rw4hsqwt46z
   - &desktop age1eaxt06lu4h8cr2m6dgvlgzfg3amaqw9qdeynhs4nsfaum4nxz4tqm54dnt
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
@@ -14,6 +15,7 @@ creation_rules:
       - age:
           - *steamdeck_user
           - *steamdeck
+          - *desktop_user
           - *desktop
 
   - path_regex: (/etc|secrets)/daed/wing.db$
@@ -21,4 +23,5 @@ creation_rules:
       - age:
           - *steamdeck_user
           - *steamdeck
+          - *desktop_user
           - *desktop

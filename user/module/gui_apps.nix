@@ -106,6 +106,7 @@
   # flatpak apps can not read symbolic link, so we need to copy the file
   home.activation.cp_fontconfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     #!/usr/bin/env bash
+    run mkdir ${config.xdg.configHome}/fontconfig/
     run cp -rfL ${dotfile.conf}/fontconfig/fonts.conf ${config.xdg.configHome}/fontconfig/fonts.conf
   '';
 

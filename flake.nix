@@ -61,6 +61,42 @@
     , ...
     }: {
       nixosConfigurations = {
+        DesktopPC = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          # specialArgs = { inherit inputs; };
+          modules = [
+            ({
+              nixpkgs.overlays = [
+                (final: prev: {
+                  glaumarPkgs = glaumar_aur.packages."${prev.system}";
+                })
+              ];
+            })
+
+            daeuniverse.nixosModules.daed
+            sops-nix.nixosModules.sops
+            nix-flatpak.nixosModules.nix-flatpak
+            # nur.nixosModules.nur
+            system/DesktopPC/default.nix
+
+            home-manager.nixosModules.home-manager
+            {
+              # home-manager.extraSpecialArgs = inputs;
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.sharedModules = [
+                plasma-manager.homeManagerModules.plasma-manager
+                nix-index-database.hmModules.nix-index
+              ];
+              home-manager.users.glaumar = import user/DesktopPC/default.nix;
+              home-manager.backupFileExtension = "hm_backup";
+              nixpkgs.overlays = [
+                nur.overlay
+              ];
+            }
+          ];
+        };
+
         Thinkpad = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           # specialArgs = { inherit inputs; };
