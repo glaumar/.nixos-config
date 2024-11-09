@@ -261,6 +261,7 @@
     "yakuakerc".source = mkOutOfStoreSymlink "${dotfile.conf}/yakuakerc";
     "dolphinrc".source = mkOutOfStoreSymlink "${dotfile.conf}/dolphinrc";
     "klipperrc".source = mkOutOfStoreSymlink "${dotfile.conf}/klipperrc";
+    "krunnerrc".source = mkOutOfStoreSymlink "${dotfile.conf}/krunnerrc";
 
     # shortcuts
     "kglobalshortcutsrc".source = mkOutOfStoreSymlink "${dotfile.conf}/kglobalshortcutsrc";

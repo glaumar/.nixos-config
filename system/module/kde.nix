@@ -14,6 +14,7 @@
   environment.systemPackages = with pkgs.kdePackages; [
     kate
     yakuake
+    discover
 
     # Using the KDE Wallet to store ssh key passphrases
     ksshaskpass

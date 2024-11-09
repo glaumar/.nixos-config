@@ -308,15 +308,12 @@
    </metadata>
   </info>
  </separator>
- <bookmark href="kdeconnect://207d215d_e66a_4467_9e6c_0bb991be7e92/">
-  <title>OnePlus 7 Pro</title>
+ <separator>
   <info>
-   <metadata owner="http://freedesktop.org">
-    <bookmark:icon name="kdeconnect"/>
-   </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1723434901/0</ID>
+    <UDI>/org/kde/fstab/fuse.cryfs/home/glaumar/Documents/secret</UDI>
+    <isSystemItem>true</isSystemItem>
    </metadata>
   </info>
- </bookmark>
+ </separator>
 </xbel>

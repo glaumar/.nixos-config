@@ -16,7 +16,7 @@
       ../module/kde.nix
       ../module/flatpak.nix
       ../module/piper.nix
-      # ../module/daed.nix
+      ../module/daed.nix
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix

@@ -33,7 +33,7 @@
 
     # browser
     # firefox
-    chromium
+    # chromium
 
     #
     # proton-pass
@@ -41,9 +41,18 @@
     # other
     xorg.xkill
   ];
+
   services.syncthing = {
     enable = true;
     # tray.enable = true;
+  };
+
+  programs.chromium = {
+    enable = true;
+    commandLineArgs = [
+      "--enable-features=UseOzonePlatform"
+      "--enable-wayland-ime"
+    ];
   };
 
   # dotfile
