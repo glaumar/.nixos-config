@@ -17,6 +17,9 @@
     # game
     glaumarPkgs.qrookie
     ludusavi
+    
+    # bittorrent
+    qbittorrent
 
     # office
     calibre
@@ -58,6 +61,7 @@
   # dotfile
   xdg.configFile = with config.lib.file;  {
     "aseprite/aseprite.ini".source = mkOutOfStoreSymlink "${dotfile.conf}/aseprite/aseprite.ini";
+    "qBittorrent".source = mkOutOfStoreSymlink "${dotfile.conf}/qBittorrent";
   };
 
   fonts.fontconfig = {

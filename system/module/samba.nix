@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   # 1. How to share a folder:
@@ -51,8 +51,8 @@
     openFirewall = true;
     extraConfig = ''
       workgroup = WORKGROUP
-      server string = SteamDeck
-      netbios name = SteamDeck
+      server string = ${config.networking.hostName}
+      netbios name = ${config.networking.hostName}
       use sendfile = yes
       # hosts allow = 192.168.146. 127.0.0.1 localhost
       # hosts deny = 0.0.0.0/0

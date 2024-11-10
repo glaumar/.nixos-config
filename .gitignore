@@ -1,3 +1,6 @@
+# uctakeoff.vscode-counter
+.VSCodeCounter
+
 # fcitx5
 dotfiles/.config/fcitx5/conf/cached_layouts
 dotfiles/.config/fcitx5/conf/chttrans.conf
@@ -10,5 +13,8 @@ dotfiles/.config/lvim/lazy-lock.json
 # godot
 dotfiles/.config/godot/recent_dirs
 
-# uctakeoff.vscode-counter
-.VSCodeCounter
+# qBittorrent
+dotfiles/.config/qBittorrent/rss
+dotfiles/.config/qBittorrent/lockfile
+dotfiles/.config/qBittorrent/ipc-socket
+dotfiles/.config/qBittorrent/qBittorrent-data.conf

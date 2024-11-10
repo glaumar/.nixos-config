@@ -13,7 +13,7 @@
       ../module/user.nix
       ../module/firefox.nix
       ../module/kde.nix
-#       ../module/flatpak.nix
+      ../module/flatpak.nix
       ../module/piper.nix
       ../module/daed.nix
 

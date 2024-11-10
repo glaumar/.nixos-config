@@ -284,7 +284,7 @@
  <separator>
   <info>
    <metadata owner="http://www.kde.org">
-    <UDI>/org/freedesktop/UDisks2/block_devices/sda2</UDI>
+    <UDI>/org/freedesktop/UDisks2/block_devices/sdb2</UDI>
     <isSystemItem>true</isSystemItem>
     <uuid>b2c8-40d2</uuid>
    </metadata>
@@ -293,7 +293,7 @@
  <separator>
   <info>
    <metadata owner="http://www.kde.org">
-    <UDI>/org/freedesktop/UDisks2/block_devices/sda1</UDI>
+    <UDI>/org/freedesktop/UDisks2/block_devices/sdb1</UDI>
     <isSystemItem>true</isSystemItem>
     <uuid>2954-aba5</uuid>
    </metadata>
@@ -302,7 +302,7 @@
  <separator>
   <info>
    <metadata owner="http://www.kde.org">
-    <UDI>/org/freedesktop/UDisks2/block_devices/sda3</UDI>
+    <UDI>/org/freedesktop/UDisks2/block_devices/sdb3</UDI>
     <isSystemItem>true</isSystemItem>
     <uuid>2c54-ac54</uuid>
    </metadata>
@@ -316,15 +316,30 @@
    </metadata>
   </info>
  </separator>
- <bookmark href="kdeconnect://207d215d_e66a_4467_9e6c_0bb991be7e92/">
-  <title>OnePlus 7 Pro</title>
+ <separator>
   <info>
-   <metadata owner="http://freedesktop.org">
-    <bookmark:icon name="kdeconnect"/>
-   </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1731163530/0</ID>
+    <UDI>/org/freedesktop/UDisks2/block_devices/sda1</UDI>
+    <isSystemItem>true</isSystemItem>
+    <uuid>ffbb908b-7053-466a-a62f-d427563203bf</uuid>
    </metadata>
   </info>
- </bookmark>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/freedesktop/UDisks2/block_devices/nvme0n1p2</UDI>
+    <isSystemItem>true</isSystemItem>
+    <uuid>75901033-2819-4f9c-8c8a-00432efc78de</uuid>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/kde/fstab/fuse.cryfs/home/glaumar/.config/sops/age</UDI>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </separator>
 </xbel>
