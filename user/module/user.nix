@@ -18,11 +18,27 @@
   
   # dir
   home.file.".config/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/.config/.directory";
-  home.file."Downloads/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Downloads/.directory";
   home.file."Games/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Games/.directory";
   home.file."Code/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Code/.directory";
   home.file."Godot/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Godot/.directory";
-  home.file."Calibre Library/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Calibre Library/.directory";
+
+  home.file."Downloads/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Downloads/.directory";
+  home.file."Downloads/.stignore".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Downloads/.stignore";
+
+  home.file."DCIM/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/DCIM/.directory";
+  home.file."DCIM/.stignore".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/DCIM/.stignore";
+
+  home.file."Notes/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Notes/.directory";
+  home.file."Notes/.stignore".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Notes/.stignore";
+
+  home.file."Pictures/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Pictures/.directory";
+  home.file."Pictures/.stignore".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Pictures/.stignore";
+
+  home.file."Calibre/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Calibre/.directory";
+  home.file."Calibre/.stignore".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Calibre/.stignore";
+
   home.file."Sync/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Sync/.directory";
+  home.file."Sync/.stignore".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Sync/.stignore";
+
   home.file."tmp/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/tmp/.directory";
 }

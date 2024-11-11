@@ -16,6 +16,7 @@
       ../module/flatpak.nix
       ../module/piper.nix
       ../module/daed.nix
+      ../module/nextcloud.nix
 
       # the results of the hardware scan.
       ./hardware-configuration.nix
