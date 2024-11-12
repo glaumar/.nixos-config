@@ -33,12 +33,13 @@
     ];
     fontPackages = with pkgs; [
       noto-fonts
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
       noto-fonts-emoji
     ];
     remotePlay.openFirewall = true;
   };
-  
+
   # all jovian options: 
   #   https://jovian-experiments.github.io/Jovian-NixOS/options.html
   jovian = {
@@ -57,7 +58,7 @@
     # decky-loader = {
     #   enable = true;
     #   user = "glaumar";
-      # extraPackages = with pkgs; [ python3 ];
+    # extraPackages = with pkgs; [ python3 ];
     # };
   };
 

@@ -47,25 +47,23 @@
   # https://nixos.wiki/wiki/Samba#Stale_file_handle
   services.samba = {
     enable = true;
-    securityType = "user";
+    # securityType = "user";
     openFirewall = true;
-    extraConfig = ''
-      workgroup = WORKGROUP
-      server string = ${config.networking.hostName}
-      netbios name = ${config.networking.hostName}
-      use sendfile = yes
-      # hosts allow = 192.168.146. 127.0.0.1 localhost
-      # hosts deny = 0.0.0.0/0
-      guest account = glaumar
-      map to guest = bad user
-      
-      usershare path = /var/lib/samba/usershares
-      usershare max shares = 100
-      usershare allow guests = yes
-      usershare owner only = yes 
-    '';
+    settings = {
+      global = {
+        security = "user";
+        workgroup = "WORKGROUP";
+        "server string" = "${config.networking.hostName}";
+        "netbios name" = "${config.networking.hostName}";
+        "use sendfile" = "yes";
+        "guest account" = "glaumar";
+        "map to guest" = "bad user";
+        "usershare path" = "/var/lib/samba/usershares";
+        "usershare max shares" = "100";
+        "usershare allow guests" = "yes";
+        "usershare owner only" = "yes";
+      };
 
-    shares = {
       public = {
         path = "/home/glaumar/Public";
         "guest ok" = "yes";
@@ -77,6 +75,7 @@
         "force group" = "users";
       };
     };
+
   };
 
   services.samba-wsdd = {
