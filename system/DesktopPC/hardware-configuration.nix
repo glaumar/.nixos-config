@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
@@ -14,13 +15,22 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/75901033-2819-4f9c-8c8a-00432efc78de";
+    {
+      device = "/dev/disk/by-uuid/75901033-2819-4f9c-8c8a-00432efc78de";
       fsType = "btrfs";
       options = [ "subvol=@" ];
     };
 
+  fileSystems."/home/glaumar/DATA" =
+    {
+      device = "/dev/disk/by-uuid/2d91023f-b583-46e0-bdbd-3bdfbacafc31";
+      fsType = "ext4";
+      options = [ "defaults" "noatime" "data=ordered" "nofail" ];
+    };
+
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/9579-212A";
+    {
+      device = "/dev/disk/by-uuid/9579-212A";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };

@@ -9,3 +9,5 @@
 
 lvim.builtin.which_key.mappings["<space>"] = { "o<Esc>", "Add empty line below" }
 lvim.builtin.which_key.mappings["bo"] = { ':%bd!|e #|bd #|normal`"<CR>', "Close other buffers" }
+
+vim.opt.wrap = true

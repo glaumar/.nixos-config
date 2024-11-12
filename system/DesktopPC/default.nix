@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ ... }:
+{pkgs, ... }:
 {
   imports =
     [
@@ -16,7 +16,8 @@
       ../module/flatpak.nix
       ../module/piper.nix
       ../module/daed.nix
-      ../module/nextcloud.nix
+      ../module/steam.nix
+      # ../module/nextcloud.nix
 
       # the results of the hardware scan.
       ./hardware-configuration.nix
@@ -38,6 +39,9 @@
     openFirewall = true;
   };
 
+  environment.systemPackages = with pkgs; [
+    gparted
+  ];
 
   # List services that you want to enable:
 
