@@ -40,7 +40,8 @@
                 launchers = [
                   "applications:org.kde.dolphin.desktop"
                   "applications:firefox-devedition.desktop"
-                  "applications:code-url-handler.desktop"
+                  # "applications:code-url-handler.desktop"
+                  "applications:code.desktop"
                 ];
                 behavior.middleClickAction = "close";
               };

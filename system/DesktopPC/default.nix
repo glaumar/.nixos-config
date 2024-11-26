@@ -30,7 +30,7 @@
 #   services.displayManager.autoLogin.user = "glaumar";
 
   environment.sessionVariables = {
-    STEAM_FORCE_DESKTOPUI_SCALING = "1.5";
+    STEAM_FORCE_DESKTOPUI_SCALING = "2";
   };
 
   # Enable the OpenSSH daemon.

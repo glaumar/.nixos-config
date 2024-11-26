@@ -51,7 +51,7 @@
     openFirewall = true;
     settings = {
       global = {
-        security = "user";
+        # security = "user";
         workgroup = "WORKGROUP";
         "server string" = "${config.networking.hostName}";
         "netbios name" = "${config.networking.hostName}";

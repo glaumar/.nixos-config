@@ -52,7 +52,7 @@
     MimeType=text/plain;inode/directory
     Name=Visual Studio Code
     StartupNotify=true
-    StartupWMClass=Code
+    StartupWMClass=code
     Type=Application
     Version=1.4
 

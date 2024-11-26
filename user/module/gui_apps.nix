@@ -37,6 +37,7 @@
     # browser
     # firefox
     # chromium
+    tor-browser
 
     #
     # proton-pass
@@ -106,7 +107,6 @@
   };
 
 
-  # TODO: let fonts.config create a file/hard link instead of symlink
   # flatpak apps can not read symbolic link, so we need to copy the file
   home.activation.cp_fontconfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     #!/usr/bin/env bash

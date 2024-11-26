@@ -1,5 +1,10 @@
 MenuBar=Disabled
 
+[ExtractDialog]
+2194x1234 screen: Height=617
+2194x1234 screen: Width=1393
+DirHistory[$e]=$HOME/tmp/
+
 [General]
 BrowseThroughArchives=true
 GlobalViewProps=false
