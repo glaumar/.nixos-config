@@ -4,7 +4,7 @@
   home.packages = with pkgs;[
     # multimedia
     mpv
-    # yesplaymusic
+    yesplaymusic
     aseprite
     gimp
     haruna
@@ -41,7 +41,7 @@
 
     #
     # proton-pass
-
+    
     # other
     xorg.xkill
   ];

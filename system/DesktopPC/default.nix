@@ -14,7 +14,7 @@
       ../module/firefox.nix
       ../module/kde.nix
       ../module/flatpak.nix
-      ../module/piper.nix
+      ../module/peripheral.nix
       ../module/daed.nix
       ../module/steam.nix
       # ../module/nextcloud.nix
