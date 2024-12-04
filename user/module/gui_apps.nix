@@ -4,7 +4,8 @@
   home.packages = with pkgs;[
     # multimedia
     mpv
-    yesplaymusic
+    # yesplaymusic
+    youtube-music
     aseprite
     gimp
     haruna
@@ -17,7 +18,7 @@
     # game
     glaumarPkgs.qrookie
     ludusavi
-    
+
     # bittorrent
     qbittorrent
 
@@ -41,7 +42,7 @@
 
     #
     # proton-pass
-    
+
     # other
     xorg.xkill
   ];
@@ -63,6 +64,7 @@
   xdg.configFile = with config.lib.file;  {
     "aseprite/aseprite.ini".source = mkOutOfStoreSymlink "${dotfile.conf}/aseprite/aseprite.ini";
     "qBittorrent".source = mkOutOfStoreSymlink "${dotfile.conf}/qBittorrent";
+    "YouTube Music".source = mkOutOfStoreSymlink "${dotfile.conf}/YouTube Music";
   };
 
   fonts.fontconfig = {

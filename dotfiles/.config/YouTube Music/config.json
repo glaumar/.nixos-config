@@ -1,0 +1,161 @@
+{
+	"window-size": {
+		"width": 2194,
+		"height": 1234
+	},
+	"window-maximized": true,
+	"window-position": {
+		"x": 0,
+		"y": 0
+	},
+	"url": "https://music.youtube.com/watch?v=5CSNv9MNEC4&list=RDAMVM8_jqN2DpaDQ&index=0",
+	"options": {
+		"tray": false,
+		"appVisible": true,
+		"autoUpdates": true,
+		"alwaysOnTop": false,
+		"hideMenu": false,
+		"hideMenuWarned": false,
+		"startAtLogin": false,
+		"disableHardwareAcceleration": false,
+		"removeUpgradeButton": false,
+		"restartOnConfigChanges": false,
+		"trayClickPlayPause": false,
+		"autoResetAppCache": false,
+		"resumeOnStart": true,
+		"likeButtons": "",
+		"proxy": "",
+		"startingPage": "",
+		"overrideUserAgent": false,
+		"usePodcastParticipantAsArtist": false,
+		"themes": []
+	},
+	"plugins": {
+		"notifications": {},
+		"video-toggle": {
+			"mode": "custom"
+		},
+		"precise-volume": {
+			"globalShortcuts": {}
+		},
+		"discord": {
+			"listenAlong": true
+		},
+		"lyrics-genius": {
+			"enabled": false,
+			"romanizedLyrics": true
+		},
+		"synced-lyrics": {
+			"enabled": true,
+			"preciseTiming": true,
+			"showLyricsEvenIfInexact": true,
+			"showTimeCodes": false,
+			"defaultTextString": "♪",
+			"lineEffect": "scale"
+		},
+		"visualizer": {
+			"enabled": false,
+			"type": "butterchurn",
+			"butterchurn": {
+				"preset": "martin [shadow harlequins shape code] - fata morgana",
+				"renderingFrequencyInMs": 500,
+				"blendTimeInSeconds": 2.7
+			},
+			"vudio": {
+				"effect": "lighting",
+				"accuracy": 128,
+				"lighting": {
+					"maxHeight": 160,
+					"maxSize": 12,
+					"lineWidth": 1,
+					"color": "#49f3f7",
+					"shadowBlur": 2,
+					"shadowColor": "rgba(244,244,244,.5)",
+					"fadeSide": true,
+					"prettify": false,
+					"horizontalAlign": "center",
+					"verticalAlign": "middle",
+					"dottify": true
+				}
+			},
+			"wave": {
+				"animations": [
+					{
+						"type": "Cubes",
+						"config": {
+							"bottom": true,
+							"count": 30,
+							"cubeHeight": 5,
+							"fillColor": {
+								"gradient": [
+									"#FAD961",
+									"#F76B1C"
+								]
+							},
+							"lineColor": "rgba(0,0,0,0)",
+							"radius": 20
+						}
+					},
+					{
+						"type": "Cubes",
+						"config": {
+							"top": true,
+							"count": 12,
+							"cubeHeight": 5,
+							"fillColor": {
+								"gradient": [
+									"#FAD961",
+									"#F76B1C"
+								]
+							},
+							"lineColor": "rgba(0,0,0,0)",
+							"radius": 10
+						}
+					},
+					{
+						"type": "Circles",
+						"config": {
+							"lineColor": {
+								"gradient": [
+									"#FAD961",
+									"#FAD961",
+									"#F76B1C"
+								],
+								"rotate": 90
+							},
+							"lineWidth": 4,
+							"diameter": 20,
+							"count": 10,
+							"frequencyBand": "base"
+						}
+					}
+				]
+			}
+		},
+		"downloader": {
+			"enabled": true,
+			"downloadFolder": "/home/glaumar/Music",
+			"downloadOnFinish": {
+				"enabled": false,
+				"seconds": 20,
+				"percent": 10,
+				"mode": "seconds",
+				"folder": "/home/glaumar/Music"
+			},
+			"selectedPreset": "mp3 (256kbps)",
+			"customPresetSetting": {
+				"extension": "mp3",
+				"ffmpegArgs": [
+					"-b:a",
+					"256k"
+				]
+			},
+			"skipExisting": false
+		}
+	},
+	"__internal__": {
+		"migrations": {
+			"version": "3.6.2"
+		}
+	}
+}

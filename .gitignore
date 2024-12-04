@@ -20,3 +20,29 @@ dotfiles/.config/qBittorrent/rss
 dotfiles/.config/qBittorrent/lockfile
 dotfiles/.config/qBittorrent/ipc-socket
 dotfiles/.config/qBittorrent/qBittorrent-data.conf
+
+# YouTube Music
+dotfiles/.config/YouTube Music/Cache
+dotfiles/.config/YouTube Music/Code Cache
+dotfiles/.config/YouTube Music/Crashpad
+dotfiles/.config/YouTube Music/DawnGraphiteCache
+dotfiles/.config/YouTube Music/DawnWebGPUCache
+dotfiles/.config/YouTube Music/Dictionaries
+dotfiles/.config/YouTube Music/GPUCache
+dotfiles/.config/YouTube Music/IndexedDB
+dotfiles/.config/YouTube Music/Local Storage
+dotfiles/.config/YouTube Music/Service Worker
+dotfiles/.config/YouTube Music/Session Storage
+dotfiles/.config/YouTube Music/Shared Dictionary
+dotfiles/.config/YouTube Music/shared_proto_db
+dotfiles/.config/YouTube Music/VideoDecodeStats
+dotfiles/.config/YouTube Music/WebStorage
+dotfiles/.config/YouTube Music/Cookies
+dotfiles/.config/YouTube Music/Cookies-journal
+dotfiles/.config/YouTube Music/Network Persistent State
+dotfiles/.config/YouTube Music/Preferences
+dotfiles/.config/YouTube Music/SharedStorage
+dotfiles/.config/YouTube Music/TransportSecurity
+dotfiles/.config/YouTube Music/Trust Tokens
+dotfiles/.config/YouTube Music/Trust Tokens-journal
+dotfiles/.config/YouTube Music/blob_storage

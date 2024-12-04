@@ -102,3 +102,4 @@ video/x-theora+ogg=mpv.desktop;
 x-scheme-handler/devdocs=DevDocs.desktop
 x-scheme-handler/http=firefox-devedition.desktop;
 x-scheme-handler/https=firefox-devedition.desktop;
+x-scheme-handler/youtubemusic=YouTube Music.desktop
