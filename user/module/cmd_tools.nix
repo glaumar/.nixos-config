@@ -19,8 +19,18 @@
 
     # vim ide
     lunarvim
-    nerdfonts
     wl-clipboard-rs
+
+    # nerd fonts
+    nerd-fonts.noto
+    nerd-fonts.hack
+    nerd-fonts.fira-mono
+    nerd-fonts.fira-code
+    nerd-fonts.monaspace
+    nerd-fonts.droid-sans-mono
+    nerd-fonts.dejavu-sans-mono
+    nerd-fonts.sauce-code-pro
+    nerd-fonts.jetbrains-mono
   ];
 
   programs.direnv.enable = true;
