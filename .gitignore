@@ -42,7 +42,9 @@ dotfiles/.config/YouTube Music/Cookies-journal
 dotfiles/.config/YouTube Music/Network Persistent State
 dotfiles/.config/YouTube Music/Preferences
 dotfiles/.config/YouTube Music/SharedStorage
+dotfiles/.config/YouTube Music/SharedStorage-wal
 dotfiles/.config/YouTube Music/TransportSecurity
 dotfiles/.config/YouTube Music/Trust Tokens
 dotfiles/.config/YouTube Music/Trust Tokens-journal
 dotfiles/.config/YouTube Music/blob_storage
+dotfiles/.config/YouTube Music/Singleton*

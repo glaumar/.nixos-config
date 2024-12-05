@@ -188,7 +188,7 @@
           };
           window-types = [ "normal" ];
           title = {
-            value = "Firefox Developer Edition";
+            value = "Mozilla Firefox";
             type = "substring";
           };
         };
@@ -227,6 +227,23 @@
           window-class = {
             value = "calibre-gui";
             type = "substring";
+          };
+          window-types = [ "normal" ];
+        };
+        apply = {
+          noborder = {
+            value = true;
+            apply = "initially";
+          };
+        };
+      }
+
+      {
+        description = "YouTube Music";
+        match = {
+          window-class = {
+            value = "electron YouTube Music";
+            type = "exact";
           };
           window-types = [ "normal" ];
         };
