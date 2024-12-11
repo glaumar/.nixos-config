@@ -1,8 +1,10 @@
-{ pkgs, ... }:
+{ config, pkgs, dotfile, ... }:
 
 {
   # set default browser
   home.sessionVariables.BROWSER = "firefox-devedition";
+
+  home.file."Downloads/firefox/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Downloads/firefox/.directory";
 
   programs.firefox = {
     enable = true;
@@ -25,10 +27,15 @@
           "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = false;
           "browser.newtabpage.activity-stream.section.highlights.includeVisited" = false;
 
+          # hide fullscreen warning
           "full-screen-api.warning.timeout" = 0;
           
           # use system title bar
           "browser.tabs.inTitlebar" = 0;
+
+          # set download dir
+          "browser.download.lastDir" = "/home/glaumar/Downloads/firefox";
+          "browser.download.dir" = "/home/glaumar/Downloads/firefox";
         };
 
         # extensions = with pkgs.nur.repos.rycee.firefox-addons; [
