@@ -60,6 +60,8 @@
     ];
   };
 
+  home.file."Downloads/Telegram Desktop/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Downloads/Telegram Desktop/.directory";
+
   # dotfile
   xdg.configFile = with config.lib.file;  {
     "aseprite/aseprite.ini".source = mkOutOfStoreSymlink "${dotfile.conf}/aseprite/aseprite.ini";
