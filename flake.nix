@@ -23,7 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    glaumar_aur = {
+    glaumar_nur = {
       url = "github:glaumar/nur";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -44,7 +44,6 @@
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
-    nur.url = "github:nix-community/NUR";
   };
 
   outputs =
@@ -54,21 +53,19 @@
     , jovian-nixos
     , plasma-manager
     , sops-nix
-    , glaumar_aur
+    , glaumar_nur
     , nix-index-database
     , nix-flatpak
-    , nur
     , ...
     }: {
       nixosConfigurations = {
         DesktopPC = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          # specialArgs = { inherit inputs; };
           modules = [
             ({
               nixpkgs.overlays = [
                 (final: prev: {
-                  glaumarPkgs = glaumar_aur.packages."${prev.system}";
+                  glaumarPkgs = glaumar_nur.packages."${prev.system}";
                 })
               ];
             })
@@ -76,12 +73,10 @@
             daeuniverse.nixosModules.daed
             sops-nix.nixosModules.sops
             nix-flatpak.nixosModules.nix-flatpak
-            # nur.nixosModules.nur
             system/DesktopPC/default.nix
 
             home-manager.nixosModules.home-manager
             {
-              # home-manager.extraSpecialArgs = inputs;
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.sharedModules = [
@@ -90,21 +85,17 @@
               ];
               home-manager.users.glaumar = import user/DesktopPC/default.nix;
               home-manager.backupFileExtension = "hm_backup";
-              nixpkgs.overlays = [
-                nur.overlay
-              ];
             }
           ];
         };
 
         Thinkpad = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          # specialArgs = { inherit inputs; };
           modules = [
             ({
               nixpkgs.overlays = [
                 (final: prev: {
-                  glaumarPkgs = glaumar_aur.packages."${prev.system}";
+                  glaumarPkgs = glaumar_nur.packages."${prev.system}";
                 })
               ];
             })
@@ -114,7 +105,6 @@
 
             home-manager.nixosModules.home-manager
             {
-              # home-manager.extraSpecialArgs = inputs;
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.glaumar = import user/Thinkpad/default.nix;
@@ -127,12 +117,11 @@
 
         SteamDeck = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          # specialArgs = { inherit inputs; };
           modules = [
             ({
               nixpkgs.overlays = [
                 (final: prev: {
-                  glaumarPkgs = glaumar_aur.packages."${prev.system}";
+                  glaumarPkgs = glaumar_nur.packages."${prev.system}";
                 })
               ];
             })
@@ -141,12 +130,10 @@
             jovian-nixos.nixosModules.default
             sops-nix.nixosModules.sops
             nix-flatpak.nixosModules.nix-flatpak
-            # nur.nixosModules.nur
             system/SteamDeck/default.nix
 
             home-manager.nixosModules.home-manager
             {
-              # home-manager.extraSpecialArgs = inputs;
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.sharedModules = [
@@ -155,9 +142,6 @@
               ];
               home-manager.users.glaumar = import user/SteamDeck/default.nix;
               home-manager.backupFileExtension = "hm_backup";
-              nixpkgs.overlays = [
-                nur.overlay
-              ];
             }
           ];
         };
