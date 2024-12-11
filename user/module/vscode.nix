@@ -45,7 +45,7 @@
     Actions=new-empty-window
     Categories=Utility;TextEditor;Development;IDE
     Comment=Code Editing. Redefined.
-    Exec=code %F --enable-features=UseOzonePlatform --enable-wayland-ime
+    Exec=code --enable-features=UseOzonePlatform --enable-wayland-ime -n %F
     GenericName=Text Editor
     Icon=vscode
     Keywords=vscode
@@ -66,7 +66,7 @@
     [Desktop Entry]
     Categories=Utility;TextEditor;Development;IDE
     Comment=Code Editing. Redefined.
-    Exec=code %U --enable-features=UseOzonePlatform --enable-wayland-ime --open-url
+    Exec=code --enable-features=UseOzonePlatform --enable-wayland-ime --open-url %U
     GenericName=Text Editor
     Icon=vscode
     Keywords=vscode
