@@ -2,7 +2,12 @@
 
 {
   home.packages = with pkgs;[
-    # cmd tool
+    # fun tools
+    cmatrix
+    # cool-retro-term
+    hollywood
+
+    # cmd tools
     file
     neofetch
     btop
