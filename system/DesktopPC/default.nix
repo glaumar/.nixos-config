@@ -17,6 +17,7 @@
       ../module/peripheral.nix
       ../module/daed.nix
       ../module/steam.nix
+      ../module/locate.nix
       # ../module/nextcloud.nix
 
       # the results of the hardware scan.
