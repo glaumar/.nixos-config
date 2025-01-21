@@ -7,14 +7,25 @@
 
   # Enable the KDE Plasma Desktop Environment.(wayland only)
   services.displayManager.defaultSession = lib.mkDefault "plasma";
-  services.displayManager.sddm.enable = lib.mkDefault true;
-  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm = {
+    enable = lib.mkDefault true;
+    wayland.enable = true;
+    settings = {
+      General = {
+        InputMethod = "qtvirtualkeyboard";
+      };
+    };
+  };
+
   services.desktopManager.plasma6.enable = true;
 
   environment.systemPackages = with pkgs.kdePackages; [
     kate
     yakuake
     discover
+    
+    # virtual keyboard for sddm
+    qtvirtualkeyboard
 
     # Using the KDE Wallet to store ssh key passphrases
     ksshaskpass
