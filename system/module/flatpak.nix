@@ -20,11 +20,12 @@
       { appId = "org.flatpak.Builder"; origin = "flathub"; }
       { appId = "com.github.tchx84.Flatseal"; origin = "flathub"; }
       { appId = "io.github.flattool.Warehouse"; origin = "flathub"; }
+      { appId = "io.github.Predidit.Kazumi"; origin = "flathub"; }
 
       # for QRookie dev
-      # { appId = "org.freedesktop.Sdk.Extension.openjdk21/x86_64/23.08"; origin = "flathub"; }
-      # { appId = "org.kde.Sdk/x86_64/6.6"; origin = "flathub"; }
-      # { appId = "org.kde.Platform/x86_64/6.6"; origin = "flathub"; }
+      { appId = "org.freedesktop.Sdk.Extension.openjdk21/x86_64/23.08"; origin = "flathub"; }
+      { appId = "org.kde.Sdk/x86_64/6.6"; origin = "flathub"; }
+      { appId = "org.kde.Platform/x86_64/6.6"; origin = "flathub"; }
     ];
 
     overrides = {

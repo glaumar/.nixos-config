@@ -3,7 +3,7 @@
 {
   # set default browser
   environment.sessionVariables.BROWSER = "firefox-devedition";
-
+  environment.systemPackages = [ pkgs.firefoxpwa ];
   programs.firefox =
     let
       lock-false = {
@@ -18,8 +18,8 @@
     {
       enable = true;
       package = pkgs.firefox-devedition;
+      nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
       languagePacks = [ "zh-CN" "en-US" "ja" ];
-
       /* ---- POLICIES ---- */
       # Check about:policies#documentation for options.
       policies = {
@@ -66,6 +66,12 @@
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";
             installation_mode = "force_installed";
           };
+
+          # uBlock Origin
+          # "uBlock0@raymondhill.net" = {
+          #   install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+          #   installation_mode = "force_installed";
+          # };
 
           # Dark Reader
           "addon@darkreader.org" = {

@@ -84,7 +84,7 @@
                 nix-index-database.hmModules.nix-index
               ];
               home-manager.users.glaumar = import user/DesktopPC/default.nix;
-              home-manager.backupFileExtension = "hm_backup";
+              home-manager.backupFileExtension = "Backup";
             }
           ];
         };

@@ -39,12 +39,15 @@
     # firefox
     # chromium
     tor-browser
-
-    #
-    # proton-pass
+    
+    # bangumi
+    kazumi
 
     # other
     xorg.xkill
+    
+    kget
+    anki
   ];
 
   services.syncthing = {

@@ -31,6 +31,9 @@
 
     # npm and nodejs for slidev
     nodePackages.nodejs
+    
+    # js/ts
+    yarn
 
     # csharp
     dotnet-sdk_8

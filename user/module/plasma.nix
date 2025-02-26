@@ -188,7 +188,7 @@
           };
           window-types = [ "normal" ];
           title = {
-            value = "Mozilla Firefox";
+            value = "Firefox Developer Edition";
             type = "substring";
           };
         };
