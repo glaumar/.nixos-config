@@ -59,7 +59,7 @@
     , ...
     }: {
       nixosConfigurations = {
-        DesktopPC = nixpkgs.lib.nixosSystem {
+        NixOS2501 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ({
@@ -73,6 +73,7 @@
             daeuniverse.nixosModules.daed
             sops-nix.nixosModules.sops
             nix-flatpak.nixosModules.nix-flatpak
+            nix-index-database.nixosModules.nix-index
             system/DesktopPC/default.nix
 
             home-manager.nixosModules.home-manager
@@ -81,7 +82,7 @@
               home-manager.useUserPackages = true;
               home-manager.sharedModules = [
                 plasma-manager.homeManagerModules.plasma-manager
-                nix-index-database.hmModules.nix-index
+                # nix-index-database.hmModules.nix-index
               ];
               home-manager.users.glaumar = import user/DesktopPC/default.nix;
               home-manager.backupFileExtension = "Backup";
@@ -130,6 +131,7 @@
             jovian-nixos.nixosModules.default
             sops-nix.nixosModules.sops
             nix-flatpak.nixosModules.nix-flatpak
+            # nix-index-database.nixosModules.nix-index
             system/SteamDeck/default.nix
 
             home-manager.nixosModules.home-manager
@@ -138,7 +140,7 @@
               home-manager.useUserPackages = true;
               home-manager.sharedModules = [
                 plasma-manager.homeManagerModules.plasma-manager
-                nix-index-database.hmModules.nix-index
+                # nix-index-database.hmModules.nix-index
               ];
               home-manager.users.glaumar = import user/SteamDeck/default.nix;
               home-manager.backupFileExtension = "hm_backup";

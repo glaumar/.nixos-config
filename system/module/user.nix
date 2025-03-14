@@ -20,7 +20,7 @@
   users.users.glaumar = {
     isNormalUser = true;
     description = "glaumar";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "wireshark"];
     hashedPasswordFile = config.sops.secrets.user_passwd.path;
   };
 }

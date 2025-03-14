@@ -24,6 +24,8 @@
     #jack.enable = true;
   };
 
+  hardware.enableAllFirmware = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
+  # systemd.services.bluetooth.serviceConfig.ConfigurationDirectoryMode = "755";
 }

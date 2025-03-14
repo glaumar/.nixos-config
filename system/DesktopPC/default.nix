@@ -19,13 +19,17 @@
       ../module/steam.nix
       ../module/locate.nix
       ../module/distrobox.nix
+      ../module/wireshark.nix
+      ../module/apps.nix
+      ../module/fonts.nix
       # ../module/nextcloud.nix
 
       # the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
-  networking.hostName = "DesktopPC";
+  # networking.hostName = "DesktopPC";
+  networking.hostName = "NixOS2501";
 
   # Enable automatic login for the user.
 #   services.displayManager.autoLogin.enable = true;

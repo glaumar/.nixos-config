@@ -39,7 +39,7 @@
   ];
 
   programs.direnv.enable = true;
-  programs.nix-index.enable = true;
+  # programs.nix-index.enable = true;
   programs.fish.enable = true;
 
   programs.neovim = {

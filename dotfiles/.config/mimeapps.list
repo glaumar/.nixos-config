@@ -104,3 +104,4 @@ x-scheme-handler/http=firefox-devedition.desktop;
 x-scheme-handler/https=firefox-devedition.desktop;
 x-scheme-handler/youtubemusic=YouTube Music.desktop
 x-scheme-handler/vscode=code-url-handler.desktop;
+x-scheme-handler/nxm=com.nexusmods.app.desktop

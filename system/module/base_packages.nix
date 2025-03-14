@@ -18,15 +18,13 @@
     lfs.enable = true;
   };
 
-  programs.vim = {
+  # programs.vim = {
+  #   enable = true;
+  #   defaultEditor = true;
+  # };
+
+  programs.neovim = {
     enable = true;
     defaultEditor = true;
   };
-
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-cjk-serif
-    noto-fonts-emoji
-  ];
 }

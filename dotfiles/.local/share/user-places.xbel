@@ -393,17 +393,14 @@
    </metadata>
   </info>
  </separator>
- <bookmark href="kdeconnect://115cda97_8220_44e5_b720_9f99c6bac72a/">
-  <title>Quest3</title>
+ <separator>
   <info>
-   <metadata owner="http://freedesktop.org">
-    <bookmark:icon name="kdeconnect"/>
-   </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1740499626/3</ID>
+    <UDI>/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:01.2/0000:02:00.0/usb1/1-2</UDI>
+    <isSystemItem>true</isSystemItem>
    </metadata>
   </info>
- </bookmark>
+ </separator>
  <bookmark href="kdeconnect://207d215d_e66a_4467_9e6c_0bb991be7e92/">
   <title>OnePlus 7 Pro</title>
   <info>
@@ -411,7 +408,7 @@
     <bookmark:icon name="kdeconnect"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1740569762/4</ID>
+    <ID>1741971936/0</ID>
    </metadata>
   </info>
  </bookmark>

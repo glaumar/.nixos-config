@@ -39,7 +39,8 @@
               {
                 launchers = [
                   "applications:org.kde.dolphin.desktop"
-                  "applications:firefox-devedition.desktop"
+                  # "applications:firefox-esr.desktop"
+                  "applications:firefox.desktop"
                   # "applications:code-url-handler.desktop"
                   "applications:code.desktop"
                 ];
@@ -189,6 +190,27 @@
           window-types = [ "normal" ];
           title = {
             value = "Firefox Developer Edition";
+            type = "substring";
+          };
+        };
+        apply = {
+          noborder = {
+            value = true;
+            apply = "initially";
+          };
+        };
+      }
+
+      {
+        description = "firefox esr";
+        match = {
+          window-class = {
+            value = "firefox firefox-esr";
+            type = "exact";
+          };
+          window-types = [ "normal" ];
+          title = {
+            value = "Mozilla Firefox";
             type = "substring";
           };
         };

@@ -23,7 +23,6 @@
     kate
     yakuake
     discover
-    
     # virtual keyboard for sddm
     qtvirtualkeyboard
 
@@ -33,6 +32,7 @@
     plasma-vault
     # plasma-browser-integration
     # plasma-firewall
+    sddm-kcm
 
     # dev
     plasma-sdk

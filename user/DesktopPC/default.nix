@@ -15,10 +15,12 @@ in
       (import ../module/key_generate.nix { inherit pkgs lib; })
       (import ../module/plasma.nix { inherit config dotfile pkgs; })
       (import ../module/vscode.nix { inherit config pkgs dotfile; })
-      (import ../module/cmd_tools.nix { inherit config pkgs dotfile; })
-      (import ../module/gui_apps.nix { inherit config pkgs lib dotfile; })
-      (import ../module/firefox.nix { inherit config pkgs dotfile; })
-      # ../module/nexusmods_app.nix
+      (import ../module/dotfile.nix { inherit lib config dotfile; })
+      # (import ../module/cmd_tools.nix { inherit config pkgs dotfile; })
+      # (import ../module/gui_apps.nix { inherit config pkgs lib dotfile; })
+      # (import ../module/firefox.nix { inherit config pkgs dotfile; })
+      # (import ../module/nexusmods_app.nix { inherit pkgs; })
+
     ];
 
   # This value determines the Home Manager release that your

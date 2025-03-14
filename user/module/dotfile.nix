@@ -1,77 +1,15 @@
-{ pkgs, config, lib, dotfile, ... }:
+{ lib, config, dotfile, ... }:
 
 {
-  home.packages = with pkgs;[
-    # multimedia
-    mpv
-    # yesplaymusic
-    youtube-music
-    aseprite
-    gimp
-    haruna
-
-    # IM
-    telegram-desktop
-    element-desktop
-    discord
-
-    # game
-    glaumarPkgs.qrookie
-    ludusavi
-
-    # bittorrent
-    qbittorrent
-
-    # office
-    calibre
-    libreoffice-qt6-fresh
-    # wpsoffice 
-
-
-    # Microsoft fonts
-    corefonts
-    vistafonts
-    vistafonts-cht
-    vistafonts-chs
-
-    # browser
-    # firefox
-    # chromium
-    tor-browser
-    
-    # bangumi
-    # kazumi
-
-    # other
-    xorg.xkill
-    
-    kdePackages.kget
-    anki
-    
-    rclone
-  ];
-
-  services.syncthing = {
-    enable = true;
-    # tray.enable = true;
-  };
-
-  programs.chromium = {
-    enable = true;
-    commandLineArgs = [
-      "--enable-features=UseOzonePlatform"
-      "--enable-wayland-ime"
-    ];
-  };
-
-  home.file."Downloads/Telegram Desktop/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Downloads/Telegram Desktop/.directory";
-
-  # dotfile
   xdg.configFile = with config.lib.file;  {
+    "tealdeer/config.toml".source = mkOutOfStoreSymlink "${dotfile.conf}/tealdeer/config.toml";
+    "lvim".source = mkOutOfStoreSymlink "${dotfile.conf}/lvim";
     "aseprite/aseprite.ini".source = mkOutOfStoreSymlink "${dotfile.conf}/aseprite/aseprite.ini";
     "qBittorrent".source = mkOutOfStoreSymlink "${dotfile.conf}/qBittorrent";
     "YouTube Music".source = mkOutOfStoreSymlink "${dotfile.conf}/YouTube Music";
   };
+
+  home.file."Downloads/Telegram Desktop/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Downloads/Telegram Desktop/.directory";
 
   fonts.fontconfig = {
     enable = true;
@@ -121,5 +59,7 @@
     run mkdir -p ${config.xdg.configHome}/fontconfig/
     run cp -rfL ${dotfile.conf}/fontconfig/fonts.conf ${config.xdg.configHome}/fontconfig/fonts.conf
   '';
+
+
 
 }
