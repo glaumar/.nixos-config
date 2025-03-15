@@ -408,7 +408,18 @@
     <bookmark:icon name="kdeconnect"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1741971936/0</ID>
+    <ID>1742011690/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="kdeconnect://b8d8f249_21a8_4d87_8903_5dd23facffb5/">
+  <title>Redmi K70E</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="kdeconnect"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1742012763/1</ID>
    </metadata>
   </info>
  </bookmark>

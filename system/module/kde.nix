@@ -30,12 +30,17 @@
     ksshaskpass
 
     plasma-vault
-    # plasma-browser-integration
+    plasma-browser-integration
     # plasma-firewall
     sddm-kcm
 
     # dev
     plasma-sdk
+    
+    # utilities
+    partitionmanager
+    ksystemlog
+    kget
   ] ++ lib.optionals config.services.flatpak.enable [
     # make flatpak GTK app follow system theme
     (pkgs.xdg-desktop-portal-gtk)

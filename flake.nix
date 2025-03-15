@@ -11,11 +11,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
+    # plasma-manager = {
+    #   url = "github:nix-community/plasma-manager";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.home-manager.follows = "home-manager";
+    # };
 
     # steamdeck package
     jovian-nixos = {
@@ -51,7 +51,7 @@
     , home-manager
     , daeuniverse
     , jovian-nixos
-    , plasma-manager
+    # , plasma-manager
     , sops-nix
     , glaumar_nur
     , nix-index-database
@@ -81,37 +81,11 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.sharedModules = [
-                plasma-manager.homeManagerModules.plasma-manager
+                # plasma-manager.homeManagerModules.plasma-manager
                 # nix-index-database.hmModules.nix-index
               ];
               home-manager.users.glaumar = import user/DesktopPC/default.nix;
               home-manager.backupFileExtension = "Backup";
-            }
-          ];
-        };
-
-        Thinkpad = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ({
-              nixpkgs.overlays = [
-                (final: prev: {
-                  glaumarPkgs = glaumar_nur.packages."${prev.system}";
-                })
-              ];
-            })
-            system/Thinkpad/default.nix
-            daeuniverse.nixosModules.daed
-            sops-nix.nixosModules.sops
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.glaumar = import user/Thinkpad/default.nix;
-
-              # rename overwrited file
-              home-manager.backupFileExtension = "hm_backup";
             }
           ];
         };
@@ -139,7 +113,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.sharedModules = [
-                plasma-manager.homeManagerModules.plasma-manager
+                # plasma-manager.homeManagerModules.plasma-manager
                 # nix-index-database.hmModules.nix-index
               ];
               home-manager.users.glaumar = import user/SteamDeck/default.nix;

@@ -1,0 +1,78 @@
+[1]
+Description=Dolphin
+noborder=true
+noborderrule=3
+types=1
+wmclass=dolphin
+wmclasscomplete=true
+wmclassmatch=1
+
+[2]
+Description=Element
+noborder=true
+noborderrule=3
+types=1
+wmclass=electron Element
+wmclasscomplete=true
+wmclassmatch=1
+
+[3]
+Description=Discord
+noborder=true
+noborderrule=3
+types=1
+wmclass=Discord discord
+wmclasscomplete=true
+wmclassmatch=1
+
+[4]
+Description=org.telegram.desktop
+noborder=true
+noborderrule=3
+types=1
+wmclass=telegram-desktop org.telegram.desktop
+wmclasscomplete=true
+wmclassmatch=1
+
+[5]
+Description=org.kde.konsole
+noborder=true
+noborderrule=3
+types=1
+wmclass=konsole org.kde.konsole
+wmclasscomplete=true
+wmclassmatch=1
+
+[8]
+Description=firefox
+noborder=true
+noborderrule=3
+title=Mozilla Firefox
+titlematch=2
+types=1
+wmclass=firefox firefox
+wmclasscomplete=true
+wmclassmatch=1
+
+[9]
+Description=Calibre
+noborder=true
+noborderrule=3
+types=1
+wmclass=calibre-gui
+wmclasscomplete=true
+wmclassmatch=2
+
+[General]
+count=8
+rules=c5cf3cf0-d0d5-45d8-880b-656b9324e4f6,1,2,3,4,5,8,9
+
+[c5cf3cf0-d0d5-45d8-880b-656b9324e4f6]
+Description=Youtube Music
+noborder=true
+noborderrule=2
+title=YouTube Music
+types=1
+wmclass=electron com.github.th_ch.youtube_music
+wmclasscomplete=true
+wmclassmatch=1

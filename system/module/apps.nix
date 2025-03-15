@@ -18,16 +18,7 @@
     pwgen
     busybox
     gh # github cli
-    android-tools
 
-    desktop-file-utils
-    appstream
-    just
-    direnv
-
-    # vim ide
-    lunarvim
-    wl-clipboard-rs
 
     #---------------gui tools--------------#
     # multimedia
@@ -46,6 +37,7 @@
     # game
     glaumarPkgs.qrookie
     ludusavi
+    # nexusmods-app-unfree
 
     # bittorrent
     qbittorrent
@@ -60,17 +52,16 @@
     # bangumi
     # kazumi
     chromium
-    syncthing
 
     # other
     xorg.xkill
 
-    kdePackages.kget
     anki
-
     rclone
+
   ];
 
+  services.syncthing.enable = true;
 }
 
  

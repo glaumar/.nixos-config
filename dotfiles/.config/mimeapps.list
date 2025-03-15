@@ -47,8 +47,8 @@ video/x-ogm=mpv.desktop;
 video/x-ogm+ogg=mpv.desktop;
 video/x-theora=mpv.desktop;
 video/x-theora+ogg=mpv.desktop;
-x-scheme-handler/http=firefox-devedition.desktop;
-x-scheme-handler/https=firefox-devedition.desktop;
+x-scheme-handler/http=firefox.desktop;firefox-devedition.desktop;
+x-scheme-handler/https=firefox.desktop;firefox-devedition.desktop;
 
 [Default Applications]
 application/json=lvim.desktop;
@@ -100,8 +100,8 @@ video/x-ogm+ogg=mpv.desktop;
 video/x-theora=mpv.desktop;
 video/x-theora+ogg=mpv.desktop;
 x-scheme-handler/devdocs=DevDocs.desktop
-x-scheme-handler/http=firefox-devedition.desktop;
-x-scheme-handler/https=firefox-devedition.desktop;
-x-scheme-handler/youtubemusic=YouTube Music.desktop
-x-scheme-handler/vscode=code-url-handler.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
 x-scheme-handler/nxm=com.nexusmods.app.desktop
+x-scheme-handler/vscode=code-url-handler.desktop;
+x-scheme-handler/youtubemusic=YouTube Music.desktop

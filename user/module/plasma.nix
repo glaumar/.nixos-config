@@ -1,79 +1,79 @@
-{ config, dotfile, pkgs, ... }:
+{ config, dotfile, ... }:
 
 {
   # config example: 
   #   https://github.com/nix-community/plasma-manager/blob/trunk/examples/home.nix
 
-  home.packages = with pkgs.kdePackages; [
-    partitionmanager
-    ksystemlog
-    plasma-browser-integration
-  ];
+  # home.packages = with pkgs.kdePackages; [
+  #   partitionmanager
+  #   ksystemlog
+  #   plasma-browser-integration
+  # ];
 
-  programs.plasma = {
-    enable = true;
-    workspace = {
-      clickItemTo = "open";
-      lookAndFeel = "org.kde.breezedark.desktop";
-    };
+  # programs.plasma = {
+  #   enable = true;
+  #   workspace = {
+  #     clickItemTo = "open";
+  #     lookAndFeel = "org.kde.breezedark.desktop";
+  #   };
 
-    panels = [
-      # Windows-like panel at the bottom
-      {
-        location = "bottom";
-        floating = true;
-        height = 56;
-        widgets = [
-          {
-            kickoff = {
-              sortAlphabetically = true;
-              icon = "nix-snowflake";
-            };
-          }
-          "org.kde.plasma.marginsseparator"
-          "org.kde.plasma.pager"
+    # panels = [
+    #   # Windows-like panel at the bottom
+    #   {
+    #     location = "bottom";
+    #     floating = true;
+    #     height = 56;
+    #     widgets = [
+    #       {
+    #         kickoff = {
+    #           sortAlphabetically = true;
+    #           icon = "nix-snowflake";
+    #         };
+    #       }
+    #       "org.kde.plasma.marginsseparator"
+    #       "org.kde.plasma.pager"
 
-          "org.kde.plasma.panelspacer"
-          {
-            iconTasks =
-              {
-                launchers = [
-                  "applications:org.kde.dolphin.desktop"
-                  # "applications:firefox-esr.desktop"
-                  "applications:firefox.desktop"
-                  # "applications:code-url-handler.desktop"
-                  "applications:code.desktop"
-                ];
-                behavior.middleClickAction = "close";
-              };
-          }
-          "org.kde.plasma.panelspacer"
+    #       "org.kde.plasma.panelspacer"
+    #       {
+    #         iconTasks =
+    #           {
+    #             launchers = [
+    #               "applications:org.kde.dolphin.desktop"
+    #               # "applications:firefox-esr.desktop"
+    #               "applications:firefox.desktop"
+    #               # "applications:code-url-handler.desktop"
+    #               "applications:code.desktop"
+    #             ];
+    #             behavior.middleClickAction = "close";
+    #           };
+    #       }
+    #       "org.kde.plasma.panelspacer"
 
-          {
-            systemTray = {
-              icons.scaleToFit = true;
-            };
-          }
+    #       {
+    #         systemTray = {
+    #           icons.scaleToFit = true;
+    #         };
+    #       }
 
-          {
-            digitalClock = {
-              calendar.firstDayOfWeek = "sunday";
-              time.format = "24h";
-            };
-          }
+    #       {
+    #         digitalClock = {
+    #           calendar.firstDayOfWeek = "sunday";
+    #           time.format = "24h";
+    #         };
+    #       }
 
-          "org.kde.plasma.showdesktop"
-        ];
+    #       "org.kde.plasma.showdesktop"
+    #     ];
 
-      }
-    ];
+    #   }
+    # ];
 
-    configFile = {
-      kwinrc = {
-        Desktops.Number = 2;
-        Wayland.InputMethod = "org.fcitx.Fcitx5.desktop";
-      };
-    };
+    # configFile = {
+    #   kwinrc = {
+    #     Desktops.Number = 2;
+    #     Wayland.InputMethod = "org.fcitx.Fcitx5.desktop";
+    #   };
+    # };
 
     # ~/.config/kglobalshortcutsrc
     # shortcuts = {
@@ -94,191 +94,191 @@
     #   };
     # };
 
-    window-rules = [
-      {
-        description = "Dolphin";
-        match = {
-          window-class = {
-            value = "dolphin";
-            type = "exact";
-          };
-          window-types = [ "normal" ];
-        };
-        apply = {
-          noborder = {
-            value = true;
-            apply = "initially";
-          };
-        };
-      }
+  #   window-rules = [
+  #     {
+  #       description = "Dolphin";
+  #       match = {
+  #         window-class = {
+  #           value = "dolphin";
+  #           type = "exact";
+  #         };
+  #         window-types = [ "normal" ];
+  #       };
+  #       apply = {
+  #         noborder = {
+  #           value = true;
+  #           apply = "initially";
+  #         };
+  #       };
+  #     }
 
-      {
-        description = "Element";
-        match = {
-          window-class = {
-            value = "electron Element";
-            type = "exact";
-          };
-          window-types = [ "normal" ];
-        };
-        apply = {
-          noborder = {
-            value = true;
-            apply = "initially";
-          };
-        };
-      }
+  #     {
+  #       description = "Element";
+  #       match = {
+  #         window-class = {
+  #           value = "electron Element";
+  #           type = "exact";
+  #         };
+  #         window-types = [ "normal" ];
+  #       };
+  #       apply = {
+  #         noborder = {
+  #           value = true;
+  #           apply = "initially";
+  #         };
+  #       };
+  #     }
 
-      {
-        description = "Discord";
-        match = {
-          window-class = {
-            value = "Discord discord";
-            type = "exact";
-          };
-          window-types = [ "normal" ];
-        };
-        apply = {
-          noborder = {
-            value = true;
-            apply = "initially";
-          };
-        };
-      }
+  #     {
+  #       description = "Discord";
+  #       match = {
+  #         window-class = {
+  #           value = "Discord discord";
+  #           type = "exact";
+  #         };
+  #         window-types = [ "normal" ];
+  #       };
+  #       apply = {
+  #         noborder = {
+  #           value = true;
+  #           apply = "initially";
+  #         };
+  #       };
+  #     }
 
-      {
-        description = "org.telegram.desktop";
-        match = {
-          window-class = {
-            value = "telegram-desktop org.telegram.desktop";
-            type = "exact";
-          };
-          window-types = [ "normal" ];
-        };
-        apply = {
-          noborder = {
-            value = true;
-            apply = "initially";
-          };
-        };
-      }
+  #     {
+  #       description = "org.telegram.desktop";
+  #       match = {
+  #         window-class = {
+  #           value = "telegram-desktop org.telegram.desktop";
+  #           type = "exact";
+  #         };
+  #         window-types = [ "normal" ];
+  #       };
+  #       apply = {
+  #         noborder = {
+  #           value = true;
+  #           apply = "initially";
+  #         };
+  #       };
+  #     }
 
-      {
-        description = "org.kde.konsole";
-        match = {
-          window-class = {
-            value = "konsole org.kde.konsole";
-            type = "exact";
-          };
-          window-types = [ "normal" ];
-        };
-        apply = {
-          noborder = {
-            value = true;
-            apply = "initially";
-          };
-        };
-      }
+  #     {
+  #       description = "org.kde.konsole";
+  #       match = {
+  #         window-class = {
+  #           value = "konsole org.kde.konsole";
+  #           type = "exact";
+  #         };
+  #         window-types = [ "normal" ];
+  #       };
+  #       apply = {
+  #         noborder = {
+  #           value = true;
+  #           apply = "initially";
+  #         };
+  #       };
+  #     }
 
-      {
-        description = "firefox dev";
-        match = {
-          window-class = {
-            value = "firefox firefox-devedition";
-            type = "exact";
-          };
-          window-types = [ "normal" ];
-          title = {
-            value = "Firefox Developer Edition";
-            type = "substring";
-          };
-        };
-        apply = {
-          noborder = {
-            value = true;
-            apply = "initially";
-          };
-        };
-      }
+  #     {
+  #       description = "firefox dev";
+  #       match = {
+  #         window-class = {
+  #           value = "firefox firefox-devedition";
+  #           type = "exact";
+  #         };
+  #         window-types = [ "normal" ];
+  #         title = {
+  #           value = "Firefox Developer Edition";
+  #           type = "substring";
+  #         };
+  #       };
+  #       apply = {
+  #         noborder = {
+  #           value = true;
+  #           apply = "initially";
+  #         };
+  #       };
+  #     }
 
-      {
-        description = "firefox esr";
-        match = {
-          window-class = {
-            value = "firefox firefox-esr";
-            type = "exact";
-          };
-          window-types = [ "normal" ];
-          title = {
-            value = "Mozilla Firefox";
-            type = "substring";
-          };
-        };
-        apply = {
-          noborder = {
-            value = true;
-            apply = "initially";
-          };
-        };
-      }
+  #     {
+  #       description = "firefox esr";
+  #       match = {
+  #         window-class = {
+  #           value = "firefox firefox-esr";
+  #           type = "exact";
+  #         };
+  #         window-types = [ "normal" ];
+  #         title = {
+  #           value = "Mozilla Firefox";
+  #           type = "substring";
+  #         };
+  #       };
+  #       apply = {
+  #         noborder = {
+  #           value = true;
+  #           apply = "initially";
+  #         };
+  #       };
+  #     }
 
-      {
-        description = "firefox";
-        match = {
-          window-class = {
-            value = "firefox firefox";
-            type = "exact";
-          };
-          window-types = [ "normal" ];
-          title = {
-            value = "Mozilla Firefox";
-            type = "substring";
-          };
-        };
-        apply = {
-          noborder = {
-            value = true;
-            apply = "initially";
-          };
-        };
-      }
+  #     {
+  #       description = "firefox";
+  #       match = {
+  #         window-class = {
+  #           value = "firefox firefox";
+  #           type = "exact";
+  #         };
+  #         window-types = [ "normal" ];
+  #         title = {
+  #           value = "Mozilla Firefox";
+  #           type = "substring";
+  #         };
+  #       };
+  #       apply = {
+  #         noborder = {
+  #           value = true;
+  #           apply = "initially";
+  #         };
+  #       };
+  #     }
 
-      {
-        description = "Calibre";
-        match = {
-          window-class = {
-            value = "calibre-gui";
-            type = "substring";
-          };
-          window-types = [ "normal" ];
-        };
-        apply = {
-          noborder = {
-            value = true;
-            apply = "initially";
-          };
-        };
-      }
+  #     {
+  #       description = "Calibre";
+  #       match = {
+  #         window-class = {
+  #           value = "calibre-gui";
+  #           type = "substring";
+  #         };
+  #         window-types = [ "normal" ];
+  #       };
+  #       apply = {
+  #         noborder = {
+  #           value = true;
+  #           apply = "initially";
+  #         };
+  #       };
+  #     }
 
-      {
-        description = "YouTube Music";
-        match = {
-          window-class = {
-            value = "electron YouTube Music";
-            type = "exact";
-          };
-          window-types = [ "normal" ];
-        };
-        apply = {
-          noborder = {
-            value = true;
-            apply = "initially";
-          };
-        };
-      }
-    ];
+  #     {
+  #       description = "YouTube Music";
+  #       match = {
+  #         window-class = {
+  #           value = "electron YouTube Music";
+  #           type = "exact";
+  #         };
+  #         window-types = [ "normal" ];
+  #       };
+  #       apply = {
+  #         noborder = {
+  #           value = true;
+  #           apply = "initially";
+  #         };
+  #       };
+  #     }
+  #   ];
 
-  };
+  # };
 
   xdg.configFile = with config.lib.file;  {
     # autostart
@@ -305,6 +305,9 @@
 
     # shortcuts
     "kglobalshortcutsrc".source = mkOutOfStoreSymlink "${dotfile.conf}/kglobalshortcutsrc";
+    
+    # window rule
+    "kwinrulesrc".source = mkOutOfStoreSymlink "${dotfile.conf}/kwinrulesrc";
 
     # fcitx5
     "fcitx5".source = mkOutOfStoreSymlink "${dotfile.conf}/fcitx5";

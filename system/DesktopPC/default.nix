@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{pkgs, ... }:
+{ pkgs, ... }:
 {
   imports =
     [
@@ -10,6 +10,7 @@
       ../module/base_packages.nix
       ../module/locale.nix
       ../module/gc.nix
+      ../module/dns.nix
       ../module/user.nix
       ../module/firefox.nix
       ../module/kde.nix
@@ -22,6 +23,7 @@
       ../module/wireshark.nix
       ../module/apps.nix
       ../module/fonts.nix
+      ../module/develop.nix
       # ../module/nextcloud.nix
 
       # the results of the hardware scan.
@@ -32,8 +34,8 @@
   networking.hostName = "NixOS2501";
 
   # Enable automatic login for the user.
-#   services.displayManager.autoLogin.enable = true;
-#   services.displayManager.autoLogin.user = "glaumar";
+  #   services.displayManager.autoLogin.enable = true;
+  #   services.displayManager.autoLogin.user = "glaumar";
 
   environment.sessionVariables = {
     STEAM_FORCE_DESKTOPUI_SCALING = "2";
@@ -48,6 +50,8 @@
   environment.systemPackages = with pkgs; [
     gparted
   ];
+
+
 
   # List services that you want to enable:
 
