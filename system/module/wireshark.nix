@@ -5,4 +5,6 @@
     package = pkgs.wireshark;
 
   };
+
+  users.users.glaumar.extraGroups = [ "wireshark" ];
 }

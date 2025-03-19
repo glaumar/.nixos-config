@@ -1,12 +1,19 @@
 { ... }:
 {
+  networking = {
+    nameservers = [ "127.0.0.1" "::1" ];
+    # If using dhcpcd:
+    dhcpcd.extraConfig = "nohook resolv.conf";
+    # If using NetworkManager:
+    networkmanager.dns = "none";
+  };
 
   services.dnscrypt-proxy2 = {
     enable = true;
     # Settings reference:
     # https://github.com/DNSCrypt/dnscrypt-proxy/blob/master/dnscrypt-proxy/example-dnscrypt-proxy.toml
     settings = {
-      ipv6_servers = true;
+      # ipv6_servers = true;
       doh_servers = true;
       require_dnssec = true;
       # Add this to test if dnscrypt-proxy is actually used to resolve DNS requests
@@ -21,7 +28,7 @@
       };
 
       # You can choose a specific set of servers from https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
-      # server_names = [ ... ];
+      # server_names = [ "adguard-dns-unfiltered-doh" ];
     };
   };
 }

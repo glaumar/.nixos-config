@@ -1,3 +1,6 @@
+[08df9b6a-c0b7-4e93-8464-d9eeb8241a3e]
+noborderrule=2
+
 [1]
 Description=Dolphin
 noborder=true
@@ -64,8 +67,8 @@ wmclasscomplete=true
 wmclassmatch=2
 
 [General]
-count=8
-rules=c5cf3cf0-d0d5-45d8-880b-656b9324e4f6,1,2,3,4,5,8,9
+count=9
+rules=d8cabf3e-43ce-4e6d-a987-e37404f301d1,c5cf3cf0-d0d5-45d8-880b-656b9324e4f6,1,2,3,4,5,8,9
 
 [c5cf3cf0-d0d5-45d8-880b-656b9324e4f6]
 Description=Youtube Music
@@ -75,4 +78,11 @@ title=YouTube Music
 types=1
 wmclass=electron com.github.th_ch.youtube_music
 wmclasscomplete=true
+wmclassmatch=1
+
+[d8cabf3e-43ce-4e6d-a987-e37404f301d1]
+Description=Application settings for firefox-devedition
+noborder=true
+noborderrule=2
+wmclass=firefox-devedition
 wmclassmatch=1

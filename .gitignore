@@ -48,3 +48,8 @@ dotfiles/.config/YouTube Music/Trust Tokens
 dotfiles/.config/YouTube Music/Trust Tokens-journal
 dotfiles/.config/YouTube Music/blob_storage
 dotfiles/.config/YouTube Music/Singleton*
+
+# wireshark
+dotfiles/.config/wireshark/recent_common
+dotfiles/.config/wireshark/recent
+dotfiles/.config/wireshark/decode_as_entries

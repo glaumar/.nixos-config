@@ -9,6 +9,7 @@
     "YouTube Music".source = mkOutOfStoreSymlink "${dotfile.conf}/YouTube Music";
     "nvim".source = mkOutOfStoreSymlink "${dotfile.conf}/nvim";
     "godot".source = mkOutOfStoreSymlink "${dotfile.conf}/godot";
+    "wireshark".source = mkOutOfStoreSymlink "${dotfile.conf}/wireshark";
   };
 
   # git

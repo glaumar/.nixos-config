@@ -11,6 +11,7 @@
       ../module/locale.nix
       ../module/gc.nix
       ../module/dns.nix
+      # ../module/adguard.nix
       ../module/user.nix
       ../module/firefox.nix
       ../module/kde.nix
