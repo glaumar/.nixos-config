@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   networking = {
     nameservers = [ "127.0.0.1" "::1" ];
@@ -6,6 +6,7 @@
     dhcpcd.extraConfig = "nohook resolv.conf";
     # If using NetworkManager:
     networkmanager.dns = "none";
+
   };
 
   services.dnscrypt-proxy2 = {
@@ -28,7 +29,8 @@
       };
 
       # You can choose a specific set of servers from https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
-      # server_names = [ "adguard-dns-unfiltered-doh" ];
+      server_names = [ "alidns-doh" "cloudflare" ];
     };
   };
+
 }

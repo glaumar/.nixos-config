@@ -4,21 +4,17 @@
 
   environment.systemPackages = with pkgs; [
     #--------------cmdline tools--------------#
-
-    # fun tools
-    cmatrix
-    # cool-retro-term
-    hollywood
-
     file
     neofetch
     btop
     tealdeer
     tree
     pwgen
-    busybox
+    # busybox
     gh # github cli
 
+    # AI
+    ollama
 
     #---------------gui tools--------------#
     # multimedia
@@ -46,19 +42,20 @@
     calibre
     libreoffice-qt6-fresh
     # wpsoffice 
-
-    tor-browser
+    anki
+    logseq
+    joplin-desktop
+    vnote
 
     # bangumi
     # kazumi
     chromium
+    brave
 
     # other
     xorg.xkill
 
-    anki
     rclone
-
   ];
 
   services.syncthing.enable = true;

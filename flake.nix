@@ -81,8 +81,6 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.sharedModules = [
-                # plasma-manager.homeManagerModules.plasma-manager
-                # nix-index-database.hmModules.nix-index
               ];
               home-manager.users.glaumar = import user/DesktopPC/default.nix;
               home-manager.backupFileExtension = "Backup";
@@ -113,8 +111,6 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.sharedModules = [
-                # plasma-manager.homeManagerModules.plasma-manager
-                # nix-index-database.hmModules.nix-index
               ];
               home-manager.users.glaumar = import user/SteamDeck/default.nix;
               home-manager.backupFileExtension = "hm_backup";

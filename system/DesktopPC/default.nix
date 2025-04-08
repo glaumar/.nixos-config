@@ -11,7 +11,6 @@
       ../module/locale.nix
       ../module/gc.nix
       ../module/dns.nix
-      # ../module/adguard.nix
       ../module/user.nix
       ../module/firefox.nix
       ../module/kde.nix
@@ -25,7 +24,7 @@
       ../module/apps.nix
       ../module/fonts.nix
       ../module/develop.nix
-      # ../module/nextcloud.nix
+      ../module/hack.nix
 
       # the results of the hardware scan.
       ./hardware-configuration.nix

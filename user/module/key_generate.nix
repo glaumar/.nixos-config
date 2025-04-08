@@ -4,7 +4,6 @@
 {
   # show public key:
   #   age-keygen -y ~/.config/sops/age/keys.txt
-
   home.activation.glaumar_ssh_keygen = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     #!/usr/bin/env bash
     export PATH="${pkgs.openssh}/bin:$PATH"

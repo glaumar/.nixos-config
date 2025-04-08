@@ -14,6 +14,12 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  # resume device is a swapfile on btrfs
+  # get the offset:
+  #   $ btrfs inspect-internal map-swapfile swapfile
+  boot.resumeDevice = "/dev/disk/by-uuid/75901033-2819-4f9c-8c8a-00432efc78de";
+  boot.kernelParams = [ "resume_offset=183326153" ];
+
   fileSystems."/" =
     {
       device = "/dev/disk/by-uuid/75901033-2819-4f9c-8c8a-00432efc78de";
@@ -35,7 +41,18 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices = [ ];
+
+  # https://btrfs.readthedocs.io/en/latest/Swapfile.html
+  #
+  # create a swapfile on btrfs:
+  #   $ btrfs filesystem mkswapfile --size 48G swapfile
+  #
+  # get the offset:
+  #   $ btrfs inspect-internal map-swapfile swapfile
+  swapDevices = [{
+    device = "/swapfile";
+    size = 48 * 1024;
+  }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

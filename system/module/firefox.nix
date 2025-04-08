@@ -64,7 +64,7 @@
         # check about:config for options.
         Preferences = {
           # make firefox use the kde file picker.
-          "widget.use-xdg-desktop-portal.file-picker" = 1;
+          "widget.use-xdg-desktop-portal.file-picker" = 2;
 
           "browser.aboutConfig.showWarning" = lock-false;
 
@@ -85,6 +85,51 @@
           # hide fullscreen warning
           "full-screen-api.warning.timeout" = "0";
         };
+
+        # https://mozilla.github.io/policy-templates/#searchengines-this-policy-is-only-available-on-the-esr
+        SearchEngines = {
+          # Defualt = "DuckDuckGo";
+          Add = [
+            # {
+            # Name = "Example1";
+            # URLTemplate = "https://www.example.org/q={searchTerms}";
+            # "Method": "GET" | "POST",
+            # "IconURL": "https://www.example.org/favicon.ico",
+            # "Alias": "example",
+            # "Description": "Description",
+            # "PostData": "name=value&q={searchTerms}",
+            # "SuggestURLTemplate": "https://www.example.org/suggestions/q={searchTerms}"
+            # }
+
+
+            {
+              Name = "NixOS Packages";
+              URLTemplate = "https://search.nixos.org/packages?channel=unstable&type=packages&query={searchTerms}";
+              IconURL = "https://search.nixos.org/images/nix-logo.png";
+              Alias = "np";
+            }
+
+            {
+              Name = "NixOS Options";
+              URLTemplate = "https://search.nixos.org/options?channel=unstable&query={searchTerms}";
+              IconURL = "https://search.nixos.org/images/nix-logo.png";
+              Alias = "no";
+            }
+
+            # {
+            #   Name = "duckduck";
+            #   URLTemplate = "https://duckduckgo.com/?q={searchTerms}";
+            #   IconURL = "https://duckduckgo.com/favicon.ico";
+            #   Alias = "ddg";
+            # }
+
+          ];
+
+          Remove = [ "Bing" "Wikipedia (en)" ];
+
+        };
+
+
       };
     };
 
