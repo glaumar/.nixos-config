@@ -17,6 +17,12 @@
 
   # Telegram download folder
   home.file."Downloads/Telegram Desktop/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Downloads/Telegram Desktop/.directory";
+  
+  # firefox download folder
+  home.file."Downloads/firefox/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Downloads/firefox/.directory";
+
+  # qbittorrent download folder
+  home.file."Downloads/qBittorrent/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Downloads/qBittorrent/.directory";
 
   # fix flatpak fonts
   home.activation.link_font_dir = lib.hm.dag.entryAfter [ "writeBoundary" ] ''

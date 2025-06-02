@@ -116,6 +116,19 @@
               Alias = "no";
             }
 
+            {
+              Name = "Bilibili";
+              URLTemplate = "https://search.bilibili.com/all?keyword={searchTerms}";
+              IconURL = "https://i0.hdslb.com/bfs/static/jinkela/long/images/favicon.ico";
+              Alias = "bili";
+            }
+
+            {
+              Name = "Zhihu";
+              URLTemplate = "https://www.zhihu.com/search?q={searchTerms}";
+              IconURL = "https://static.zhihu.com/heifetz/favicon.ico";
+              Alias = "zh";
+            }
             # {
             #   Name = "duckduck";
             #   URLTemplate = "https://duckduckgo.com/?q={searchTerms}";

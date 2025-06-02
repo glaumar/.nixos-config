@@ -17,6 +17,9 @@
     # database for ip2location https://lite.ip2location.com/database-download
     ip2location
     speedtest-rs
+    nmap
+    mdk4
+    aircrack-ng
 
     # Cracking
     hashcat
@@ -25,7 +28,7 @@
     # zip2hashcat
     hcxdumptool
     hcxtools
-    
+
     # Wordlist
     wordlists
 

@@ -13,13 +13,17 @@
     # busybox
     gh # github cli
 
+    rar
+    # unzip
+    # unar
+    # convmv
+
     # AI
     ollama
 
     #---------------gui tools--------------#
     # multimedia
     mpv
-    # yesplaymusic
     youtube-music
     aseprite
     gimp
@@ -35,22 +39,26 @@
     ludusavi
     # nexusmods-app-unfree
 
-    # bittorrent
-    qbittorrent
 
     # office
     calibre
+    readest
     libreoffice-qt6-fresh
     # wpsoffice 
     anki
-    logseq
-    joplin-desktop
-    vnote
+    # vnote
+    obsidian
 
     # bangumi
     # kazumi
     chromium
     brave
+    librewolf
+
+    # downloader
+    yt-dlp
+    qbittorrent
+    motrix
 
     # other
     xorg.xkill
@@ -58,7 +66,10 @@
     rclone
   ];
 
-  services.syncthing.enable = true;
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+  };
 }
 
  
