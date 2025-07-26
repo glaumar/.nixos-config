@@ -20,6 +20,7 @@
 
     # AI
     ollama
+    jan
 
     #---------------gui tools--------------#
     # multimedia
@@ -42,18 +43,18 @@
 
     # office
     calibre
+    mcomix
     readest
     libreoffice-qt6-fresh
     # wpsoffice 
     anki
-    # vnote
     obsidian
 
     # bangumi
     # kazumi
     chromium
-    brave
-    librewolf
+    # brave
+    # librewolf
 
     # downloader
     yt-dlp
@@ -64,6 +65,7 @@
     xorg.xkill
 
     rclone
+
   ];
 
   services.syncthing = {

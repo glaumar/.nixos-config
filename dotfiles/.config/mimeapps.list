@@ -2,7 +2,9 @@
 application/epub+zip=calibre-ebook-viewer.desktop;okularApplication_epub.desktop;calibre-ebook-edit.desktop;calibre-gui.desktop;org.kde.ark.desktop;
 application/json=lvim.desktop;
 application/vnd.amazon.mobi8-ebook=calibre-ebook-viewer.desktop;okularApplication_mobi.desktop;calibre-gui.desktop;writer.desktop;calibre-ebook-edit.desktop;
+application/vnd.comicbook+zip=mcomix.desktop;okularApplication_comicbook.desktop;calibre-gui.desktop;calibre-ebook-viewer.desktop;org.kde.ark.desktop;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=writer.desktop;calibre-ebook-viewer.desktop;calibre-gui.desktop;calibre-ebook-edit.desktop;org.kde.ark.desktop;
+application/x-bittorrent=org.qbittorrent.qBittorrent.desktop;org.kde.kget.desktop;motrix.desktop;
 application/x-desktop=lvim.desktop;org.kde.kate.desktop;org.kde.kwrite.desktop;calibre-gui.desktop;code.desktop;nvim.desktop;calibre-ebook-viewer.desktop;okularApplication_txt.desktop;writer.desktop;
 application/x-docbook+xml=lvim.desktop;
 application/x-matroska=mpv.desktop;
@@ -58,7 +60,9 @@ x-scheme-handler/https=firefox.desktop;firefox-devedition.desktop;
 application/epub+zip=calibre-ebook-viewer.desktop;
 application/json=lvim.desktop;
 application/vnd.amazon.mobi8-ebook=calibre-ebook-viewer.desktop;
+application/vnd.comicbook+zip=mcomix.desktop;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=writer.desktop;
+application/x-bittorrent=org.qbittorrent.qBittorrent.desktop;
 application/x-desktop=lvim.desktop;
 application/x-docbook+xml=lvim.desktop;
 application/x-matroska=mpv.desktop;
@@ -117,3 +121,6 @@ x-scheme-handler/motrix=motrix.desktop
 x-scheme-handler/nxm=com.nexusmods.app.desktop
 x-scheme-handler/vscode=code-url-handler.desktop;
 x-scheme-handler/youtubemusic=YouTube Music.desktop
+
+[Removed Associations]
+application/vnd.comicbook+zip=readest.desktop;

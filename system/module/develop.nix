@@ -55,5 +55,9 @@
     appstream
     just
     direnv
+    
+    # unity
+    unityhub
   ];
+
 }

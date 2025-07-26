@@ -73,6 +73,7 @@
       kdePackages.fcitx5-chinese-addons
       kdePackages.fcitx5-with-addons
       fcitx5-anthy
+      fcitx5-hangul
       fcitx5-pinyin-minecraft
       fcitx5-pinyin-moegirl
       fcitx5-pinyin-zhwiki

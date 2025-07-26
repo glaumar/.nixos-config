@@ -401,37 +401,4 @@
    </metadata>
   </info>
  </separator>
- <bookmark href="kdeconnect://115cda97_8220_44e5_b720_9f99c6bac72a/">
-  <title>Quest3</title>
-  <info>
-   <metadata owner="http://freedesktop.org">
-    <bookmark:icon name="kdeconnect"/>
-   </metadata>
-   <metadata owner="http://www.kde.org">
-    <ID>1748275624/7</ID>
-   </metadata>
-  </info>
- </bookmark>
- <bookmark href="kdeconnect://b8d8f249_21a8_4d87_8903_5dd23facffb5/">
-  <title>Redmi K70E</title>
-  <info>
-   <metadata owner="http://freedesktop.org">
-    <bookmark:icon name="kdeconnect"/>
-   </metadata>
-   <metadata owner="http://www.kde.org">
-    <ID>1748842029/36</ID>
-   </metadata>
-  </info>
- </bookmark>
- <bookmark href="kdeconnect://207d215d_e66a_4467_9e6c_0bb991be7e92/">
-  <title>OnePlus 7 Pro</title>
-  <info>
-   <metadata owner="http://freedesktop.org">
-    <bookmark:icon name="kdeconnect"/>
-   </metadata>
-   <metadata owner="http://www.kde.org">
-    <ID>1748847915/37</ID>
-   </metadata>
-  </info>
- </bookmark>
 </xbel>
