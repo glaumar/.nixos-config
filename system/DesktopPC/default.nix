@@ -22,6 +22,7 @@
       ../module/distrobox.nix
       ../module/wireshark.nix
       ../module/apps.nix
+      ../module/cli_tools.nix
       ../module/fonts.nix
       ../module/develop.nix
       ../module/hack.nix

@@ -3,26 +3,6 @@
 {
 
   environment.systemPackages = with pkgs; [
-    #--------------cmdline tools--------------#
-    file
-    neofetch
-    btop
-    tealdeer
-    tree
-    pwgen
-    # busybox
-    gh # github cli
-
-    rar
-    # unzip
-    # unar
-    # convmv
-
-    # AI
-    ollama
-    jan
-
-    #---------------gui tools--------------#
     # multimedia
     mpv
     youtube-music

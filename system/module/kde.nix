@@ -41,6 +41,9 @@
     partitionmanager
     ksystemlog
     kget
+    
+    # for ark 
+    (pkgs.rar)
   ] ++ lib.optionals config.services.flatpak.enable [
     # make flatpak GTK app follow system theme
     (pkgs.xdg-desktop-portal-gtk)

@@ -9,6 +9,8 @@ DirHistory[$e]=$HOME/tmp/
 BrowseThroughArchives=true
 GlobalViewProps=false
 RememberOpenedTabs=false
+ShowStatusBar=FullWidth
+ShowZoomSlider=true
 Version=202
 ViewPropsTimestamp=2024,7,16,22,11,52.058
 

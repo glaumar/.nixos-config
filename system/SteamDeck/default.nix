@@ -12,17 +12,28 @@
       ../module/locale.nix
       ../module/gc.nix
       ../module/user.nix
+      ../module/dns.nix
       ../module/firefox.nix
       ../module/kde.nix
       ../module/flatpak.nix
-      ../module/peripheral.nix
+      # ../module/peripheral.nix
       ../module/daed.nix
+      # ../module/locate.nix
+      # ../module/distrobox.nix
+      # ../module/wireshark.nix
+      # ../module/apps.nix
+      ../module/cli_tools.nix
+      ../module/fonts.nix
+      # ../module/develop.nix
+      # ../module/hack.nix
+
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
   networking.hostName = "SteamDeck";
+  boot.loader.systemd-boot.configurationLimit = lib.mkForce 3;
 
   services.displayManager.sddm.enable = lib.mkForce false;
   services.displayManager.defaultSession = lib.mkForce "gamescope";
@@ -66,12 +77,32 @@
     STEAM_FORCE_DESKTOPUI_SCALING = "1.5";
   };
 
-  # environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
 
-  #   # TODO: 
-  #   #   sgdboop
-  #   # see https://github.com/NixOS/nixpkgs/pull/269369
-  # ];
+    #   # TODO: 
+    #   #   sgdboop
+    #   # see https://github.com/NixOS/nixpkgs/pull/269369
+
+
+    mpv
+    aseprite
+    ludusavi
+
+    # IDE
+    vscode
+    # nix
+    nil # nix lsp
+    nixpkgs-fmt # nix formatter
+
+    just
+    direnv
+
+  ];
+
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+  };
 
   # List services that you want to enable:
 

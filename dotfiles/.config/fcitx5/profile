@@ -24,12 +24,6 @@ Name=anthy
 # Layout
 Layout=
 
-[Groups/0/Items/3]
-# Name
-Name=hangul
-# Layout
-Layout=
-
 [GroupOrder]
 0=Default
 
