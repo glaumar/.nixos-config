@@ -1,6 +1,12 @@
 { pkgs, ... }:
 {
 
+  imports = [
+    ./cli.nix
+    ./distrobox.nix
+    ./hack.nix
+    ./wireshark.nix
+  ];
 
   environment.systemPackages = with pkgs;[
 
@@ -33,9 +39,10 @@
     rust-analyzer # rust lsp
     rustfmt # rust formatter
 
+
     # godot
     godot_4
-    godot_4-export-templates
+    godot_4-export-templates-bin
 
     # npm and nodejs for slidev
     nodePackages.nodejs
@@ -55,7 +62,7 @@
     appstream
     just
     direnv
-    
+
     # unity
     unityhub
   ];

@@ -82,8 +82,12 @@
           "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = lock-false;
           "browser.newtabpage.activity-stream.section.highlights.includeVisited" = lock-false;
 
+          "browser.tabs.closeTabByDblclick" = lock-true;
+          "browser.tabs.closeWindowWithLastTab" = lock-false;
           # hide fullscreen warning
           "full-screen-api.warning.timeout" = "0";
+          "full-screen-api.warning.delay" = "-1";
+          
         };
 
         # https://mozilla.github.io/policy-templates/#searchengines-this-policy-is-only-available-on-the-esr
@@ -124,9 +128,16 @@
             }
 
             {
+              Name = "YouTube";
+              URLTemplate = "https://www.youtube.com/results?search_query={searchTerms}";
+              IconURL = "https://www.youtube.com/favicon.ico";
+              Alias = "yt";
+            }
+
+            {
               Name = "Zhihu";
               URLTemplate = "https://www.zhihu.com/search?q={searchTerms}";
-              IconURL = "https://static.zhihu.com/heifetz/favicon.ico";
+              IconURL = "https://www.youtube.com/s/desktop/cd5cb204/img/logos/favicon_32x32.png";
               Alias = "zh";
             }
             # {

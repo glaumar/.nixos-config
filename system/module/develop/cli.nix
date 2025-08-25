@@ -3,15 +3,14 @@
 {
 
   environment.systemPackages = with pkgs; [
-    #--------------cmdline tools--------------#
+    xorg.xkill
+    gh # github cli
     file
     neofetch
     btop
     tealdeer
     tree
     pwgen
-    gh # github cli
-    xorg.xkill
   ];
 }
 

@@ -66,9 +66,17 @@ wmclass=calibre-gui
 wmclasscomplete=true
 wmclassmatch=2
 
+[9dd75026-9a7f-4698-b111-02f90327d657]
+Description=Application settings for obsidian
+desktops=\\0
+desktopsrule=3
+wmclass=electron obsidian
+wmclasscomplete=true
+wmclassmatch=1
+
 [General]
-count=9
-rules=d8cabf3e-43ce-4e6d-a987-e37404f301d1,c5cf3cf0-d0d5-45d8-880b-656b9324e4f6,1,2,3,4,5,8,9
+count=10
+rules=9dd75026-9a7f-4698-b111-02f90327d657,d8cabf3e-43ce-4e6d-a987-e37404f301d1,c5cf3cf0-d0d5-45d8-880b-656b9324e4f6,1,2,3,4,5,8,9
 
 [c5cf3cf0-d0d5-45d8-880b-656b9324e4f6]
 Description=Youtube Music

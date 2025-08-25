@@ -66,11 +66,11 @@
       autoUpdate = true;
     };
 
-    # decky-loader = {
-    #   enable = true;
-    #   user = "glaumar";
-    # extraPackages = with pkgs; [ python3 ];
-    # };
+    decky-loader = {
+      enable = true;
+      user = "glaumar";
+    extraPackages = with pkgs; [ python3 ];
+    };
   };
 
   environment.sessionVariables = {
@@ -78,11 +78,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-
-    #   # TODO: 
-    #   #   sgdboop
-    #   # see https://github.com/NixOS/nixpkgs/pull/269369
-
 
     mpv
     aseprite

@@ -27,6 +27,15 @@
    </metadata>
   </info>
  </bookmark>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/freedesktop/UDisks2/block_devices/nvme0n1p2</UDI>
+    <isSystemItem>true</isSystemItem>
+    <uuid>75901033-2819-4f9c-8c8a-00432efc78de</uuid>
+   </metadata>
+  </info>
+ </separator>
  <bookmark href="file:///home/glaumar/Code">
   <title>Code</title>
   <info>
@@ -328,15 +337,6 @@
  <separator>
   <info>
    <metadata owner="http://www.kde.org">
-    <UDI>/org/freedesktop/UDisks2/block_devices/nvme0n1p2</UDI>
-    <isSystemItem>true</isSystemItem>
-    <uuid>75901033-2819-4f9c-8c8a-00432efc78de</uuid>
-   </metadata>
-  </info>
- </separator>
- <separator>
-  <info>
-   <metadata owner="http://www.kde.org">
     <UDI>/org/kde/fstab/fuse.cryfs/home/glaumar/.config/sops/age</UDI>
     <isSystemItem>true</isSystemItem>
    </metadata>
@@ -351,6 +351,14 @@
    </metadata>
   </info>
  </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:01.2/0000:02:00.0/usb1/1-2</UDI>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </separator>
  <bookmark href="kdeconnect://115cda97_8220_44e5_b720_9f99c6bac72a/">
   <title>Quest3</title>
   <info>
@@ -358,7 +366,18 @@
     <bookmark:icon name="kdeconnect"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1738738915/1</ID>
+    <ID>1756019577/33</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="">
+  <title>Project Folder</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="folder-favorites"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <OnlyInApp>kdenlive</OnlyInApp>
    </metadata>
   </info>
  </bookmark>
@@ -369,7 +388,7 @@
     <bookmark:icon name="kdeconnect"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1753587809/0</ID>
+    <ID>1756093858/0</ID>
    </metadata>
   </info>
  </bookmark>

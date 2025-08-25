@@ -7,7 +7,7 @@
 
   sops.secrets.wing_db = {
     format = "binary";
-    sopsFile = ../../secrets/daed/wing.db;
+    sopsFile = ../../../secrets/daed/wing.db;
     restartUnits = [ "daed.service" ];
   };
 

@@ -6,26 +6,17 @@
 {
   imports =
     [
-      ../module/boot.nix
-      ../module/base_packages.nix
-      ../module/locale.nix
-      ../module/gc.nix
-      ../module/dns.nix
-      ../module/user.nix
-      ../module/firefox.nix
-      ../module/kde.nix
-      ../module/flatpak.nix
-      ../module/peripheral.nix
-      ../module/daed.nix
-      ../module/steam.nix
-      ../module/locate.nix
-      ../module/distrobox.nix
-      ../module/wireshark.nix
-      ../module/apps.nix
-      ../module/cli_tools.nix
-      ../module/fonts.nix
-      ../module/develop.nix
-      ../module/hack.nix
+      ../module/tmp.nix
+
+      ../module/system/default.nix
+      ../module/network/default.nix
+      ../module/multimedia/default.nix
+      ../module/multimedia/tools.nix
+      ../module/game/default.nix
+      ../module/develop/default.nix
+      ../module/office/default.nix
+      ../module/other_apps/default.nix
+
 
       # the results of the hardware scan.
       ./hardware-configuration.nix
