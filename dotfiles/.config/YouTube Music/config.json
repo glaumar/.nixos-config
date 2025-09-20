@@ -41,12 +41,8 @@
 		"discord": {
 			"listenAlong": true
 		},
-		"lyrics-genius": {
-			"enabled": false,
-			"romanizedLyrics": true
-		},
 		"synced-lyrics": {
-			"enabled": true,
+			"enabled": false,
 			"preciseTiming": true,
 			"showLyricsEvenIfInexact": true,
 			"showTimeCodes": false,
@@ -158,7 +154,7 @@
 	},
 	"__internal__": {
 		"migrations": {
-			"version": "3.9.0"
+			"version": "3.10.0"
 		}
 	}
 }

@@ -11,8 +11,9 @@
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [ "kvm-amd" "nct6775" ];
   boot.extraModulePackages = [ ];
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # resume device is a swapfile on btrfs
   # get the offset:
@@ -32,6 +33,13 @@
       device = "/dev/disk/by-uuid/2d91023f-b583-46e0-bdbd-3bdfbacafc31";
       fsType = "ext4";
       options = [ "defaults" "noatime" "data=ordered" "nofail" ];
+    };
+
+  fileSystems."/home/glaumar/Games" =
+    {
+      device = "/dev/disk/by-uuid/b4b64c00-0d88-4c9a-8d76-5aaee8d8d61d";
+      fsType = "btrfs";
+      # options = [ "subvol=@" ];
     };
 
   fileSystems."/boot" =
@@ -64,4 +72,7 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  # hardware.enableAllFirmware = true;
+  # hardware.enableRedistributableFirmware = true;
 }

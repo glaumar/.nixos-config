@@ -4,6 +4,7 @@
 
   imports = [
     ./speech_note.nix
+    # ../system/flatpak.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -13,10 +14,13 @@
     gimp
     kdePackages.kdenlive
     handbrake
-    easytag
-    puddletag
+    kid3
+    subtitlecomposer
   ];
 
+  # services.flatpak.packages = [
+  #   { appId = "org.kde.kdenlive"; origin = "flathub"; }
+  # ];
 }
 
  

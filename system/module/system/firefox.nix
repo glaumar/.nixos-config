@@ -137,7 +137,7 @@
             {
               Name = "Zhihu";
               URLTemplate = "https://www.zhihu.com/search?q={searchTerms}";
-              IconURL = "https://www.youtube.com/s/desktop/cd5cb204/img/logos/favicon_32x32.png";
+              IconURL = "https://static.zhihu.com/heifetz/favicon.ico";
               Alias = "zh";
             }
             # {

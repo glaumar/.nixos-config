@@ -44,6 +44,7 @@
     
     # for ark 
     (pkgs.rar)
+    
   ] ++ lib.optionals config.services.flatpak.enable [
     # make flatpak GTK app follow system theme
     (pkgs.xdg-desktop-portal-gtk)
@@ -51,9 +52,9 @@
     kdenetwork-filesharing
   ];
 
-  environment.plasma6.excludePackages = with pkgs; [
-    kdePackages.elisa
-  ];
+  # environment.plasma6.excludePackages = with pkgs; [
+  #   kdePackages.elisa
+  # ];
 
   environment.variables = {
     # Using the KDE Wallet to store ssh key passphrases
@@ -70,7 +71,6 @@
   i18n.inputMethod = {
     type = "fcitx5";
     enable = true;
-    fcitx5.plasma6Support = true;
     fcitx5.waylandFrontend = true;
     fcitx5.addons = with pkgs; [
       kdePackages.fcitx5-chinese-addons

@@ -11,6 +11,9 @@
     tealdeer
     tree
     pwgen
+    
+    # hardware
+    dmidecode
   ];
 }
 

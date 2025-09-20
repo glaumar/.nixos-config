@@ -13,10 +13,10 @@
   };
   
 
-  programs.alvr = {
-    enable = true;
-    openFirewall = true;
-  };
+  # programs.alvr = {
+  #   enable = true;
+  #   openFirewall = true;
+  # };
 
 # Notes:
 # use follow launch option to fix steamvr :

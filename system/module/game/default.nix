@@ -9,6 +9,9 @@
   environment.systemPackages = with pkgs; [
     glaumarPkgs.qrookie
     ludusavi
+    
+    lsfg-vk
+    lsfg-vk-ui
   ];
 
 }

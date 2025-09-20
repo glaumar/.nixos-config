@@ -9,7 +9,7 @@
 
   };
 
-  services.dnscrypt-proxy2 = {
+  services.dnscrypt-proxy = {
     enable = true;
     # Settings reference:
     # https://github.com/DNSCrypt/dnscrypt-proxy/blob/master/dnscrypt-proxy/example-dnscrypt-proxy.toml
@@ -29,7 +29,7 @@
       };
 
       # You can choose a specific set of servers from https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
-      # server_names = [ "alidns-doh" "cloudflare" ];
+      # server_names = [ "cloudflare" ];
       server_names = [ "alidns-doh" ];
     };
   };

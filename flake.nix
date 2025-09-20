@@ -43,7 +43,6 @@
     };
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-
   };
 
   outputs =
@@ -51,7 +50,7 @@
     , home-manager
     , daeuniverse
     , jovian-nixos
-    # , plasma-manager
+      # , plasma-manager
     , sops-nix
     , glaumar_nur
     , nix-index-database

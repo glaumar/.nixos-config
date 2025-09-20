@@ -9,6 +9,7 @@
     ./locate.nix
     ./secrets.nix
     ./user.nix
+    ./fwupd.nix
 
     ./kde.nix
     ./base_packages.nix

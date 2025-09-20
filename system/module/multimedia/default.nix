@@ -10,6 +10,7 @@
     mpv
     haruna
     youtube-music
+    splayer
     qbittorrent
   ];
 }

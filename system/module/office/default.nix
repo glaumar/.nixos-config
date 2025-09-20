@@ -6,7 +6,7 @@
     calibre
     mcomix
     libreoffice-qt6-fresh
-    anki
+    anki-bin
     obsidian
     jhentai
     readest
