@@ -3,13 +3,16 @@ MenuBar=Disabled
 [ExtractDialog]
 2194x1234 screen: Height=617
 2194x1234 screen: Width=1393
-DirHistory[$e]=$HOME/tmp/
+DirHistory[$e]=/DATA/ASMR/,$HOME/tmp/,$HOME/DATA/ASMR/青夏おま○こフレンズ/[RJ335635] 青夏おま○こフレンズートライアングルー【フォーリーサウンド】/
 
 [General]
 BrowseThroughArchives=true
+FilterBar=true
 GlobalViewProps=false
 RememberOpenedTabs=false
+ShowFullPath=true
 ShowStatusBar=FullWidth
+ShowToolTips=true
 ShowZoomSlider=true
 Version=202
 ViewPropsTimestamp=2024,7,16,22,11,52.058
@@ -17,6 +20,9 @@ ViewPropsTimestamp=2024,7,16,22,11,52.058
 [IconsMode]
 IconSize=96
 PreviewSize=112
+
+[InformationPanel]
+previewsAutoPlay=true
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false

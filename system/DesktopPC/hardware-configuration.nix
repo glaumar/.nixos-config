@@ -28,7 +28,7 @@
       options = [ "subvol=@" ];
     };
 
-  fileSystems."/home/glaumar/DATA" =
+  fileSystems."/DATA" =
     {
       device = "/dev/disk/by-uuid/2d91023f-b583-46e0-bdbd-3bdfbacafc31";
       fsType = "ext4";

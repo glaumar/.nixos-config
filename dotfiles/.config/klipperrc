@@ -1,4 +1,9 @@
+[Actions]
+EnableMagicMimeActions=false
+
 [General]
 IgnoreImages=false
 MaxClipItems=2048
-Version=6.1.2
+NoActionsForWM_CLASS=
+URLGrabberEnabled=true
+Version=6.4.5

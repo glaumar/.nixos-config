@@ -13,6 +13,8 @@
   # environment.systemPackages = with pkgs; [
   #   wivrn
   # ];
+  
+  # WAYLAND_DISPLAY='' ~/.local/share/Steam/steamapps/common/SteamVR/bin/vrmonitor.sh %command% 
 
   services.avahi.enable = true;
   services.avahi.publish.userServices = true;

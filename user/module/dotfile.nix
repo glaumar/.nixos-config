@@ -24,6 +24,9 @@
   # qbittorrent download folder
   home.file."Downloads/qBittorrent/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Downloads/qBittorrent/.directory";
 
+  # KDE Connect download folder
+  home.file."Downloads/KDE Connect/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Downloads/KDE Connect/.directory";
+
   # fix flatpak fonts
   home.activation.link_font_dir = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     #!/usr/bin/env bash

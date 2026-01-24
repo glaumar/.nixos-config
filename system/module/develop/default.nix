@@ -65,6 +65,10 @@
 
     # unity
     unityhub
+    
+
+    # latex
+    texliveFull
   ];
 
 }

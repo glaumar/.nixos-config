@@ -4,6 +4,7 @@
 
   imports = [
     ./kazumi.nix
+    ./suwayomi.nix
   ];
 
   environment.systemPackages = with pkgs; [

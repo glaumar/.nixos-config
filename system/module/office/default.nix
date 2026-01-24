@@ -4,12 +4,19 @@
 
   environment.systemPackages = with pkgs; [
     calibre
-    mcomix
+    # mcomix
     libreoffice-qt6-fresh
     anki-bin
     obsidian
-    jhentai
-    readest
+    # readest
+  ];
+
+  imports = [
+    ../system/flatpak.nix
+  ];
+
+  services.flatpak.packages = [
+    { appId = "com.bilingify.readest"; origin = "flathub"; }
   ];
 }
 

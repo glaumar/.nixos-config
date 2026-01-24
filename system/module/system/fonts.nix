@@ -6,7 +6,7 @@
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
-    noto-fonts-emoji
+    noto-fonts-color-emoji
 
     # nerd fonts
     nerd-fonts.noto
@@ -21,9 +21,9 @@
 
     # Microsoft fonts
     corefonts
-    vistafonts
-    vistafonts-cht
-    vistafonts-chs
+    vista-fonts
+    vista-fonts-cht
+    vista-fonts-chs
   ];
 
   fonts.fontconfig = {

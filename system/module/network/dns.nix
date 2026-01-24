@@ -29,8 +29,8 @@
       };
 
       # You can choose a specific set of servers from https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
-      # server_names = [ "cloudflare" ];
-      server_names = [ "alidns-doh" ];
+      server_names = [ "cloudflare" ];
+      # server_names = [ "alidns-doh" ];
     };
   };
 

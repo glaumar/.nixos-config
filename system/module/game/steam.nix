@@ -20,7 +20,12 @@
 
 # Notes:
 # use follow launch option to fix steamvr :
+# sudo setcap CAP_SYS_NICE=eip ~/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/vrcompositor-launcher
+
+#  use follow launch option to fix steamvr wayland :
 #   WAYLAND_DISPLAY='' ~/.local/share/Steam/steamapps/common/SteamVR/bin/vrmonitor.sh %command%
+
+
 
 
 }

@@ -49,8 +49,8 @@ video/x-ogm=mpv.desktop;
 video/x-ogm+ogg=mpv.desktop;
 video/x-theora=mpv.desktop;
 video/x-theora+ogg=mpv.desktop;
-x-scheme-handler/http=firefox.desktop;firefox-devedition.desktop;
-x-scheme-handler/https=firefox.desktop;firefox-devedition.desktop;
+x-scheme-handler/http=firefox-devedition.desktop;chromium-browser.desktop;firefox.desktop;
+x-scheme-handler/https=firefox-devedition.desktop;chromium-browser.desktop;firefox.desktop;
 
 [Default Applications]
 application/epub+zip=calibre-ebook-viewer.desktop;
@@ -103,8 +103,8 @@ video/x-ogm+ogg=mpv.desktop;
 video/x-theora=mpv.desktop;
 video/x-theora+ogg=mpv.desktop;
 x-scheme-handler/devdocs=DevDocs.desktop
-x-scheme-handler/http=firefox.desktop;
-x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/http=firefox-devedition.desktop;
+x-scheme-handler/https=firefox-devedition.desktop;
 x-scheme-handler/logseq=Logseq.desktop
 x-scheme-handler/magnet=motrix.desktop
 x-scheme-handler/mo=motrix.desktop
@@ -112,6 +112,7 @@ x-scheme-handler/motrix=motrix.desktop
 x-scheme-handler/nxm=com.nexusmods.app.desktop
 x-scheme-handler/vscode=code-url-handler.desktop;
 x-scheme-handler/youtubemusic=YouTube Music.desktop
+x-scheme-handler/remnote=remnote.desktop
 
 [Removed Associations]
 application/vnd.comicbook+zip=readest.desktop;

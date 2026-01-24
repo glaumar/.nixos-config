@@ -7,7 +7,7 @@
     # fun tools
     cmatrix
     # cool-retro-term
-    hollywood
+    # hollywood
 
     # Network
     whois

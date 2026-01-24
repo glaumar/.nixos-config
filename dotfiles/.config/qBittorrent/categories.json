@@ -5,10 +5,10 @@
     "AdultVideo": {
         "save_path": "/home/glaumar/Downloads/qBittorrent/AV"
     },
+    "Film": {
+        "save_path": "/home/glaumar/Videos/Film"
+    },
     "Video": {
         "save_path": "/home/glaumar/Videos"
-    },
-    "bangumi": {
-        "save_path": "/home/glaumar/Videos/bangumi"
     }
 }
