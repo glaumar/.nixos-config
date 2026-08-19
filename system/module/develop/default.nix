@@ -6,26 +6,32 @@
     ./distrobox.nix
     ./hack.nix
     ./wireshark.nix
+    ./reqable.nix
   ];
 
-  environment.systemPackages = with pkgs;[
+  environment.systemPackages = with pkgs; [
+
+    # AI
+    opencode
+    opencode-desktop
 
     # IDE
     vscode
 
     # vim ide
-    lunarvim
-    wl-clipboard-rs
+    # lunarvim
+    # wl-clipboard-rs
 
     #--------------programming languages and tools--------------#
     # nix
     nil # nix lsp
-    nixpkgs-fmt # nix formatter
+    # nixpkgs-fmt # nix formatter
+    nixfmt
 
     # lua
     lua-language-server
 
-    lemminx # xml lsp 
+    lemminx # xml lsp
     # yaml-language-server
 
     # cpp
@@ -39,13 +45,12 @@
     rust-analyzer # rust lsp
     rustfmt # rust formatter
 
-
     # godot
     godot_4
     godot_4-export-templates-bin
 
     # npm and nodejs for slidev
-    nodePackages.nodejs
+    nodejs
 
     # js/ts
     yarn
@@ -56,16 +61,19 @@
     dotnetPackages.Nuget
     omnisharp-roslyn # csharp lsp
 
+    #Jupyter
+    # python314
+    # python314Packages.pip
+    # python314Packages.jupyter
+    jupyter
+
     #--------------other tools--------------#
     android-tools
     desktop-file-utils
     appstream
     just
+    just-lsp
     direnv
-
-    # unity
-    unityhub
-    
 
     # latex
     texliveFull

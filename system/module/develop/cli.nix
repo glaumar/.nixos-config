@@ -3,10 +3,11 @@
 {
 
   environment.systemPackages = with pkgs; [
-    xorg.xkill
+    xkill
     gh # github cli
     file
-    neofetch
+    # neofetch
+    fastfetch
     btop
     tealdeer
     tree

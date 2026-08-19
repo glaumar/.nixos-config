@@ -30,7 +30,7 @@
     hcxtools
 
     # Wordlist
-    wordlists
+    # wordlists
 
 
     # web

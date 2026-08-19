@@ -9,3 +9,12 @@ sync_daed_conf:
 
 edit_secrets:
   sops secrets/default.yaml
+  
+repair:
+  sudo nix-store --verify --check-contents --repair 
+  
+list-generations:
+  nixos-rebuild list-generations
+  
+delete-generation:
+  sudo nix-collect-garbage --delete-older-than 90d

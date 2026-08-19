@@ -6,18 +6,24 @@
     calibre
     # mcomix
     libreoffice-qt6-fresh
-    anki-bin
+    libreoffice-fresh
+    anki
     obsidian
-    # readest
+    readest
+    logseq
+    nextcloud-client
+    zotero
+    super-productivity
   ];
 
-  imports = [
-    ../system/flatpak.nix
-  ];
+  # imports = [
+  #   ../system/flatpak.nix
+  # ];
 
-  services.flatpak.packages = [
-    { appId = "com.bilingify.readest"; origin = "flathub"; }
-  ];
+  # services.flatpak.packages = [
+  #   {
+  #     appId = "com.super_productivity.SuperProductivity";
+  #     origin = "flathub";
+  #   }
+  # ];
 }
-
- 

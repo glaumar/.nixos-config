@@ -105,6 +105,17 @@
    </metadata>
   </info>
  </bookmark>
+ <bookmark href="file:///home/glaumar/Logseq">
+  <title>Logseq</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="logseq"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1781900774/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
  <bookmark href="file:///home/glaumar/Music">
   <title>Music</title>
   <info>
@@ -411,7 +422,7 @@
  <separator>
   <info>
    <metadata owner="http://www.kde.org">
-    <UDI>/org/freedesktop/UDisks2/block_devices/sdb4</UDI>
+    <UDI>/org/freedesktop/UDisks2/block_devices/sdc4</UDI>
     <isSystemItem>true</isSystemItem>
     <uuid>17d46966-cb62-416d-8c9d-603d5fde06c4</uuid>
    </metadata>
@@ -420,7 +431,7 @@
  <separator>
   <info>
    <metadata owner="http://www.kde.org">
-    <UDI>/org/freedesktop/UDisks2/block_devices/sdb2</UDI>
+    <UDI>/org/freedesktop/UDisks2/block_devices/sdc2</UDI>
     <isSystemItem>true</isSystemItem>
     <uuid>4934-f915</uuid>
    </metadata>
@@ -429,7 +440,7 @@
  <separator>
   <info>
    <metadata owner="http://www.kde.org">
-    <UDI>/org/freedesktop/UDisks2/block_devices/sdb5</UDI>
+    <UDI>/org/freedesktop/UDisks2/block_devices/sdc5</UDI>
     <isSystemItem>true</isSystemItem>
     <uuid>952128a7-3815-484e-9fe9-423858e036b3</uuid>
    </metadata>
@@ -438,12 +449,63 @@
  <separator>
   <info>
    <metadata owner="http://www.kde.org">
-    <UDI>/org/freedesktop/UDisks2/block_devices/sdb3</UDI>
+    <UDI>/org/freedesktop/UDisks2/block_devices/sdc3</UDI>
     <isSystemItem>true</isSystemItem>
     <uuid>304d3526-c99e-45e9-81b5-b8cf4367a4a7</uuid>
    </metadata>
   </info>
  </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:08.1/0000:0b:00.3/usb3/3-1</UDI>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/kde/fstab/fuse.gocryptfs/home/glaumar/Vaults/RecoveryCode</UDI>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/kde/fstab/fuse.gocryptfs/home/glaumar/Vaults/nextcloud</UDI>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:01.2/0000:02:00.0/usb2/2-3</UDI>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:01.2/0000:02:00.0/usb1/1-7/1-7.1</UDI>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </separator>
+ <bookmark href="kdeconnect://207d215d_e66a_4467_9e6c_0bb991be7e92/">
+  <title>OnePlus 7 Pro</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="kdeconnect"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1787181145/0</ID>
+   </metadata>
+  </info>
+ </bookmark>
  <bookmark href="kdeconnect://395ef171461a47a8b13d3eae2e8dde56/">
   <title>Galaxy XCover6 Pro</title>
   <info>
@@ -451,7 +513,7 @@
     <bookmark:icon name="kdeconnect"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1769129596/199</ID>
+    <ID>1787181146/1</ID>
    </metadata>
   </info>
  </bookmark>

@@ -40,6 +40,14 @@
 
   xdg.portal = {
     enable = true;
-    config.common.default = [ "gtk" ];
+    # config.common.default = [ "gtk" ];
+    xdgOpenUsePortal = true;
+    
+    config.common.default = [ "kde" ];
   };
+  
+  # https://discourse.nixos.org/t/flatpak-gtk-apps-has-no-fonts/77401
+  # fix gtk app font issue:
+  #   rm -rf ~/.cache/fontconfig/
+  #   flatpak list --app --columns=application | xargs -I {} flatpak run --command=fc-cache {} -r
 }

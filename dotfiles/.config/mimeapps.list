@@ -51,6 +51,8 @@ video/x-theora=mpv.desktop;
 video/x-theora+ogg=mpv.desktop;
 x-scheme-handler/http=firefox-devedition.desktop;chromium-browser.desktop;firefox.desktop;
 x-scheme-handler/https=firefox-devedition.desktop;chromium-browser.desktop;firefox.desktop;
+x-scheme-handler/tg=org.telegram.desktop.desktop;
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;
 
 [Default Applications]
 application/epub+zip=calibre-ebook-viewer.desktop;
@@ -113,6 +115,8 @@ x-scheme-handler/nxm=com.nexusmods.app.desktop
 x-scheme-handler/vscode=code-url-handler.desktop;
 x-scheme-handler/youtubemusic=YouTube Music.desktop
 x-scheme-handler/remnote=remnote.desktop
+x-scheme-handler/tg=org.telegram.desktop.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop
 
 [Removed Associations]
 application/vnd.comicbook+zip=readest.desktop;

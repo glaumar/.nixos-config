@@ -28,12 +28,12 @@
   home.file."Downloads/KDE Connect/.directory".source = config.lib.file.mkOutOfStoreSymlink "${dotfile.home}/Downloads/KDE Connect/.directory";
 
   # fix flatpak fonts
-  home.activation.link_font_dir = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    #!/usr/bin/env bash
-    if [ ! -L ~/.local/share/fonts ];then
-      run ln -s /run/current-system/sw/share/X11/fonts ~/.local/share/fonts
-    fi
-  '';
+  # home.activation.link_font_dir = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  #   #!/usr/bin/env bash
+  #   if [ ! -L ~/.local/share/fonts ];then
+  #     run ln -s /run/current-system/sw/share/X11/fonts ~/.local/share/fonts
+  #   fi
+  # '';
 
   # xdg.dataFile."applications/nexusmods-app.desktop".text = ''
   #   [Desktop Entry]

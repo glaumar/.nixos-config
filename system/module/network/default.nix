@@ -2,7 +2,8 @@
 
 {
   imports = [
-    ./dns.nix
+    # ./dns.nix
     ./daed.nix
+    ./freenet.nix
   ];
 }

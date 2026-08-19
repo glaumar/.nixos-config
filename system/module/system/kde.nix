@@ -36,18 +36,23 @@
 
     # dev
     plasma-sdk
-    
+
     # utilities
     partitionmanager
     ksystemlog
     kget
-    
+    filelight
+    kamoso
+
     # for ark 
     (pkgs.rar)
-    
+
+    (pkgs.klassy)
+
   ] ++ lib.optionals config.services.flatpak.enable [
     # make flatpak GTK app follow system theme
     (pkgs.xdg-desktop-portal-gtk)
+    xdg-desktop-portal-kde
   ] ++ lib.optionals config.services.samba.enable [
     kdenetwork-filesharing
   ];
@@ -73,6 +78,8 @@
     enable = true;
     fcitx5.waylandFrontend = true;
     fcitx5.addons = with pkgs; [
+      # fcitx5-gtk
+      # kdePackages.fcitx5-qt
       kdePackages.fcitx5-chinese-addons
       kdePackages.fcitx5-with-addons
       fcitx5-anthy
@@ -86,5 +93,7 @@
   environment.sessionVariables = {
     # enable wayland for electron
     NIXOS_OZONE_WL = "1";
+    # enable wayland for anki
+    # ANKI_WAYLAND = 1;
   };
 }

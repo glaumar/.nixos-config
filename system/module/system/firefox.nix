@@ -48,10 +48,10 @@
           };
 
           # proton pass
-          "78272b6fa58f4a1abaac99321d503a20@proton.me" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/proton-pass/latest.xpi";
-            installation_mode = "force_installed";
-          };
+          # "78272b6fa58f4a1abaac99321d503a20@proton.me" = {
+          #   install_url = "https://addons.mozilla.org/firefox/downloads/latest/proton-pass/latest.xpi";
+          #   installation_mode = "force_installed";
+          # };
 
           # plasma-integration
           "plasma-browser-integration@kde.org" = {
@@ -138,7 +138,7 @@
               Name = "Zhihu";
               URLTemplate = "https://www.zhihu.com/search?q={searchTerms}";
               IconURL = "https://static.zhihu.com/heifetz/favicon.ico";
-              Alias = "zh";
+              Alias = "zhi";
             }
             # {
             #   Name = "duckduck";

@@ -2,23 +2,30 @@
 
 {
 
-  imports = [
-    ../system/flatpak.nix
-  ];
+  # imports = [
+  #   ../system/flatpak.nix
+  # ];
 
-  services.flatpak.packages = [
-    { appId = "io.github.wivrn.wivrn"; origin = "flathub"; }
-  ];
+  # services.flatpak.packages = [
+  #   { appId = "io.github.wivrn.wivrn"; origin = "flathub"; }
+  # ];
 
   # environment.systemPackages = with pkgs; [
   #   wivrn
   # ];
-  
+
   # WAYLAND_DISPLAY='' ~/.local/share/Steam/steamapps/common/SteamVR/bin/vrmonitor.sh %command% 
 
-  services.avahi.enable = true;
-  services.avahi.publish.userServices = true;
-  networking.firewall.allowedTCPPorts = [ 9757 ];
-  networking.firewall.allowedUDPPorts = [ 9757 ];
+  services.wivrn = {
+    enable = true;
+    openFirewall = true;
+    autoStart = true;
+    highPriority = true;
+  };
+
+  # services.avahi.enable = true;
+  # services.avahi.publish.userServices = true;
+  # networking.firewall.allowedTCPPorts = [ 9757 ];
+  # networking.firewall.allowedUDPPorts = [ 9757 ];
 
 }

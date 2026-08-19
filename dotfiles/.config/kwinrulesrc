@@ -37,6 +37,14 @@ wmclass=telegram-desktop org.telegram.desktop
 wmclasscomplete=true
 wmclassmatch=1
 
+[45dc6131-c990-4e11-9d60-3c33634ab566]
+Description=Application settings for readest
+noborder=true
+noborderrule=2
+wmclass=\sreadest
+wmclasscomplete=true
+wmclassmatch=1
+
 [5]
 Description=org.kde.konsole
 noborder=true
@@ -57,6 +65,14 @@ wmclass=firefox firefox
 wmclasscomplete=true
 wmclassmatch=1
 
+[82bbcaa1-6aeb-431c-bed9-ac478b3beb15]
+Description=Application settings for Logseq
+desktops=\\0
+desktopsrule=3
+wmclass=electron Logseq
+wmclasscomplete=true
+wmclassmatch=1
+
 [9]
 Description=Calibre
 noborder=true
@@ -70,8 +86,8 @@ wmclassmatch=2
 desktopsrule=3
 
 [General]
-count=9
-rules=d8cabf3e-43ce-4e6d-a987-e37404f301d1,c5cf3cf0-d0d5-45d8-880b-656b9324e4f6,1,2,3,4,5,8,9
+count=13
+rules=f78b7c91-d2d6-4bc3-b47c-b64ccfc7d511,ca89e7d5-90c2-4f20-b54c-a594b80fe7de,82bbcaa1-6aeb-431c-bed9-ac478b3beb15,45dc6131-c990-4e11-9d60-3c33634ab566,d8cabf3e-43ce-4e6d-a987-e37404f301d1,c5cf3cf0-d0d5-45d8-880b-656b9324e4f6,1,2,3,4,5,8,9
 
 [bd6b304d-7712-4832-b024-e0230a7d2d9e]
 noborderrule=3
@@ -86,9 +102,25 @@ wmclass=electron com.github.th_ch.youtube_music
 wmclasscomplete=true
 wmclassmatch=1
 
+[ca89e7d5-90c2-4f20-b54c-a594b80fe7de]
+Description=Application settings for Anki
+clientmachine=localhost
+desktops=\\0
+desktopsrule=4
+wmclass=anki Anki
+wmclasscomplete=true
+wmclassmatch=1
+
 [d8cabf3e-43ce-4e6d-a987-e37404f301d1]
 Description=Application settings for firefox-devedition
 noborder=true
 noborderrule=2
 wmclass=firefox-devedition
+wmclassmatch=1
+
+[f78b7c91-d2d6-4bc3-b47c-b64ccfc7d511]
+Description=Application settings for electron
+desktops=\\0
+desktopsrule=4
+wmclass=electron
 wmclassmatch=1

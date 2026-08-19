@@ -12,7 +12,7 @@
     speedtest
     s-tui
     furmark
-    unigine-superposition
+    # unigine-superposition
   ];
 
   programs.coolercontrol.enable = true;

@@ -10,7 +10,8 @@
   environment.systemPackages = with pkgs; [
     mpv
     yt-dlp
-    aseprite
+    ffmpeg
+    # aseprite
     gimp
     kdePackages.kdenlive
     handbrake
