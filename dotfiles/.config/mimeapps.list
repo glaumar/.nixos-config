@@ -113,7 +113,6 @@ x-scheme-handler/mo=motrix.desktop
 x-scheme-handler/motrix=motrix.desktop
 x-scheme-handler/nxm=com.nexusmods.app.desktop
 x-scheme-handler/vscode=code-url-handler.desktop;
-x-scheme-handler/youtubemusic=YouTube Music.desktop
 x-scheme-handler/remnote=remnote.desktop
 x-scheme-handler/tg=org.telegram.desktop.desktop
 x-scheme-handler/tonsite=org.telegram.desktop.desktop

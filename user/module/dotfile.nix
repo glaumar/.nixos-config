@@ -6,7 +6,6 @@
     "lvim".source = mkOutOfStoreSymlink "${dotfile.conf}/lvim";
     "aseprite/aseprite.ini".source = mkOutOfStoreSymlink "${dotfile.conf}/aseprite/aseprite.ini";
     "qBittorrent".source = mkOutOfStoreSymlink "${dotfile.conf}/qBittorrent";
-    "YouTube Music".source = mkOutOfStoreSymlink "${dotfile.conf}/YouTube Music";
     "nvim".source = mkOutOfStoreSymlink "${dotfile.conf}/nvim";
     "godot".source = mkOutOfStoreSymlink "${dotfile.conf}/godot";
     "wireshark".source = mkOutOfStoreSymlink "${dotfile.conf}/wireshark";
