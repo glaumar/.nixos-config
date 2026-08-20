@@ -9,6 +9,7 @@
         mpvScripts.uosc
         mpvScripts.thumbfast
         mpvScripts.memo
+        mpvScripts.videoclip
       ];
     })
     anime4k
@@ -19,7 +20,7 @@
   environment.etc."mpv/mpv.conf".text = ''
     # Anime4K
     glsl-shaders="~~/shaders/Anime4K/Anime4K_Clamp_Highlights.glsl:~~/shaders/Anime4K/Anime4K_Restore_CNN_VL.glsl:~~/shaders/Anime4K/Anime4K_Upscale_CNN_x2_VL.glsl:~~/shaders/Anime4K/Anime4K_AutoDownscalePre_x2.glsl:~~/shaders/Anime4K/Anime4K_AutoDownscalePre_x4.glsl:~~/shaders/Anime4K/Anime4K_Upscale_CNN_x2_M.glsl"
-    
+
     # uosc
     # uosc provides seeking & volume indicators (via flash-timeline and flash-volume commands)
     # if you decide to use them, you don't need osd-bar
@@ -28,7 +29,7 @@
     # uosc will draw its own window controls and border if you disable window border
     border=no
   '';
-  
+
   environment.etc."mpv/input.conf".text = ''
     # Anime4K
     CTRL+0 no-osd change-list glsl-shaders clr ""; show-text "GLSL shaders cleared"
