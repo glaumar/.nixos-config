@@ -8,6 +8,7 @@
         mpvScripts.mpris
         mpvScripts.uosc
         mpvScripts.thumbfast
+        mpvScripts.memo
       ];
     })
     anime4k
