@@ -5,7 +5,7 @@ dll = "/home/glaumar/Games/SteamLibrary/steamapps/common/Lossless Scaling/Lossle
 
 [[game]]
 exe = ".haruna-wrapped"
-multiplier = 4
+multiplier = 2
 flow_scale = 1.0
 performance_mode = false
 hdr_mode = false

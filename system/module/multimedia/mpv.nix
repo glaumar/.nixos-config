@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-
   environment.systemPackages = with pkgs; [
     (mpv.override {
       scripts = [
@@ -33,7 +32,14 @@
   environment.etc."mpv/input.conf".text = ''
     # Anime4K
     CTRL+0 no-osd change-list glsl-shaders clr ""; show-text "GLSL shaders cleared"
+
     CTRL+1 no-osd change-list glsl-shaders set "~~/shaders/Anime4K/Anime4K_Clamp_Highlights.glsl:~~/shaders/Anime4K/Anime4K_Restore_CNN_VL.glsl:~~/shaders/Anime4K/Anime4K_Upscale_CNN_x2_VL.glsl:~~/shaders/Anime4K/Anime4K_AutoDownscalePre_x2.glsl:~~/shaders/Anime4K/Anime4K_AutoDownscalePre_x4.glsl:~~/shaders/Anime4K/Anime4K_Upscale_CNN_x2_M.glsl"; show-text "Anime4K: Mode A (HQ)"
+
+    CTRL+2 no-osd change-list glsl-shaders set "~~/shaders/Anime4K/Anime4K_Clamp_Highlights.glsl:~~/shaders/Anime4K/Anime4K_Restore_CNN_Soft_VL.glsl:~~/shaders/Anime4K/Anime4K_Upscale_CNN_x2_VL.glsl:~~/shaders/Anime4K/Anime4K_AutoDownscalePre_x2.glsl:~~/shaders/Anime4K/Anime4K_AutoDownscalePre_x4.glsl:~~/shaders/Anime4K/Anime4K_Upscale_CNN_x2_M.glsl"; show-text "Anime4K: Mode B (HQ)"
+
+    CTRL+3 no-osd change-list glsl-shaders set "~~/shaders/Anime4K/Anime4K_Clamp_Highlights.glsl:~~/shaders/Anime4K/Anime4K_Upscale_Denoise_CNN_x2_VL.glsl:~~/shaders/Anime4K/Anime4K_AutoDownscalePre_x2.glsl:~~/shaders/Anime4K/Anime4K_AutoDownscalePre_x4.glsl:~~/shaders/Anime4K/Anime4K_Upscale_CNN_x2_M.glsl"; show-text "Anime4K: Mode C (HQ)"
+
+
   '';
 
 }
