@@ -10,8 +10,8 @@
     stellarium
     # nix-du
     # animeko
+    # mpvScripts.thumbnail
   ];
-
 
   nixpkgs.config.permittedInsecurePackages = [
     "electron-39.8.10"
@@ -29,11 +29,5 @@
   services.flatpak.packages = [
     # { appId = "io.otsaloma.gaupol"; origin = "flathub"; }
   ];
-
-  # nixpkgs.config = {
-  #   problems.handlers = {
-  #     animeko.broken = "ignore";
-  #   };
-  # };
 
 }

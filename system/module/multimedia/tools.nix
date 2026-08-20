@@ -8,7 +8,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    mpv
     yt-dlp
     ffmpeg
     # aseprite
