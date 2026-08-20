@@ -10,6 +10,7 @@
     "godot".source = mkOutOfStoreSymlink "${dotfile.conf}/godot";
     "wireshark".source = mkOutOfStoreSymlink "${dotfile.conf}/wireshark";
     "mpv".source = mkOutOfStoreSymlink "${dotfile.conf}/mpv";
+    "lsfg-vk".source = mkOutOfStoreSymlink "${dotfile.conf}/lsfg-vk";
   };
 
   # git
