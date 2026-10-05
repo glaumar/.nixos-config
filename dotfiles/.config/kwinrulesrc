@@ -1,106 +1,31 @@
 [08df9b6a-c0b7-4e93-8464-d9eeb8241a3e]
 noborderrule=2
 
-[1]
-Description=Dolphin
-noborder=true
-noborderrule=3
-types=1
-wmclass=dolphin
+[51675c67-a04c-4979-b027-641474be8249]
+Description=Application settings for mpv
+screenrule=2
+wmclass=mpv
 wmclasscomplete=true
 wmclassmatch=1
-
-[2]
-Description=Element
-noborder=true
-noborderrule=3
-types=1
-wmclass=electron Element
-wmclasscomplete=true
-wmclassmatch=1
-
-[3]
-Description=Discord
-noborder=true
-noborderrule=3
-types=1
-wmclass=Discord discord
-wmclasscomplete=true
-wmclassmatch=1
-
-[4]
-Description=org.telegram.desktop
-noborder=true
-noborderrule=3
-types=1
-wmclass=telegram-desktop org.telegram.desktop
-wmclasscomplete=true
-wmclassmatch=1
-
-[45dc6131-c990-4e11-9d60-3c33634ab566]
-Description=Application settings for readest
-noborder=true
-noborderrule=2
-wmclass=\sreadest
-wmclasscomplete=true
-wmclassmatch=1
-
-[5]
-Description=org.kde.konsole
-noborder=true
-noborderrule=3
-types=1
-wmclass=konsole org.kde.konsole
-wmclasscomplete=true
-wmclassmatch=1
-
-[8]
-Description=firefox
-noborder=true
-noborderrule=3
-title=Mozilla Firefox
-titlematch=2
-types=1
-wmclass=firefox firefox
-wmclasscomplete=true
-wmclassmatch=1
-
-[82bbcaa1-6aeb-431c-bed9-ac478b3beb15]
-Description=Application settings for Logseq
-desktops=\\0
-desktopsrule=3
-wmclass=electron Logseq
-wmclasscomplete=true
-wmclassmatch=1
-
-[9]
-Description=Calibre
-noborder=true
-noborderrule=3
-types=1
-wmclass=calibre-gui
-wmclasscomplete=true
-wmclassmatch=2
 
 [9dd75026-9a7f-4698-b111-02f90327d657]
 desktopsrule=3
 
 [General]
-count=13
-rules=f78b7c91-d2d6-4bc3-b47c-b64ccfc7d511,ca89e7d5-90c2-4f20-b54c-a594b80fe7de,82bbcaa1-6aeb-431c-bed9-ac478b3beb15,45dc6131-c990-4e11-9d60-3c33634ab566,d8cabf3e-43ce-4e6d-a987-e37404f301d1,c5cf3cf0-d0d5-45d8-880b-656b9324e4f6,1,2,3,4,5,8,9
+count=4
+rules=a3b10751-bfbe-43d7-afae-6348dc09a7a0,ec6304fc-e0ce-4d03-bbe3-7c44a2326972,51675c67-a04c-4979-b027-641474be8249,d8cabf3e-43ce-4e6d-a987-e37404f301d1
+
+[a3b10751-bfbe-43d7-afae-6348dc09a7a0]
+Description=Window settings for firefox
+noborder=true
+noborderrule=3
+types=1
+wmclass=firefox firefox
+wmclasscomplete=true
+wmclassmatch=1
 
 [bd6b304d-7712-4832-b024-e0230a7d2d9e]
 noborderrule=3
-
-
-[ca89e7d5-90c2-4f20-b54c-a594b80fe7de]
-Description=Application settings for Anki
-clientmachine=localhost
-desktops=\\0
-desktopsrule=4
-wmclass=anki Anki
-wmclasscomplete=true
-wmclassmatch=1
 
 [d8cabf3e-43ce-4e6d-a987-e37404f301d1]
 Description=Application settings for firefox-devedition
@@ -109,9 +34,12 @@ noborderrule=2
 wmclass=firefox-devedition
 wmclassmatch=1
 
-[f78b7c91-d2d6-4bc3-b47c-b64ccfc7d511]
-Description=Application settings for electron
-desktops=\\0
-desktopsrule=4
-wmclass=electron
+[ec6304fc-e0ce-4d03-bbe3-7c44a2326972]
+Description=Window settings for org.kde.konsole
+noborder=true
+noborderrule=3
+title=~ : .opencode-wrapp — Konsole
+types=1
+wmclass=konsole org.kde.konsole
+wmclasscomplete=true
 wmclassmatch=1

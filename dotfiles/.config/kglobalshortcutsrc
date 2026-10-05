@@ -307,6 +307,14 @@ ToggleTouchpad=Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku
 CF1C15ACC040394FE740BD7CB253E7A8-Ctrl+Shift+X=Ctrl+Shift+X,Ctrl+Shift+X,Super Productivity shortcut: Ctrl+Shift+X
 _k_friendly_name=Super Productivity
 
+[top.imsyy.splayer_next]
+0DBC6B57DD0EB4B5A09371623028DE50-Ctrl+Shift+Right=none,Ctrl+Shift+Right,SPlayer-Next shortcut: Ctrl+Shift+Right
+1683FAD69E10E25619286DB45E464E3A-Ctrl+Shift+Down=none,Ctrl+Shift+Down,SPlayer-Next shortcut: Ctrl+Shift+Down
+A8756E030B15F7343EA3E0AA00E3989E-Ctrl+Shift+Left=none,Ctrl+Shift+Left,SPlayer-Next shortcut: Ctrl+Shift+Left
+CA7B1DA699AC1B259FE57A8A2CB19CDE-Ctrl+Shift+Up=none,Ctrl+Shift+Up,SPlayer-Next shortcut: Ctrl+Shift+Up
+FC70122FAF4F108FF72B39FFBA3A5B05-Ctrl+Shift+Space=none,Ctrl+Shift+Space,SPlayer-Next shortcut: Ctrl+Shift+Space
+_k_friendly_name=SPlayer-Next
+
 [yakuake]
 _k_friendly_name=Yakuake
 toggle-window-state=Meta+Return,F12,Open/Retract Yakuake

@@ -6,4 +6,4 @@ ReplayActionInHistory=true
 IgnoreImages=false
 MaxClipItems=2048
 NoActionsForWM_CLASS=
-Version=6.5.5
+Version=6.7.4

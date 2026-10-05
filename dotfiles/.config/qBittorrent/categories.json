@@ -1,14 +1,42 @@
 {
     "AVVR": {
-        "save_path": ""
+        "download_path": null,
+        "inactive_seeding_time_limit": -2,
+        "ratio_limit": -2,
+        "save_path": "",
+        "seeding_time_limit": -2,
+        "share_limit_action": "Default"
     },
     "AdultVideo": {
-        "save_path": "/home/glaumar/Downloads/qBittorrent/AV"
+        "download_path": null,
+        "inactive_seeding_time_limit": -2,
+        "ratio_limit": -2,
+        "save_path": "/home/glaumar/Downloads/qBittorrent/AV",
+        "seeding_time_limit": -2,
+        "share_limit_action": "Default"
     },
     "Film": {
-        "save_path": "/home/glaumar/Videos/Film"
+        "download_path": null,
+        "inactive_seeding_time_limit": -2,
+        "ratio_limit": -2,
+        "save_path": "/home/glaumar/Videos/Film",
+        "seeding_time_limit": -2,
+        "share_limit_action": "Default"
+    },
+    "Game": {
+        "download_path": null,
+        "inactive_seeding_time_limit": -2,
+        "ratio_limit": -2,
+        "save_path": "/home/glaumar/Downloads/qBittorrent/Game",
+        "seeding_time_limit": -2,
+        "share_limit_action": "Default"
     },
     "Video": {
-        "save_path": "/home/glaumar/Videos"
+        "download_path": null,
+        "inactive_seeding_time_limit": -2,
+        "ratio_limit": -2,
+        "save_path": "/home/glaumar/Videos",
+        "seeding_time_limit": -2,
+        "share_limit_action": "Default"
     }
 }

@@ -27,17 +27,6 @@
    </metadata>
   </info>
  </bookmark>
- <bookmark href="file:///home/glaumar/Code">
-  <title>Code</title>
-  <info>
-   <metadata owner="http://freedesktop.org">
-    <bookmark:icon name="terminal"/>
-   </metadata>
-   <metadata owner="http://www.kde.org">
-    <ID>1787252852/0</ID>
-   </metadata>
-  </info>
- </bookmark>
  <separator>
   <info>
    <metadata owner="http://www.kde.org">
@@ -47,6 +36,17 @@
    </metadata>
   </info>
  </separator>
+ <bookmark href="file:///home/glaumar/Code">
+  <title>Code</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="format-text-code"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1722187845/1</ID>
+   </metadata>
+  </info>
+ </bookmark>
  <bookmark href="file:///home/glaumar/Godot">
   <title>Godot</title>
   <info>
@@ -495,17 +495,32 @@
    </metadata>
   </info>
  </separator>
- <bookmark href="kdeconnect://207d215d_e66a_4467_9e6c_0bb991be7e92/">
-  <title>OnePlus 7 Pro</title>
+ <separator>
   <info>
-   <metadata owner="http://freedesktop.org">
-    <bookmark:icon name="kdeconnect"/>
-   </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1787181145/0</ID>
+    <UDI>/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:08.1/0000:0b:00.3/usb3/3-2</UDI>
+    <isSystemItem>true</isSystemItem>
    </metadata>
   </info>
- </bookmark>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/freedesktop/UDisks2/block_devices/sdb</UDI>
+    <isSystemItem>true</isSystemItem>
+    <uuid>8473-0668</uuid>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/freedesktop/UDisks2/block_devices/sdc1</UDI>
+    <isSystemItem>true</isSystemItem>
+    <uuid>82dc4730-2869-4d2d-971d-dba2b88435cd</uuid>
+   </metadata>
+  </info>
+ </separator>
  <bookmark href="kdeconnect://395ef171461a47a8b13d3eae2e8dde56/">
   <title>Galaxy XCover6 Pro</title>
   <info>
@@ -513,7 +528,7 @@
     <bookmark:icon name="kdeconnect"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1787209647/4</ID>
+    <ID>1791233899/91</ID>
    </metadata>
   </info>
  </bookmark>
