@@ -15,6 +15,8 @@ in
       (import ../module/key_generate.nix { inherit pkgs lib; })
       (import ../module/dotfile.nix { inherit lib config dotfile; })
       (import ../module/plasma.nix { inherit config dotfile; })
+      (import ../module/zed.nix { inherit pkgs; })
+      (import ../module/chezmoi.nix { inherit config lib pkgs; })
     ];
 
   # This value determines the Home Manager release that your
