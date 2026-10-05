@@ -13,9 +13,11 @@
     
     lsfg-vk
     lsfg-vk-ui
+    sgdboop
+    
+    # mangohud
+    # steamguard-cli
 
-    mangohud
-    steamguard-cli
   ];
 
 }

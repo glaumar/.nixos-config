@@ -11,6 +11,8 @@
     # nix-du
     # animeko
     # mpvScripts.thumbnail
+    dbgate
+    firefox
   ];
 
   nixpkgs.config.permittedInsecurePackages = [

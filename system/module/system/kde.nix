@@ -46,6 +46,7 @@
 
     # for ark 
     (pkgs.rar)
+    (pkgs.p7zip)
 
     (pkgs.klassy)
 

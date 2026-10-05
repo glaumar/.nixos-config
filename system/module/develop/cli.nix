@@ -12,6 +12,7 @@
     tealdeer
     tree
     pwgen
+    jq
     
     # hardware
     dmidecode

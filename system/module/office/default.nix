@@ -5,8 +5,8 @@
   environment.systemPackages = with pkgs; [
     calibre
     # mcomix
-    libreoffice-qt6-fresh
-    libreoffice-fresh
+    libreoffice-qt
+    libreoffice
     anki
     obsidian
     readest
@@ -14,6 +14,7 @@
     nextcloud-client
     zotero
     super-productivity
+    thunderbird
   ];
 
   # imports = [

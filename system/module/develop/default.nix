@@ -79,4 +79,9 @@
     texliveFull
   ];
 
+  networking.firewall.allowedTCPPorts = [
+    # Tauri mobile (Android) dev server + Vite HMR, reachable from the phone over LAN
+    1420
+    1421
+  ];
 }

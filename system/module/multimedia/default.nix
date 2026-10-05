@@ -11,7 +11,7 @@
 
   environment.systemPackages = with pkgs; [
     haruna
-    splayer
+    splayer-next
     qbittorrent
   ];
 }
