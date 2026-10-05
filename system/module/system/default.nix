@@ -8,6 +8,7 @@
     ./locale.nix
     ./locate.nix
     ./secrets.nix
+    ./dotfiles.nix
     ./user.nix
     ./fwupd.nix
 

@@ -7,6 +7,7 @@
     ./hack.nix
     ./wireshark.nix
     ./reqable.nix
+    ./zed.nix
   ];
 
   environment.systemPackages = with pkgs; [

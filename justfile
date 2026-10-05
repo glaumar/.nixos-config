@@ -1,21 +1,22 @@
-switch: 
+switch:
   sudo nixos-rebuild switch
+  dotfiles apply
 
 update:
   nix flake update
 
-# dotfiles (chezmoi, source: ./chezmoi)
+# dotfiles (chezmoi, source: ./chezmoi); use the `dotfiles` wrapper
 dotfiles-diff:
-  chezmoi diff
+  dotfiles diff
 
 dotfiles-apply:
-  chezmoi apply
+  dotfiles apply
 
 dotfiles-add:
-  chezmoi re-add
+  dotfiles re-add
 
 dotfiles-cd:
-  chezmoi cd
+  dotfiles cd
 
 sync_daed_conf: 
   sudo -E sops -e /etc/daed/wing.db > secrets/daed/wing.db
