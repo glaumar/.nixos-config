@@ -1,4 +1,19 @@
 {
+  "vim": {
+    "toggle_relative_line_numbers": true
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "Gruvbox Light Soft",
+    "dark": "Gruvbox Dark"
+  },
+  "agent_buffer_font_size": 14.0,
+  "ui_font_size": 16.0,
+  "ui_font_family": "Noto Sans Mono CJK SC",
+  "buffer_font_family": "FiraCode Nerd Font Mono",
+  "terminal": {
+    "font_family": "Hack"
+  },
   "agent_buffer_font_family": "Noto Sans",
   "language_models": {
     "opencode": {
@@ -18,6 +33,32 @@
     }
   },
   "agent": {
+    "sandbox_permissions": {
+      "allow_unsandboxed": true
+    },
+    "tool_permissions": {
+      "tools": {
+        "terminal": {
+          "always_allow": [
+            {
+              "pattern": "^git\\b"
+            },
+            {
+              "pattern": "^echo\\s+===(\\s|$)"
+            },
+            {
+              "pattern": "^ls\\b"
+            },
+            {
+              "pattern": "^head\\b"
+            },
+            {
+              "pattern": "^git\\s+add(\\s|$)"
+            }
+          ]
+        }
+      }
+    },
     "thinking_display": "always_collapsed",
     "auto_compact": {
       "threshold": "90%"

@@ -528,7 +528,18 @@
     <bookmark:icon name="kdeconnect"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1791233899/91</ID>
+    <ID>1791302977/96</ID>
+   </metadata>
+  </info>
+ </bookmark>
+ <bookmark href="kdeconnect://207d215d_e66a_4467_9e6c_0bb991be7e92/">
+  <title>OnePlus 7 Pro</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="kdeconnect"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1791304823/98</ID>
    </metadata>
   </info>
  </bookmark>
