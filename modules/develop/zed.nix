@@ -4,8 +4,6 @@
   environment.systemPackages = with pkgs; [
     zed-editor
     opencode # ACP agent used by Zed
-    nixd # Nix LSP with NixOS/Home-Manager option completion
-    nixfmt # Nix formatter (used by the repo .zed/settings.json)
   ];
 
   # Fonts used by the Zed config

@@ -8,9 +8,6 @@
         "options": {
           "nixos": {
             "expr": "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.NixOS2501.options"
-          },
-          "home-manager": {
-            "expr": "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.NixOS2501.options.home-manager.users.type.getSubOptions []"
           }
         }
       }

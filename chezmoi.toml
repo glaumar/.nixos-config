@@ -1,4 +1,4 @@
-# Managed by NixOS (system/module/system/dotfiles.nix), installed to /etc/xdg.
+# Managed by NixOS (modules/system/dotfiles.nix), installed to /etc/xdg.
 # Read-only system config; the persistent state must live in a per-user writable
 # location (default would be /etc/xdg/chezmoi/chezmoistate.boltdb -> EACCES).
 sourceDir = "~/.nixos-config/chezmoi"

@@ -10,6 +10,7 @@
     ./zed.nix
     ./rust.nix
     ./lua.nix
+    ./nix.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -28,11 +29,6 @@
     # wl-clipboard-rs
 
     #--------------programming languages and tools--------------#
-    # nix
-    nil # nix lsp
-    # nixpkgs-fmt # nix formatter
-    nixfmt
-
     lemminx # xml lsp
     # yaml-language-server
 
