@@ -12,8 +12,6 @@
     telegram-desktop
     element-desktop
     discord
-
+    chromium
   ];
 }
-
- 

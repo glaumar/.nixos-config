@@ -11,6 +11,8 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    # Others
+    dbgate
 
     # AI
     opencode

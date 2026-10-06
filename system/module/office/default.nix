@@ -16,15 +16,4 @@
     super-productivity
     thunderbird
   ];
-
-  # imports = [
-  #   ../system/flatpak.nix
-  # ];
-
-  # services.flatpak.packages = [
-  #   {
-  #     appId = "com.super_productivity.SuperProductivity";
-  #     origin = "flathub";
-  #   }
-  # ];
 }
