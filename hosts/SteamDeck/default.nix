@@ -7,22 +7,22 @@
 {
   imports =
     [
-      ../module/system/boot.nix
-      ../module/system/base_packages.nix
-      ../module/system/locale.nix
-      ../module/system/gc.nix
-      ../module/system/user.nix
-      ../module/system/dotfiles.nix
-      ../module/system/kde.nix
-      ../module/system/firefox.nix
-      ../module/system/fonts.nix
-      ../module/system/flatpak.nix
-      ../module/system/syncthing.nix
+      ../../modules/system/boot.nix
+      ../../modules/system/base_packages.nix
+      ../../modules/system/locale.nix
+      ../../modules/system/gc.nix
+      ../../modules/system/user.nix
+      ../../modules/system/dotfiles.nix
+      ../../modules/system/kde.nix
+      ../../modules/system/firefox.nix
+      ../../modules/system/fonts.nix
+      ../../modules/system/flatpak.nix
+      ../../modules/system/syncthing.nix
 
-      ../module/network/default.nix
+      ../../modules/network/default.nix
 
-      ../module/game/steam.nix
-      ../module/game/jovian.nix
+      ../../modules/game/steam.nix
+      ../../modules/game/jovian.nix
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix

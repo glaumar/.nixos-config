@@ -6,16 +6,16 @@
 {
   imports =
     [
-      ../module/tmp.nix
+      ../../modules/tmp.nix
 
-      ../module/system/default.nix
-      ../module/network/default.nix
-      ../module/multimedia/default.nix
-      ../module/multimedia/tools.nix
-      ../module/game/default.nix
-      ../module/develop/default.nix
-      ../module/office/default.nix
-      ../module/other_apps/default.nix
+      ../../modules/system/default.nix
+      ../../modules/network/default.nix
+      ../../modules/multimedia/default.nix
+      ../../modules/multimedia/tools.nix
+      ../../modules/game/default.nix
+      ../../modules/develop/default.nix
+      ../../modules/office/default.nix
+      ../../modules/other_apps/default.nix
 
 
       # the results of the hardware scan.

@@ -76,7 +76,7 @@
     {
       nixosConfigurations = {
         NixOS2501 = mkHost {
-          systemModule = ./system/DesktopPC/default.nix;
+          systemModule = ./hosts/DesktopPC/default.nix;
           extraModules = [
             daeuniverse.nixosModules.daed
             sops-nix.nixosModules.sops
@@ -86,7 +86,7 @@
         };
 
         SteamDeck = mkHost {
-          systemModule = ./system/SteamDeck/default.nix;
+          systemModule = ./hosts/SteamDeck/default.nix;
           extraModules = [
             daeuniverse.nixosModules.daed
             jovian-nixos.nixosModules.default
