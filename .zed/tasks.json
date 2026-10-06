@@ -1,0 +1,8 @@
+[
+  { "label": "just switch", "command": "just", "args": ["switch"], "save": "all" },
+  { "label": "nixos-rebuild build", "command": "nixos-rebuild", "args": ["build"], "save": "all" },
+  { "label": "nix flake check", "command": "nix", "args": ["flake", "check"] },
+  { "label": "nix fmt", "command": "nix", "args": ["fmt"], "save": "all" },
+  { "label": "just update", "command": "just", "args": ["update"] },
+  { "label": "just dotfiles-diff", "command": "just", "args": ["dotfiles-diff"] }
+]

@@ -1,0 +1,49 @@
+{
+  "agent_buffer_font_family": "Noto Sans",
+  "language_models": {
+    "opencode": {
+      "show_go_models": true,
+      "show_zen_models": false,
+      "available_models": [
+        {
+          "name": "deepseek-v4.1-flash",
+          "display_name": "DeepSeek V4.1 Flash",
+          "max_tokens": 1000000,
+          "max_output_tokens": 384000,
+          "subscription": "go",
+          "reasoning_effort_levels": ["low", "high", "max"],
+          "interleaved_reasoning": true
+        }
+      ]
+    }
+  },
+  "agent": {
+    "thinking_display": "always_collapsed",
+    "auto_compact": {
+      "threshold": "90%"
+    },
+    "default_model": {
+      "provider": "opencode",
+      "model": "go/deepseek-v4.1-flash",
+      "enable_thinking": true,
+      "effort": "high"
+    }
+  },
+  "vim_mode": true,
+  "buffer_font_fallbacks": ["Noto Sans Mono CJK SC"],
+  "auto_install_extensions": { "nix": true },
+  "languages": {
+    "Nix": {
+      "language_servers": ["nixd", "!nil"],
+      "formatter": { "external": { "command": "nixfmt" } },
+      "format_on_save": "on"
+    }
+  },
+  "agent_servers": {
+    "OpenCode": {
+      "type": "custom",
+      "command": "opencode",
+      "args": ["acp"]
+    }
+  }
+}
