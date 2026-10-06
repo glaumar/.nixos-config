@@ -2,8 +2,10 @@
 {
   environment.systemPackages = [
     pkgs.chezmoi
-    (pkgs.writeShellScriptBin "dotfiles" ''
-      exec ${pkgs.chezmoi}/bin/chezmoi --source "$HOME/.nixos-config/chezmoi" "$@"
-    '')
   ];
+
+  # System-wide chezmoi config (read from $XDG_CONFIG_DIRS/chezmoi/chezmoi.toml).
+  # Points chezmoi at the dotfiles source in this repo; no wrapper needed.
+  environment.etc."xdg/chezmoi/chezmoi.toml".source =
+    ../../../dotfiles/.config/chezmoi/chezmoi.toml;
 }

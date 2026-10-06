@@ -1,24 +1,23 @@
 switch:
   sudo nixos-rebuild switch
-  dotfiles apply
 
 update:
   nix flake update
 
-# dotfiles (chezmoi, source: ./chezmoi); use the `dotfiles` wrapper
+# dotfiles (chezmoi, sourceDir set in ~/.config/chezmoi/chezmoi.toml)
 dotfiles-diff:
-  dotfiles diff
+  chezmoi diff
 
 dotfiles-apply:
-  dotfiles apply
+  chezmoi apply
 
 dotfiles-add:
-  dotfiles re-add
+  chezmoi re-add
 
 dotfiles-cd:
-  dotfiles cd
+  chezmoi cd
 
-sync_daed_conf: 
+sync_daed_conf:
   sudo -E sops -e /etc/daed/wing.db > secrets/daed/wing.db
 
 sops-edit:
@@ -26,12 +25,12 @@ sops-edit:
 
 sops-update-keys:
   sops updatekeys secrets/default.yaml
-  
+
 repair:
-  sudo nix-store --verify --check-contents --repair 
-  
+  sudo nix-store --verify --check-contents --repair
+
 list-generations:
   nixos-rebuild list-generations
-  
+
 delete-generation:
   sudo nix-collect-garbage --delete-older-than 90d

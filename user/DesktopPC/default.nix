@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   dotfile = rec {
@@ -9,13 +14,12 @@ let
   };
 in
 {
-  imports =
-    [
-      (import ../module/user.nix { inherit config dotfile; })
-      (import ../module/key_generate.nix { inherit pkgs lib; })
-      (import ../module/dotfile.nix { inherit lib config dotfile; })
-      (import ../module/plasma.nix { inherit config dotfile; })
-    ];
+  imports = [
+    (import ../module/user.nix { inherit config dotfile; })
+    (import ../module/key_generate.nix { inherit pkgs lib; })
+    (import ../module/dotfile.nix { inherit lib config dotfile; })
+    # (import ../module/plasma.nix { inherit config dotfile; })
+  ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

@@ -4,11 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # steamdeck package
     jovian-nixos = {
       url = "github:Jovian-Experiments/Jovian-NixOS";
@@ -42,7 +37,6 @@
 
   outputs =
     { nixpkgs
-    , home-manager
     , daeuniverse
     , jovian-nixos
     , sops-nix
@@ -53,30 +47,27 @@
     }:
     let
       system = "x86_64-linux";
-      user = "glaumar";
 
       pkgsOverlay = final: prev: {
-        glaumarPkgs = glaumar_nur.packages.${prev.system};
+        glaumarPkgs = glaumar_nur.packages.${prev.stdenv.hostPlatform.system};
+
+        # Workaround: daeuniverse pins `fetchPnpmDeps { fetcherVersion = 3; }`,
+        # which current nixpkgs rejects once `pnpm` >= 11 (it hard-throws during
+        # evaluation). Build daed's web assets with pnpm_10, where fetcherVersion 3
+        # is still supported, so upstream's pinned pnpmDepsHash stays valid.
+        daed = daeuniverse.packages.${prev.stdenv.hostPlatform.system}.daed.override {
+          pnpm = prev.pnpm_10;
+        };
       };
 
       mkHost =
         { systemModule
-        , homeModule
         , extraModules ? [ ]
-        , backupFileExtension
         }:
         nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
             { nixpkgs.overlays = [ pkgsOverlay ]; }
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.${user} = homeModule;
-              home-manager.backupFileExtension = backupFileExtension;
-            }
 
             systemModule
           ] ++ extraModules;
@@ -86,8 +77,6 @@
       nixosConfigurations = {
         NixOS2501 = mkHost {
           systemModule = ./system/DesktopPC/default.nix;
-          homeModule = import ./user/DesktopPC/default.nix;
-          backupFileExtension = "Backup";
           extraModules = [
             daeuniverse.nixosModules.daed
             sops-nix.nixosModules.sops
@@ -98,8 +87,6 @@
 
         SteamDeck = mkHost {
           systemModule = ./system/SteamDeck/default.nix;
-          homeModule = import ./user/SteamDeck/default.nix;
-          backupFileExtension = "hm_backup";
           extraModules = [
             daeuniverse.nixosModules.daed
             jovian-nixos.nixosModules.default

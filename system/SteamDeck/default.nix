@@ -12,6 +12,7 @@
       ../module/system/locale.nix
       ../module/system/gc.nix
       ../module/system/user.nix
+      ../module/system/dotfiles.nix
       ../module/system/kde.nix
       ../module/system/firefox.nix
       ../module/system/fonts.nix

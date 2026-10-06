@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
 
@@ -22,6 +22,11 @@
 
   services.daed = {
     enable = true;
+
+    # Use the patched package from the flake overlay (`pkgs.daed`), which swaps in
+    # pnpm_10 so the upstream fetcherVersion=3 hash still evaluates/builds.
+    # Remove once daeuniverse migrates to fetcherVersion 4.
+    package = pkgs.daed;
 
     # allow to access the web dashboard from other devices
     openFirewall.enable = true;
