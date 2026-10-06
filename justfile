@@ -4,7 +4,7 @@ switch:
 update:
   nix flake update
 
-# dotfiles (chezmoi, sourceDir set in ~/.config/chezmoi/chezmoi.toml)
+# dotfiles (chezmoi, config installed to /etc/xdg/chezmoi/chezmoi.toml)
 dotfiles-diff:
   chezmoi diff
 

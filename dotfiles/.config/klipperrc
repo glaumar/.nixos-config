@@ -1,9 +1,0 @@
-[Actions]
-EnableMagicMimeActions=false
-ReplayActionInHistory=true
-
-[General]
-IgnoreImages=false
-MaxClipItems=2048
-NoActionsForWM_CLASS=
-Version=6.7.4
