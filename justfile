@@ -4,20 +4,10 @@ switch:
 update:
   nix flake update
 
-# dotfiles (chezmoi, config installed to /etc/xdg/chezmoi/chezmoi.toml)
-dotfiles-diff:
-  chezmoi diff
-
-dotfiles-apply:
-  chezmoi apply
-
-dotfiles-add:
+dotfiles_sync:
   chezmoi re-add
 
-dotfiles-cd:
-  chezmoi cd
-
-sync_daed_conf:
+daed_conf_sync:
   sudo -E sops -e /etc/daed/wing.db > secrets/daed/wing.db
 
 sops-edit:

@@ -72,6 +72,12 @@
             },
             {
               "pattern": "^nix\\s+eval(\\s|$)"
+            },
+            {
+              "pattern": "^echo\\b"
+            },
+            {
+              "pattern": "^strings\\b"
             }
           ]
         }
