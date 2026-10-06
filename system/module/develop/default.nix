@@ -8,6 +8,8 @@
     ./wireshark.nix
     ./reqable.nix
     ./zed.nix
+    ./rust.nix
+    ./lua.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -31,9 +33,6 @@
     # nixpkgs-fmt # nix formatter
     nixfmt
 
-    # lua
-    lua-language-server
-
     lemminx # xml lsp
     # yaml-language-server
 
@@ -41,12 +40,6 @@
     # ccls # c/c++ lsp
     clang-tools # c/c++ lsp and formatter
     libclang.python # git-clang-format
-
-    # rust
-    cargo
-    clippy
-    rust-analyzer # rust lsp
-    rustfmt # rust formatter
 
     # godot
     godot_4
