@@ -52,7 +52,6 @@
     android-tools
     desktop-file-utils
     appstream
-    direnv
   ];
 
   networking.firewall.allowedTCPPorts = [

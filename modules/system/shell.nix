@@ -1,27 +1,14 @@
 { pkgs, ... }:
 
 {
-  programs.zsh = {
+  programs.nushell = {
     enable = true;
-    enableCompletion = true;
-    histSize = 10000;
-    histFile = "$HOME/.zsh_history";
-    setOptions = [
-      "HIST_IGNORE_DUPS"
-      "SHARE_HISTORY"
-      "HIST_FCNTL_LOCK"
-      "AUTO_CD"
-    ];
-
-    # NixOS 的 zsh 模块不提供 autosuggestions / syntax-highlighting
-    # （那是 home-manager 的选项），这里手动 source。
-    interactiveShellInit = ''
-      source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-      source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    '';
   };
 
-  # starship 提示符；该模块会自动为 zsh 做集成
+  # programs.nushell 不注册 login shell，补上
+  environment.shells = [ pkgs.nushell ];
+
+  # starship 目前只对 fish 生效（NixOS 的 starship 模块不支持 nushell）
   programs.starship = {
     enable = true;
     settings = {
@@ -30,9 +17,15 @@
     };
   };
 
+  # direnv + nix-direnv（nix-direnv 是 direnv 的插件，二者需同时启用）
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+    enableZshIntegration = false; # zsh 已移除
+    enableXonshIntegration = false; # 不使用 xonsh
+  };
+
   environment.systemPackages = with pkgs; [
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    zsh-completions
+    zoxide
   ];
 }

@@ -16,7 +16,7 @@
   };
 
   programs.fish.enable = true;
-  users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = pkgs.nushell;
   users.users.glaumar = {
     isNormalUser = true;
     description = "glaumar";

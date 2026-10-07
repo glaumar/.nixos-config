@@ -53,7 +53,6 @@
     nixpkgs-fmt # nix formatter
 
     just
-    direnv
 
   ];
 
