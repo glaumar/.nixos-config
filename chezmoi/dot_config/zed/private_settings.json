@@ -1,4 +1,5 @@
 {
+  "cli_default_open_behavior": "new_window",
   "autosave": {
     "after_delay": {
       "milliseconds": 1000
@@ -48,7 +49,8 @@
       ],
       "network_hosts": [
         "raw.githubusercontent.com",
-        "ghostty.org"
+        "ghostty.org",
+        "carapace-sh.github.io"
       ],
       "allow_all_hosts": false,
       "allow_unsandboxed": false
@@ -236,6 +238,9 @@
             },
             {
               "pattern": "^sed\\b"
+            },
+            {
+              "pattern": "^nu\\b"
             }
           ]
         }

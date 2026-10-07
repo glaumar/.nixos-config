@@ -15,5 +15,6 @@
 
   environment.systemPackages = with pkgs; [
     zoxide
+    carapace # multi-shell argument completion (wired up in nushell config.nu)
   ];
 }

@@ -12,6 +12,12 @@ alias la = ls -a
 mkdir ($nu.data-dir | path join "vendor/autoload")
 zoxide init nushell | save -f ($nu.data-dir | path join "vendor/autoload/zoxide.nu")
 
+# carapace: argument completion for external commands (git, nix, docker, ...).
+# Same vendor-autoload pattern as zoxide above (nu loads these after config.nu).
+# Bridges let carapace fall back to other shells' completions when it lacks one.
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
+carapace _carapace nushell | save -f ($nu.data-dir | path join "vendor/autoload/carapace.nu")
+
 # yazi: bring the cwd back into the shell on exit
 def --env y [...args] {
   let tmp = (mktemp -t "yazi-cwd.XXXXXX")
