@@ -8,9 +8,7 @@
     ./wireshark.nix
     ./reqable.nix
     ./zed.nix
-    ./rust.nix
-    ./lua.nix
-    ./nix.nix
+    ./languages.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -19,7 +17,7 @@
 
     # AI
     opencode
-    opencode-desktop
+    # opencode-desktop
 
     # IDE
     vscode
@@ -29,46 +27,32 @@
     # wl-clipboard-rs
 
     #--------------programming languages and tools--------------#
-    lemminx # xml lsp
-    # yaml-language-server
+    # Language servers, toolchains, linters and formatters live in ./languages.nix
 
     # cpp
     # ccls # c/c++ lsp
-    clang-tools # c/c++ lsp and formatter
-    libclang.python # git-clang-format
+    # libclang.python # git-clang-format
 
     # godot
-    godot_4
-    godot_4-export-templates-bin
-
-    # npm and nodejs for slidev
-    nodejs
-
-    # js/ts
-    yarn
+    # godot_4
+    # godot_4-export-templates-bin
 
     # csharp
-    dotnet-sdk_8
+    # dotnet-sdk_8
     # dotnet-runtime_8
-    dotnetPackages.Nuget
-    omnisharp-roslyn # csharp lsp
+    # dotnetPackages.Nuget
 
     #Jupyter
     # python314
     # python314Packages.pip
     # python314Packages.jupyter
-    jupyter
+    # jupyter
 
     #--------------other tools--------------#
     android-tools
     desktop-file-utils
     appstream
-    just
-    just-lsp
     direnv
-
-    # latex
-    texliveFull
   ];
 
   networking.firewall.allowedTCPPorts = [
