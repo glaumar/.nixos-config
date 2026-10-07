@@ -109,6 +109,34 @@ The `justfile` is the canonical entry point:
 - `chezmoi.toml` is deployed system-wide by `modules/system/dotfiles.nix`; it deliberately
   keeps persistent state under `~/.local/state/chezmoi/`.
 
+## Privacy (public repository)
+
+This repo is published publicly on GitHub, so **everything committed is world-readable
+forever, including git history**. Deleting a file in a later commit does not remove it: the
+old `dotfiles/` tree is still fully retrievable even though it was dropped in `16ee4d2`.
+Treat the history as the leak surface, not just the working tree.
+
+- **Ask "would I publish this?" before adding any file — because it will be published.** If
+  something sensitive was ever committed, consider it exposed; the only fixes are rewriting
+  history (`git filter-repo`, then force-push) or making the repo private. Note that
+  `glaumar` and `git@geekgo.tech` in commit metadata are intentionally public — do not
+  "fix" that.
+- **The encrypted `secrets/` blobs are safe only while the age private key is offline.** The
+  ciphertext is downloadable by anyone; it stays private solely because
+  `~/.config/sops/age/keys.txt` (and its backup) never leave the machine. Never commit an
+  age/SSH private key, `keys.txt`, a passphrase, or any plaintext equivalent.
+- **`chezmoi re-add` can pull in more than intended.** `just dotfiles_sync` folds live
+  `$HOME` files into `chezmoi/`; keep it to declarative config and extend `.gitignore` for
+  state/caches (browser profiles, token stores, `*-shm`/`*-wal` journals, recent-files,
+  per-machine state). Do not sync personal media, notes, photos, or an avatar.
+- **Commit the certificate, never its key.** `modules/develop/reqable-root.crt` is fine (a
+  public root CA cert); the matching private key must never be added.
+- **The machine is fingerprintable and that is accepted here.**
+  `hosts/*/hardware-configuration.nix` (disk/partition UUIDs, swapfile offset, CPU) and
+  `modules/system/locale.nix` (timezone) reveal the hardware layout and region. This is a
+  personal machine, not a server, so it is intentionally published — but do not add further
+  identifying data (serial numbers, MAC addresses, public IPs, extra hostnames).
+
 ## Zed / AI tooling setup (in-repo)
 
 - `opencode` is installed system-wide (`modules/develop/default.nix` under `# AI`, and
