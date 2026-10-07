@@ -44,52 +44,78 @@
       "tools": {
         "fetch": {
           "always_allow": [
-            {
-              "pattern": "^https?://raw\\.githubusercontent\\.com"
-            },
-            {
-              "pattern": "^https?://api\\.github\\.com"
-            }
+            { "pattern": "^https?://raw\\.githubusercontent\\.com" },
+            { "pattern": "^https?://api\\.github\\.com" },
+            { "pattern": "^https?://gist\\.githubusercontent\\.com" },
+            { "pattern": "^https?://github\\.com" },
+            { "pattern": "^https?://(docs\\.)?zed\\.dev" },
+            { "pattern": "^https?://doc\\.rust-lang\\.org" },
+            { "pattern": "^https?://docs\\.rs" },
+            { "pattern": "^https?://crates\\.io" },
+            { "pattern": "^https?://pkg\\.go\\.dev" },
+            { "pattern": "^https?://developer\\.mozilla\\.org" },
+            { "pattern": "^https?://docs\\.python\\.org" },
+            { "pattern": "^https?://(www\\.)?npmjs\\.com" },
+            { "pattern": "^https?://nixos\\.org" },
+            { "pattern": "^https?://nix\\.dev" },
+            { "pattern": "^https?://search\\.nixos\\.org" },
+            { "pattern": "^https?://wiki\\.archlinux\\.org" },
+            { "pattern": "^https?://stackoverflow\\.com" }
           ]
         },
         "terminal": {
           "always_allow": [
-            {
-              "pattern": "^git\\b"
-            },
-            {
-              "pattern": "^echo\\s+===(\\s|$)"
-            },
-            {
-              "pattern": "^ls\\b"
-            },
-            {
-              "pattern": "^head\\b"
-            },
-            {
-              "pattern": "^git\\s+add(\\s|$)"
-            },
-            {
-              "pattern": "^find\\s+chezmoi(\\s|$)"
-            },
-            {
-              "pattern": "^grep\\b"
-            },
-            {
-              "pattern": "^command\\b"
-            },
-            {
-              "pattern": "^true\\b"
-            },
-            {
-              "pattern": "^nix\\s+eval(\\s|$)"
-            },
-            {
-              "pattern": "^echo\\b"
-            },
-            {
-              "pattern": "^strings\\b"
-            }
+            { "pattern": "^git\\b" },
+            { "pattern": "^ls\\b" },
+            { "pattern": "^pwd\\b" },
+            { "pattern": "^cat\\b" },
+            { "pattern": "^bat\\b" },
+            { "pattern": "^head\\b" },
+            { "pattern": "^tail\\b" },
+            { "pattern": "^wc\\b" },
+            { "pattern": "^file\\b" },
+            { "pattern": "^stat\\b" },
+            { "pattern": "^readlink\\b" },
+            { "pattern": "^realpath\\b" },
+            { "pattern": "^dirname\\b" },
+            { "pattern": "^basename\\b" },
+            { "pattern": "^tree\\b" },
+            { "pattern": "^find\\b" },
+            { "pattern": "^fd\\b" },
+            { "pattern": "^grep\\b" },
+            { "pattern": "^rg\\b" },
+            { "pattern": "^diff\\b" },
+            { "pattern": "^sort\\b" },
+            { "pattern": "^uniq\\b" },
+            { "pattern": "^cut\\b" },
+            { "pattern": "^jq\\b" },
+            { "pattern": "^strings\\b" },
+            { "pattern": "^sha256sum\\b" },
+            { "pattern": "^md5sum\\b" },
+            { "pattern": "^which\\b" },
+            { "pattern": "^type\\b" },
+            { "pattern": "^command\\b" },
+            { "pattern": "^id\\b" },
+            { "pattern": "^whoami\\b" },
+            { "pattern": "^uname\\b" },
+            { "pattern": "^printenv\\b" },
+            { "pattern": "^date\\b" },
+            { "pattern": "^df\\b" },
+            { "pattern": "^du\\b" },
+            { "pattern": "^free\\b" },
+            { "pattern": "^ps\\b" },
+            { "pattern": "^lsblk\\b" },
+            { "pattern": "^echo\\b" },
+            { "pattern": "^printf\\b" },
+            { "pattern": "^true\\b" },
+            { "pattern": "^false\\b" },
+            { "pattern": "^nix\\s+(eval|search|build|why-depends|path-info|hash)\\b" },
+            { "pattern": "^nix\\s+flake\\s+(show|metadata|check|archive)\\b" },
+            { "pattern": "^nix\\s+store\\s+(verify|ping|ls|cat)\\b" },
+            { "pattern": "^nix-instantiate\\b" },
+            { "pattern": "^nixos-option\\b" },
+            { "pattern": "^nixos-rebuild\\s+(build|dry-activate)\\b" },
+            { "pattern": "^chezmoi\\s+(diff|status|managed|cat|source-path|data|verify|doctor)\\b" }
           ]
         }
       }
