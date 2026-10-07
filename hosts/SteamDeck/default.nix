@@ -12,6 +12,9 @@
       ../../modules/system/locale.nix
       ../../modules/system/gc.nix
       ../../modules/system/user.nix
+      ../../modules/system/shell.nix
+      ../../modules/system/terminal.nix
+      ../../modules/system/yazi.nix
       ../../modules/system/dotfiles.nix
       ../../modules/system/kde.nix
       ../../modules/system/firefox.nix

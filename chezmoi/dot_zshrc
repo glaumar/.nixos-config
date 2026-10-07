@@ -1,0 +1,20 @@
+# ~/.zshrc
+
+# 历史：立即追加，避免多终端互相覆盖
+setopt INC_APPEND_HISTORY
+
+# 别名
+alias ls='ls --color=auto'
+alias ll='ls -lah'
+alias la='ls -A'
+alias g='git'
+
+# yazi：退出时把 cwd 带回 shell（官方 zsh 包装函数）
+function y() {
+  local tmp="$(mktemp -t yazi-cwd.XXXXXX)" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}

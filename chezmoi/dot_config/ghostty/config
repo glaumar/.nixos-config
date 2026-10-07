@@ -1,0 +1,16 @@
+font-family = "JetBrainsMono Nerd Font"
+font-size = 12
+
+window-padding-x = 8
+window-padding-y = 6
+
+cursor-style = block
+copy-on-select = clipboard
+mouse-hide-while-typing = true
+
+# 主题：用 `ghostty +list-themes` 查看可用名称
+theme = "catppuccin-mocha"
+
+# 全局下拉终端（替代 yakuake），F12 呼出。
+# 需要 ghostty 处于运行状态；可用 KDE 自启动让它常驻。
+keybind = global:f12=toggle_quick_terminal

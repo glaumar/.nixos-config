@@ -10,6 +10,9 @@
     ./secrets.nix
     ./dotfiles.nix
     ./user.nix
+    ./shell.nix
+    ./terminal.nix
+    ./yazi.nix
     ./fwupd.nix
 
     ./kde.nix
