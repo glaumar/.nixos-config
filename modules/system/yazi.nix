@@ -1,16 +1,16 @@
 { pkgs, ... }:
 
 {
-  # yazi 及其全部预览依赖，集中在此文件管理
+  # yazi and all its preview dependencies, managed centrally in this file
   environment.systemPackages = with pkgs; [
     yazi
 
-    # 缩略图 / 预览
-    ffmpegthumbnailer # 视频缩略图
-    poppler-utils # PDF 缩略图（pdftoppm）
-    chafa # 终端不支持图形协议时的兜底
+    # Thumbnails / preview
+    ffmpegthumbnailer # video thumbnails
+    poppler-utils # PDF thumbnails (pdftoppm)
+    chafa # fallback when the terminal lacks graphics-protocol support
 
-    # 归档 / 结构化数据预览
+    # Archive / structured data preview
     p7zip
     jq
     file

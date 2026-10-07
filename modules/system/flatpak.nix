@@ -7,9 +7,9 @@
 
   services.flatpak = {
     # remotes = lib.mkOptionDefault [{
-    #   # 备用镜像（上海交大）
-    #   # 文档： https://mirror.sjtu.edu.cn/docs/flathub
-    #   # 可能需要手动添加 GPG 密钥
+    #   # Alternate mirror (SJTU)
+    #   # Docs: https://mirror.sjtu.edu.cn/docs/flathub
+    #   # May require manually adding the GPG key
     #   name = "sjtu";
     #   location = "https://mirror.sjtu.edu.cn/flathub";
     # }];
