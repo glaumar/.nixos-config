@@ -7,12 +7,13 @@ git history.
 
 ## What this repo is
 
-A personal NixOS flake that manages two machines from a single source of truth:
+A personal NixOS flake. `NixOS2501` is the active machine; `minimal` is a bootable
+template used to provision new machines.
 
-| Host | Machine | Notes |
-|------|---------|-------|
-| `NixOS2501` | Desktop PC | imports the aggregate `modules/**/default.nix` plus `modules/tmp.nix` (scratch packages) |
-| `SteamDeck` | Steam Deck | imports individual modules; Jovian-NixOS, gamescope session |
+| Host        | Role                | Notes                                                                                    |
+| ----------- | ------------------- | ---------------------------------------------------------------------------------------- |
+| `NixOS2501` | Desktop PC (active) | imports the aggregate `modules/**/default.nix` plus `modules/tmp.nix` (scratch packages) |
+| `minimal`   | template            | self-contained minimal host; copy to `hosts/<NewHost>` when adding a machine             |
 
 `flake.nix` builds hosts via the `mkHost` helper and a shared `pkgsOverlay`
 (`glaumarPkgs` from the `glaumar_nur` input, plus the `daed` `pnpm_10` workaround —
@@ -65,14 +66,14 @@ nixfmt <changed .nix files>    # format (this repo formats with nixfmt, not nixp
 
 The `justfile` is the canonical entry point:
 
-| Recipe | Effect |
-|--------|--------|
-| `just switch` | `sudo nixos-rebuild switch` — **user-only, not for agents** |
-| `just update` | `nix flake update` |
-| `just dotfiles_sync` | `chezmoi re-add` (pull live `$HOME` changes back into the repo) |
-| `just daed_conf_sync` | export `/etc/daed/wing.db` into the encrypted secret |
-| `just sops-edit` / `just sops-update-keys` | edit / re-key `secrets/default.yaml` |
-| `just repair` / `just list-generations` / `just delete-generation` | maintenance (mostly `sudo`) |
+| Recipe                                                             | Effect                                                          |
+| ------------------------------------------------------------------ | --------------------------------------------------------------- |
+| `just switch`                                                      | `sudo nixos-rebuild switch` — **user-only, not for agents**     |
+| `just update`                                                      | `nix flake update`                                              |
+| `just dotfiles_sync`                                               | `chezmoi re-add` (pull live `$HOME` changes back into the repo) |
+| `just daed_conf_sync`                                              | export `/etc/daed/wing.db` into the encrypted secret            |
+| `just sops-edit` / `just sops-update-keys`                         | edit / re-key `secrets/default.yaml`                            |
+| `just repair` / `just list-generations` / `just delete-generation` | maintenance (mostly `sudo`)                                     |
 
 Note: `.zed/tasks.json` references `just dotfiles-diff`, which does not currently exist in
 the `justfile`; the real recipe is `dotfiles_sync`.
@@ -82,8 +83,7 @@ the `justfile`; the real recipe is `dotfiles_sync`.
 - One module per concern; each `modules/<domain>/` has a `default.nix` that **only**
   aggregates its siblings via `imports = [ ./a.nix ./b.nix ];`.
 - Hosts are thin: they set host-specific options and `imports` the relevant modules.
-  Host overrides use `lib.mkDefault` / `lib.mkForce` (see `hosts/SteamDeck/default.nix`
-  and `modules/system/kde.nix`).
+  Host overrides use `lib.mkDefault` / `lib.mkForce` (see `modules/system/kde.nix`).
 - Packages: `environment.systemPackages = with pkgs; [ ... ];`. KDE packages come from
   `with pkgs.kdePackages;`.
 - Language servers, linters, formatters and toolchains live together in
@@ -92,8 +92,8 @@ the `justfile`; the real recipe is `dotfiles_sync`.
 - Comments: **English**, and only where they explain non-obvious intent, constraints or
   workarounds (e.g. the `daed` `pnpm_10` override, the non-setuid `bubblewrap` note). Do not
   add comments that merely restate the code.
-- Formatting is `nixfmt` (see the Zed `Nix` language config and `languages.nix`).
-  The SteamDeck host still ships `nixpkgs-fmt`; prefer `nixfmt` for new/edited files.
+- Formatting is `nixfmt` (see the Zed `Nix` language config and `languages.nix`);
+  use it for new/edited `.nix` files.
 
 ## Secrets (sops-nix + age)
 
@@ -144,10 +144,14 @@ chore(ghostty): bind global quick terminal to super+enter
 
 Scopes seen: host-agnostic areas and module names (`nushell`, `shell`, `zed`, `ghostty`,
 `flake`, `develop`, `system`, `kde`, `flatpak`, `network`, `game`, `multimedia`). Keep the
-subject imperative and lower-case; explain the *why* in the body for workarounds.
+subject imperative and lower-case; explain the _why_ in the body for workarounds.
 
 ## Common tasks
 
+- **Add a host**: copy `hosts/minimal` to `hosts/<NewHost>`, regenerate its
+  `hardware-configuration.nix` on the machine, set `networking.hostName` and user
+  credentials, then add `mkHost { systemModule = ./hosts/<NewHost>/default.nix; }` to
+  `flake.nix`.
 - **Add a package**: pick the domain folder (`modules/system`, `develop`, `game`, …) and add
   it to `environment.systemPackages`. Temporary experiments go in `modules/tmp.nix`.
 - **Add a new module**: create `modules/<domain>/<thing>.nix` and add it to that domain's
@@ -157,4 +161,7 @@ subject imperative and lower-case; explain the *why* in the body for workarounds
 - **Change dotfiles**: edit under `chezmoi/`, then note that the user runs `just dotfiles_sync`.
 - **After editing Nix**: run `nixos-rebuild build` (or at minimum `nix flake check`) and
   `nixfmt` before finishing.
+
+```
+
 ```

@@ -4,12 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    # steamdeck package
-    jovian-nixos = {
-      url = "github:Jovian-Experiments/Jovian-NixOS";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     glaumar_nur = {
       url = "github:glaumar/nur";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,14 +30,14 @@
   };
 
   outputs =
-    { nixpkgs
-    , daeuniverse
-    , jovian-nixos
-    , sops-nix
-    , glaumar_nur
-    , nix-index-database
-    , nix-flatpak
-    , ...
+    {
+      nixpkgs,
+      daeuniverse,
+      sops-nix,
+      glaumar_nur,
+      nix-index-database,
+      nix-flatpak,
+      ...
     }:
     let
       system = "x86_64-linux";
@@ -61,8 +55,9 @@
       };
 
       mkHost =
-        { systemModule
-        , extraModules ? [ ]
+        {
+          systemModule,
+          extraModules ? [ ],
         }:
         nixpkgs.lib.nixosSystem {
           inherit system;
@@ -70,7 +65,8 @@
             { nixpkgs.overlays = [ pkgsOverlay ]; }
 
             systemModule
-          ] ++ extraModules;
+          ]
+          ++ extraModules;
         };
     in
     {
@@ -85,15 +81,11 @@
           ];
         };
 
-        SteamDeck = mkHost {
-          systemModule = ./hosts/SteamDeck/default.nix;
-          extraModules = [
-            daeuniverse.nixosModules.daed
-            jovian-nixos.nixosModules.default
-            sops-nix.nixosModules.sops
-            nix-flatpak.nixosModules.nix-flatpak
-            # nix-index-database.nixosModules.nix-index
-          ];
+        # Bootable minimal template for provisioning a new machine.
+        # Copy hosts/minimal to hosts/<NewHost>, regenerate its hardware
+        # configuration, then add a matching attribute here.
+        minimal = mkHost {
+          systemModule = ./hosts/minimal/default.nix;
         };
       };
     };
