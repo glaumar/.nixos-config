@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     zed-editor
     opencode # ACP agent used by Zed
+    bubblewrap # Zed Agent sandbox needs a non-setuid `bwrap` on $PATH (do not install via security.wrappers)
   ];
 
   # Fonts used by the Zed config
