@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  # Config: chezmoi/dot_config/zed/settings.json + repo .zed/{settings,tasks}.json
+  # Config: chezmoi/dot_config/zed/private_settings.json + repo .zed/{settings,tasks}.json
   environment.systemPackages = with pkgs; [
     zed-editor
     opencode # ACP agent used by Zed
