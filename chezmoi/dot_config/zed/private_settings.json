@@ -44,11 +44,25 @@
   "agent": {
     "default_profile": "write",
     "sandbox_permissions": {
-      "write_paths": [
-        "/tmp"
-      ],
       "network_hosts": [
-        "raw.githubusercontent.com",
+        "github.com",
+        "api.github.com",
+        "*.githubusercontent.com",
+        "zed.dev",
+        "docs.zed.dev",
+        "doc.rust-lang.org",
+        "docs.rs",
+        "crates.io",
+        "pkg.go.dev",
+        "developer.mozilla.org",
+        "docs.python.org",
+        "npmjs.com",
+        "*.npmjs.com",
+        "nixos.org",
+        "*.nixos.org",
+        "nix.dev",
+        "wiki.archlinux.org",
+        "stackoverflow.com",
         "ghostty.org",
         "carapace-sh.github.io"
       ],
@@ -56,193 +70,47 @@
       "allow_unsandboxed": false
     },
     "tool_permissions": {
+      "default": "allow",
       "tools": {
-        "fetch": {
-          "always_allow": [
-            { "pattern": "^https?://raw\\.githubusercontent\\.com" },
-            { "pattern": "^https?://api\\.github\\.com" },
-            { "pattern": "^https?://gist\\.githubusercontent\\.com" },
-            { "pattern": "^https?://github\\.com" },
-            { "pattern": "^https?://(docs\\.)?zed\\.dev" },
-            { "pattern": "^https?://doc\\.rust-lang\\.org" },
-            { "pattern": "^https?://docs\\.rs" },
-            { "pattern": "^https?://crates\\.io" },
-            { "pattern": "^https?://pkg\\.go\\.dev" },
-            { "pattern": "^https?://developer\\.mozilla\\.org" },
-            { "pattern": "^https?://docs\\.python\\.org" },
-            { "pattern": "^https?://(www\\.)?npmjs\\.com" },
-            { "pattern": "^https?://nixos\\.org" },
-            { "pattern": "^https?://nix\\.dev" },
-            { "pattern": "^https?://search\\.nixos\\.org" },
-            { "pattern": "^https?://wiki\\.archlinux\\.org" },
-            { "pattern": "^https?://stackoverflow\\.com" }
+        "terminal": {
+          "always_confirm": [
+            { "pattern": "\\bsudo\\b" },
+            { "pattern": "\\bnixos-rebuild\\s+(switch|boot|test)\\b" },
+            { "pattern": "\\bnix-collect-garbage\\b" },
+            { "pattern": "\\bjust\\s+(switch|repair|delete-generation)\\b" },
+            { "pattern": "\\bsops\\b" },
+            { "pattern": "\\brm\\s+(-[a-zA-Z]*r|--recursive)" },
+            { "pattern": "\\bgit\\s+push\\b" }
           ]
         },
-        "terminal": {
-          "default": "allow",
-          "always_allow": [
-            {
-              "pattern": "^git\\b"
-            },
-            {
-              "pattern": "^ls\\b"
-            },
-            {
-              "pattern": "^pwd\\b"
-            },
-            {
-              "pattern": "^cat\\b"
-            },
-            {
-              "pattern": "^bat\\b"
-            },
-            {
-              "pattern": "^head\\b"
-            },
-            {
-              "pattern": "^tail\\b"
-            },
-            {
-              "pattern": "^wc\\b"
-            },
-            {
-              "pattern": "^file\\b"
-            },
-            {
-              "pattern": "^stat\\b"
-            },
-            {
-              "pattern": "^readlink\\b"
-            },
-            {
-              "pattern": "^realpath\\b"
-            },
-            {
-              "pattern": "^dirname\\b"
-            },
-            {
-              "pattern": "^basename\\b"
-            },
-            {
-              "pattern": "^tree\\b"
-            },
-            {
-              "pattern": "^find\\b"
-            },
-            {
-              "pattern": "^fd\\b"
-            },
-            {
-              "pattern": "^grep\\b"
-            },
-            {
-              "pattern": "^rg\\b"
-            },
-            {
-              "pattern": "^diff\\b"
-            },
-            {
-              "pattern": "^sort\\b"
-            },
-            {
-              "pattern": "^uniq\\b"
-            },
-            {
-              "pattern": "^cut\\b"
-            },
-            {
-              "pattern": "^jq\\b"
-            },
-            {
-              "pattern": "^strings\\b"
-            },
-            {
-              "pattern": "^sha256sum\\b"
-            },
-            {
-              "pattern": "^md5sum\\b"
-            },
-            {
-              "pattern": "^which\\b"
-            },
-            {
-              "pattern": "^type\\b"
-            },
-            {
-              "pattern": "^command\\b"
-            },
-            {
-              "pattern": "^id\\b"
-            },
-            {
-              "pattern": "^whoami\\b"
-            },
-            {
-              "pattern": "^uname\\b"
-            },
-            {
-              "pattern": "^printenv\\b"
-            },
-            {
-              "pattern": "^date\\b"
-            },
-            {
-              "pattern": "^df\\b"
-            },
-            {
-              "pattern": "^du\\b"
-            },
-            {
-              "pattern": "^free\\b"
-            },
-            {
-              "pattern": "^ps\\b"
-            },
-            {
-              "pattern": "^lsblk\\b"
-            },
-            {
-              "pattern": "^echo\\b"
-            },
-            {
-              "pattern": "^printf\\b"
-            },
-            {
-              "pattern": "^true\\b"
-            },
-            {
-              "pattern": "^false\\b"
-            },
-            {
-              "pattern": "^nix\\s+(eval|search|build|why-depends|path-info|hash)\\b"
-            },
-            {
-              "pattern": "^nix\\s+flake\\s+(show|metadata|check|archive)\\b"
-            },
-            {
-              "pattern": "^nix\\s+store\\s+(verify|ping|ls|cat)\\b"
-            },
-            {
-              "pattern": "^nix-instantiate\\b"
-            },
-            {
-              "pattern": "^nixos-option\\b"
-            },
-            {
-              "pattern": "^nixos-rebuild\\s+(build|dry-activate)\\b"
-            },
-            {
-              "pattern": "^chezmoi\\s+(diff|status|managed|cat|source-path|data|verify|doctor)\\b"
-            },
-            {
-              "pattern": "^nixfmt\\b"
-            },
-            {
-              "pattern": "^sed\\b"
-            },
-            {
-              "pattern": "^nu\\b"
-            }
+        "edit_file": {
+          "always_confirm": [
+            { "pattern": "(^|/)secrets/" },
+            { "pattern": "\\.sops\\.yaml" }
+          ]
+        },
+        "write_file": {
+          "always_confirm": [
+            { "pattern": "(^|/)secrets/" },
+            { "pattern": "\\.sops\\.yaml" }
+          ]
+        },
+        "delete_path": {
+          "always_confirm": [
+            { "pattern": "(^|/)secrets/" },
+            { "pattern": "\\.sops\\.yaml" }
+          ]
+        },
+        "move_path": {
+          "always_confirm": [
+            { "pattern": "(^|/)secrets/" },
+            { "pattern": "\\.sops\\.yaml" }
+          ]
+        },
+        "copy_path": {
+          "always_confirm": [
+            { "pattern": "(^|/)secrets/" },
+            { "pattern": "\\.sops\\.yaml" }
           ]
         }
       }
