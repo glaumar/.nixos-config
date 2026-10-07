@@ -31,7 +31,7 @@ modules/<domain>/    # domain folders; each has a default.nix that only imports 
 modules/tmp.nix      # scratch/temporary packages (Desktop only)
 chezmoi/             # chezmoi source tree for dotfiles (dot_config/...)
 secrets/             # sops-encrypted secrets (never plaintext)
-.zed/                # Zed *project* settings (nixd LSP) + tasks
+.zed/                # Zed *project* settings (nixd LSP)
 ```
 
 The dotfiles source of truth is the `chezmoi/` tree, not `~/.config`. `chezmoi.toml`
@@ -74,9 +74,6 @@ The `justfile` is the canonical entry point:
 | `just daed_conf_sync`                                              | export `/etc/daed/wing.db` into the encrypted secret            |
 | `just sops-edit` / `just sops-update-keys`                         | edit / re-key `secrets/default.yaml`                            |
 | `just repair` / `just list-generations` / `just delete-generation` | maintenance (mostly `sudo`)                                     |
-
-Note: `.zed/tasks.json` references `just dotfiles-diff`, which does not currently exist in
-the `justfile`; the real recipe is `dotfiles_sync`.
 
 ## Nix conventions
 
