@@ -53,7 +53,7 @@
         "carapace-sh.github.io"
       ],
       "allow_all_hosts": false,
-      "allow_unsandboxed": false
+      "allow_unsandboxed": true
     },
     "tool_permissions": {
       "tools": {
@@ -79,6 +79,7 @@
           ]
         },
         "terminal": {
+          "default": "allow",
           "always_allow": [
             {
               "pattern": "^git\\b"
