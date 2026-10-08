@@ -15,7 +15,6 @@
     group = config.users.users.glaumar.group;
   };
 
-  programs.fish.enable = true;
   users.defaultUserShell = pkgs.nushell;
   users.users.glaumar = {
     isNormalUser = true;

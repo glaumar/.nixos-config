@@ -12,7 +12,7 @@
     readest
     logseq
     nextcloud-client
-    zotero
+    # zotero
     super-productivity
     thunderbird
   ];

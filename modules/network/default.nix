@@ -4,6 +4,6 @@
   imports = [
     # ./dns.nix
     ./daed.nix
-    ./freenet.nix
+    # ./freenet.nix
   ];
 }
