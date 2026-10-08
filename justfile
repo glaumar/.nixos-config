@@ -1,29 +1,34 @@
 switch:
-  sudo nixos-rebuild switch
+    sudo nixos-rebuild switch
 
 rollback:
-  sudo nixos-rebuild switch --rollback
+    sudo nixos-rebuild switch --rollback
 
 update:
-  nix flake update
+    nix flake update
 
 dotfiles_sync:
-  chezmoi re-add
+    chezmoi re-add
 
 daed_conf_sync:
-  sudo -E sops -e /etc/daed/wing.db > secrets/daed/wing.db
+    sudo -E sops -e /etc/daed/wing.db > secrets/daed/wing.db
 
 sops-edit:
-  sops secrets/default.yaml
+    sops secrets/default.yaml
 
 sops-update-keys:
-  sops updatekeys secrets/default.yaml
+    sops updatekeys secrets/default.yaml
 
 repair:
-  sudo nix-store --verify --check-contents --repair
+    sudo nix-store --verify --check-contents --repair
 
 list-generations:
-  nixos-rebuild list-generations
+    nixos-rebuild list-generations
 
 delete-generation:
-  sudo nix-collect-garbage --delete-older-than 90d
+    sudo nix-collect-garbage --delete-older-than 90d
+
+# Restart niri (ends the graphical session) and DMS.
+restart-session:
+    systemctl --user restart dms.service
+    systemctl --user restart --no-block niri.service
