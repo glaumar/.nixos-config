@@ -42,7 +42,7 @@
     }
   },
   "agent": {
-    "default_profile": "write",
+    "default_profile": "ask",
     "sandbox_permissions": {
       "network_hosts": [
         "github.com",
