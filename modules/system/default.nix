@@ -15,7 +15,15 @@
     ./yazi.nix
     ./fwupd.nix
 
-    ./kde.nix
+    ./input-method.nix
+    ./session-env.nix
+    ./portals.nix
+    ./keyring.nix
+    ./kdeconnect.nix
+    ./kde-apps.nix
+    ./icons.nix
+    ./qt.nix
+
     ./base_packages.nix
     ./flatpak.nix
     ./firefox.nix

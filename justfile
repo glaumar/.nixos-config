@@ -1,6 +1,9 @@
 switch:
   sudo nixos-rebuild switch
 
+rollback:
+  sudo nixos-rebuild switch --rollback
+
 update:
   nix flake update
 

@@ -17,9 +17,18 @@
     update.auto.enable = false;
     uninstallUnmanaged = false;
     packages = [
-      { appId = "org.flatpak.Builder"; origin = "flathub"; }
-      { appId = "com.github.tchx84.Flatseal"; origin = "flathub"; }
-      { appId = "io.github.flattool.Warehouse"; origin = "flathub"; }
+      {
+        appId = "org.flatpak.Builder";
+        origin = "flathub";
+      }
+      {
+        appId = "com.github.tchx84.Flatseal";
+        origin = "flathub";
+      }
+      {
+        appId = "io.github.flattool.Warehouse";
+        origin = "flathub";
+      }
 
       # for QRookie dev
       # { appId = "org.freedesktop.Sdk.Extension.openjdk21/x86_64/23.08"; origin = "flathub"; }
@@ -38,14 +47,8 @@
 
   environment.systemPackages = [ pkgs.flatpak-builder ];
 
-  xdg.portal = {
-    enable = true;
-    # config.common.default = [ "gtk" ];
-    xdgOpenUsePortal = true;
-    
-    config.common.default = [ "kde" ];
-  };
-  
+  # xdg.portal now lives in modules/system/portals.nix.
+
   # https://discourse.nixos.org/t/flatpak-gtk-apps-has-no-fonts/77401
   # fix gtk app font issue:
   #   rm -rf ~/.cache/fontconfig/

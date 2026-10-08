@@ -4,23 +4,22 @@
 
 { pkgs, ... }:
 {
-  imports =
-    [
-      ../../modules/tmp.nix
+  imports = [
+    ../../modules/tmp.nix
 
-      ../../modules/system/default.nix
-      ../../modules/network/default.nix
-      ../../modules/multimedia/default.nix
-      ../../modules/multimedia/tools.nix
-      ../../modules/game/default.nix
-      ../../modules/develop/default.nix
-      ../../modules/office/default.nix
-      ../../modules/other_apps/default.nix
+    ../../modules/system/default.nix
+    ../../modules/desktop/default.nix
+    ../../modules/network/default.nix
+    ../../modules/multimedia/default.nix
+    ../../modules/multimedia/tools.nix
+    ../../modules/game/default.nix
+    ../../modules/develop/default.nix
+    ../../modules/office/default.nix
+    ../../modules/other_apps/default.nix
 
-
-      # the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+    # the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # networking.hostName = "DesktopPC";
   networking.hostName = "NixOS2501";
@@ -42,8 +41,6 @@
   environment.systemPackages = with pkgs; [
     gparted
   ];
-
-
 
   # List services that you want to enable:
 

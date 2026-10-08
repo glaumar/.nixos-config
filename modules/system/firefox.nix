@@ -19,9 +19,13 @@
       enable = true;
       package = pkgs.firefox-devedition;
       nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
-      languagePacks = [ "zh-CN" "en-US" "ja" ];
+      languagePacks = [
+        "zh-CN"
+        "en-US"
+        "ja"
+      ];
 
-      /* ---- POLICIES ---- */
+      # ---- POLICIES ----
       # Check about:policies#documentation for options.
       policies = {
         DisableTelemetry = true;
@@ -34,7 +38,7 @@
         DisplayMenuBar = "default-off"; # alternatives: "always", "never" or "default-on"
         SearchBar = "unified"; # alternative: "separate"
 
-        /* ---- extensions ---- */
+        # ---- extensions ----
         # check about:support for extension/add-on id strings.
         # valid strings for installation_mode are "allowed", "blocked",
         # "force_installed" and "normal_installed".
@@ -52,15 +56,9 @@
           #   install_url = "https://addons.mozilla.org/firefox/downloads/latest/proton-pass/latest.xpi";
           #   installation_mode = "force_installed";
           # };
-
-          # plasma-integration
-          "plasma-browser-integration@kde.org" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/plasma-integration/latest.xpi";
-            installation_mode = "force_installed";
-          };
         };
 
-        /* ---- preferences ---- */
+        # ---- preferences ----
         # check about:config for options.
         Preferences = {
           # make firefox use the kde file picker.
@@ -87,7 +85,7 @@
           # hide fullscreen warning
           "full-screen-api.warning.timeout" = "0";
           "full-screen-api.warning.delay" = "-1";
-          
+
         };
 
         # https://mozilla.github.io/policy-templates/#searchengines-this-policy-is-only-available-on-the-esr
@@ -104,7 +102,6 @@
             # "PostData": "name=value&q={searchTerms}",
             # "SuggestURLTemplate": "https://www.example.org/suggestions/q={searchTerms}"
             # }
-
 
             {
               Name = "NixOS Packages";
@@ -149,10 +146,12 @@
 
           ];
 
-          Remove = [ "Bing" "Wikipedia (en)" ];
+          Remove = [
+            "Bing"
+            "Wikipedia (en)"
+          ];
 
         };
-
 
       };
     };
