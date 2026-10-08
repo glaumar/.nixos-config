@@ -27,7 +27,8 @@
       "cursorHideTimeout": 0
     }
   },
-  "fontFamily": "Noto Sans",
+  "launcherLogoMode": "os",
+  "launcherLogoColorOverride": "primary",
   "lockScreenFontFamily": "Noto Sans",
   "barConfigs": [
     {
