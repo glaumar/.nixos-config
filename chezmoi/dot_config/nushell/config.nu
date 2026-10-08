@@ -5,8 +5,8 @@ $env.config.edit_mode = "emacs"
 $env.config.history.max_size = 10000
 $env.config.history.file_format = "sqlite"
 
+alias l = ls
 alias ll = ls -l
-alias l = ls -l
 alias la = ls -a
 alias ch = chezmoi
 
