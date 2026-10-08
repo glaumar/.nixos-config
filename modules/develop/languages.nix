@@ -22,6 +22,9 @@
     clippy # linter
     rust-analyzer # rust-analyzer
     rustfmt # formatter
+    # rustc links through `cc`, which NixOS does not ship by default
+    gcc # provides `cc` / `c++`
+    pkg-config # build-script dependency probing
 
     # --- C / C++ ---
     clang-tools # clangd (LSP) + clang-format / clang-tidy
