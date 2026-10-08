@@ -29,6 +29,7 @@
   },
   "launcherLogoMode": "os",
   "launcherLogoColorOverride": "primary",
+  "muxType": "zellij",
   "lockScreenFontFamily": "Noto Sans",
   "barConfigs": [
     {
