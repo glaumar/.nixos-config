@@ -1,27 +1,31 @@
+# nix build output symlinks
+/result
+/result-*
+
 TODO.md
 
 # uctakeoff.vscode-counter
 .VSCodeCounter
 
 # fcitx5
-dotfiles/.config/fcitx5/conf/cached_layouts
-dotfiles/.config/fcitx5/conf/chttrans.conf
-dotfiles/.config/fcitx5/conf/notifications.conf
-dotfiles/.config/fcitx5/conf/punctuation.conf
+chezmoi/dot_config/fcitx5/conf/cached_layouts
+chezmoi/dot_config/fcitx5/conf/chttrans.conf
+chezmoi/dot_config/fcitx5/conf/notifications.conf
+chezmoi/dot_config/fcitx5/conf/punctuation.conf
 
 # lunarvim
-dotfiles/.config/lvim/lazy-lock.json
+chezmoi/dot_config/lvim/lazy-lock.json
 
 # godot
-dotfiles/.config/godot/recent_dirs
+chezmoi/dot_config/godot/recent_dirs
 
 # qBittorrent
-dotfiles/.config/qBittorrent/rss
-dotfiles/.config/qBittorrent/lockfile
-dotfiles/.config/qBittorrent/ipc-socket
-dotfiles/.config/qBittorrent/qBittorrent-data.conf
+chezmoi/dot_config/qBittorrent/rss
+chezmoi/dot_config/qBittorrent/lockfile
+chezmoi/dot_config/qBittorrent/ipc-socket
+chezmoi/dot_config/qBittorrent/qBittorrent-data.conf
 
 # wireshark
-dotfiles/.config/wireshark/recent_common
-dotfiles/.config/wireshark/recent
-dotfiles/.config/wireshark/decode_as_entries
+chezmoi/dot_config/wireshark/recent_common
+chezmoi/dot_config/wireshark/recent
+chezmoi/dot_config/wireshark/decode_as_entries
