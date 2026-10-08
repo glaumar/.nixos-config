@@ -3,7 +3,7 @@
 // This is niri's upstream default config with a few changes for the
 // Plasma/niri coexistence trial:
 //   1. autostart waybar -> fcitx5 (DMS runs as a systemd user service)
-//   2. Mod+T / Mod+Return -> ghostty (was alacritty)
+//   2. Mod+T -> kitty, Mod+Return -> kitty quick access terminal (was alacritty)
 //   3. launcher/lock/audio/media/brightness binds -> DankMaterialShell (DMS)
 // Keep the binds {} section: unlike other sections it is NOT filled with
 // defaults, so an incomplete binds block drops every default keybind.
@@ -369,8 +369,10 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
+    // Mod+Return toggles kitty's quick access terminal (drop-down): the kitten
+    // renders a wlr-layer-shell panel, so niri can drive it from a plain bind.
+    Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+Return repeat=false hotkey-overlay-title="Toggle the kitty Quick Access Terminal" { spawn "kitten" "quick-access-terminal"; }
     Mod+D hotkey-overlay-title="Open the DMS Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Mod+N hotkey-overlay-title="Notification Center" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
     Mod+Shift+C hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }

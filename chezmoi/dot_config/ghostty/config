@@ -1,8 +1,0 @@
-# use `ghostty +list-themes` to see theme list
-theme = Gruvbox Dark
-
-# quick terminal
-keybind = global:super+enter=toggle_quick_terminal
-quick-terminal-position = center
-quick-terminal-size = 80%,80%
-gtk-quick-terminal-layer = overlay
