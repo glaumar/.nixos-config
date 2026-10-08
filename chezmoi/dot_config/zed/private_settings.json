@@ -151,6 +151,13 @@
       "format_on_save": "on"
     }
   },
+  "lsp": {
+    "rust-analyzer": {
+      "binary": {
+        "path": "/run/current-system/sw/bin/rust-analyzer"
+      }
+    }
+  },
   "agent_servers": {
     "OpenCode": {
       "default_config_options": {
