@@ -1,0 +1,39 @@
+// kitty integration for niri — managed via chezmoi
+// (chezmoi/dot_config/niri/kitty.kdl).
+//
+// Included from config.kdl at the top level. niri watches included files, so
+// edits here hot-reload. `binds` merge with the main config (a conflicting key
+// defined later wins), and `layer-rule` is inserted at the include position.
+
+binds {
+    // Mod+T opens a normal kitty window; Mod+Return toggles kitty's quick access
+    // terminal (drop-down). The kitten renders a wlr-layer-shell panel, so niri
+    // can drive it from a plain bind (no global-shortcut portal needed).
+    Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+Return repeat=false hotkey-overlay-title="Toggle the kitty Quick Access Terminal" { spawn "kitten" "quick-access-terminal"; }
+}
+
+// Blur what is behind the quick access terminal. niri applies the blur to the
+// layer-shell surface here; kitty's own background_blur only works under KWin.
+// The surface namespace is the kitten's `app_id` (default kitty-quick-access).
+// `xray false` blurs whatever is actually underneath (windows, video, wallpaper)
+// instead of only the wallpaper; xray is enabled by default as a cheaper blur.
+layer-rule {
+    match namespace="^kitty-quick-access$"
+
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+// Same non-xray blur behind normal kitty windows (they need to be semitransparent
+// for it to show - see kitty.conf `background_opacity`).
+window-rule {
+    match app-id="^kitty$"
+
+    background-effect {
+        blur true
+        xray false
+    }
+}
